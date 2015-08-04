@@ -13,9 +13,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>article-list</title>
-<link href="../resource/css/reset.css" rel="stylesheet" type="text/css" />
-<link href="../resource/community/css/layout.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../resource/js/modernizr.js"></script>
+<link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="${ctxName }/resource/community/css/layout.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 <style>
 	
 	.hidden{

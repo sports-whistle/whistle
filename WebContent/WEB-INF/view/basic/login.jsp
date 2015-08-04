@@ -10,9 +10,9 @@
 <title>Insert title here</title>
 
 
-<link href="../resource/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
 
-<script type="text/javascript" src="../resource/js/modernizr.js"></script>
+<script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 
 <style>
 

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <c:set var="ctxName" value="${pageContext.request.contextPath}"/>
@@ -10,8 +10,8 @@
 <title>Insert title here</title>
 
 
-<link href="../resource/css/reset.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../resource/js/modernizr.js"></script>
+<link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 
 <style>
 	.hidden{
@@ -64,7 +64,7 @@
 		
 		width:171px;
 		height:130px;
-		background: url(../resource/images/whistle-logo.png) no-repeat center;
+		background: url(${ctxName }/resource/images/whistle-logo.png) no-repeat center;
 		background-size:cover;
 	}
 	
