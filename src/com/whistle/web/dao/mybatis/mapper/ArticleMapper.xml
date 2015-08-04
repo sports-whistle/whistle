@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- public List<Article> getArticles(int page);
+	public Article getArticle(int intId);
+	
+	
+	public int regArticle(Article newArticle);
+	public int delArticle(int intId);
+	
+	public int updateArticle(String content, int intID);
+	 -->
+	
+	
+
+<mapper namespace = "com.whistle.web.dao.ArticleDao">   <!--  인터페이스 -->
+	
+
+	<!-- email 이나 닉네임에 따른 id는 오버로드로 구현 -->
+	<select id="getArticles" parameterType="int" resultType="com.whistle.web.vo.Article">
+	
+		SELECT *
+         FROM(
+           SELECT ROW_NUMBER() OVER (ORDER BY RegDate DESC)NUM, ArticlesView.*
+           FROM ArticlesView
+         ) M
+      WHERE M.NUM BETWEEN  1 + (#{page,jdbcType=NUMERIC}-1)*10 AND 10 * #{page,jdbcType=NUMERIC};
+		
+	</select>
+	
+	
+	<select id="getArticle" parameterType="int"  resultType="com.whistle.web.vo.Article">
+		SELECT * FROM ArticlesView WHERE IntId = #{intId,jdbcType=NUMERIC}
+	</select>
+	
+	
+	
+	
+	<insert id="regArticle" parameterType="com.whistle.web.vo.Article">
+	
+		<selectKey keyProperty="intId" order="BEFORE" resultType="int">
+				
+			SELECT ISNULL(MAX(IntId), 0)+1 IntId FROM Articles  
+				
+		</selectKey>
+		
+	<!-- 		private int intId;
+	private String title;
+	private int writerId;
+	private String content; // 이거 데이터 타입 ...
+	private int hit;
+	private Date regDate;
+	 -->
+		
+		
+		INSERT INTO Articles(
+			IntId,
+			WriterId,
+			Title,
+			Content
+		)
+		VALUES(
+			${intId},
+			#{writerId},
+			#{title},
+			#{content}
+		);
+	</insert>
+	
+	
+	<!--  cascade delte 구현 -->
+	<delete id="delArticle" parameterType="int">
+	
+		DELETE Articles WHERE IntId =  #{intId,jdbcType=NUMERIC}
+		
+		 
+	</delete>
+
+	
+	<update id="updateArticle">
+			UPDATE Articles SET([Content]) VALUES(#{content}) WHERE intId = ${intId}
+	</update>
+	
+	
+	
+</mapper>

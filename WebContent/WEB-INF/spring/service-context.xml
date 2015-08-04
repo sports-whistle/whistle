@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    
+    
+    xsi:schemaLocation="
+    		http://www.springframework.org/schema/beans
+        	http://www.springframework.org/schema/beans/spring-beans.xsd
+        	http://www.springframework.org/schema/mvc
+        	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        	http://www.springframework.org/schema/context
+        	http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:annotation-config />
+    
+ 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"></property>
+	    <property name="url" value="jdbc:sqlserver://db.newlecture.com:1433;database=whistledb"></property>
+	    <property name="username" value="whistle"></property>
+	    <property name="password" value="890415"></property>
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" 
+			value="classpath:com/whistle/web/dao/mybatis/mapper/*.xml" />
+	</bean>
+
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+	
+	
+	<bean id="articleDao" class="com.whistle.web.dao.mybatis.MyBatisArticleDao" />
+	<bean id="attachedFileDao" class="com.whistle.web.dao.mybatis.MyBatisAttachedFileDao" />
+	<bean id="commentDao" class="com.whistle.web.dao.mybatis.MyBatisCommentDao" />
+	<bean id="rateArticleDao" class="com.whistle.web.dao.mybatis.MyBatisRateArticleDao" />
+	<bean id="rateCommentDao" class="com.whistle.web.dao.mybatis.MyBatisRateCommentDao" />
+	
+</beans>

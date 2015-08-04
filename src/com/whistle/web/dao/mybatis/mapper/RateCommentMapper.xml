@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- 
+	public int rate(RateComment rate);
+	
+	public int cancelRating(int CommentId);
+	
+	public List<RateComment> getListOfRating(int CommentId);
+	public List<RateComment> getRateComments();
+	 -->
+	
+	
+
+<mapper namespace = "com.whistle.web.dao.RateCommentDao">   <!--  인터페이스 -->
+	
+
+	<!-- email 이나 닉네임에 따른 id는 오버로드로 구현 -->
+	
+	
+	
+	<select id="getListOfRating" parameterType="int"  resultType="com.whistle.web.vo.RateComment">
+		SELECT * FROM RateComment WHERE CommentId = #{commentId, jdbcType=NUMERIC}
+	</select>
+	
+	
+	
+	
+	<insert id="rate" parameterType="com.whistle.web.vo.RateComment">
+	
+	
+		INSERT INTO RateComment(
+			Uid,
+			CommentId,
+			IsGood
+		)
+		VALUES(
+			#{uid, jdbcType=NUMERIC},
+			#{commentId, jdbcType=NUMERIC},
+			#{isGood, jdbcType=BOOLEAN}
+		);
+	</insert>
+	
+	
+	<!--  cascade delte 구현 -->
+	<delete id="cancelRating" parameterType="com.whistle.web.vo.RateComment">
+	
+		DELETE RateComment 
+		WHERE CommentId = #{commentId, jdbcType=NUMERIC}
+		 AND   Uid = #{uid, jdbcType=NUMERIC}
+		
+		 
+	</delete>
+
+
+	<select id="getRateComments" resultType="com.whistle.web.vo.RateComment">
+				SELECT * From RateComment
+	        
+	</select>
+	
+	
+</mapper>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- public User getUserByName(String nicName);
+	public User getUserByEmail(String email);
+	public User getUserByIntId(int intId);
+	
+	
+	public List<User> getUsers();
+	
+	
+	
+	public int regUser(User newUser);
+	public int dropUser(User dUser); -->
+
+
+
+<mapper namespace = "com.whistle.web.dao.UserDao">   <!--  인터페이스 -->
+	
+
+	<!-- email 이나 닉네임에 따른 id는 오버로드로 구현 -->
+	<select id="getUserByName" parameterType="string" resultType="com.whistle.web.vo.User">
+	
+		SELECT * FROM Users WHERE Name = #{Name}
+		
+	</select>
+	
+	
+	<select id="getUserByEmail" parameterType="string"  resultType="com.whistle.web.vo.User">
+	
+		SELECT * FROM Users WHERE Email = #{email}
+		
+	</select>
+	
+	<select id="getUserByUid" parameterType="int"  resultType="com.whistle.web.vo.User">
+	
+		SELECT * FROM Users WHERE Uid = #{uid,jdbcType=NUMERIC}
+		
+	</select>
+	
+	<select id="getUsers" resultType="com.whistle.web.vo.User">
+	
+		SELECT * FROM Users
+		
+	</select>
+	
+	
+	<insert id="regUser" parameterType="com.whistle.web.vo.User">
+	
+		<selectKey keyProperty="uid" order="BEFORE" resultType="int">
+				
+			SELECT ISNULL(MAX(Uid), 0)+1 Uid FROM Users  
+				
+		</selectKey>
+		
+		INSERT INTO Users(
+			Uid,
+			Email,
+			Pwd,
+			Name,
+			KakaoId,
+			IsKakaoIdOpen
+		)
+		VALUES(
+			#{uid},
+			#{email},
+			#{pwd},
+			#{name},
+			#{kakaoId},
+			#{isKakaoIdOpen, jdbcType=BOOLEAN}
+			
+			
+		)
+		
+	
+	</insert>
+	
+	<delete id="dropUser" parameterType="com.whistle.web.vo.User">
+	
+		DELETE Users WHERE Email = #{email} AND Password = #{password}
+		
+		 
+	</delete>
+	
+	
+	
+
+	
+	
+	
+</mapper>

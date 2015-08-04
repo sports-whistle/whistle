@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration    
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+   <environments default = "development">
+      <environment id = "development">
+      <transactionManager type = "JDBC"/>
+         <dataSource type = "POOLED">
+            <property name = "driver" value = "com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name = "url" value = "jdbc:sqlserver://211.238.142.250:1433; databaseName=whistledb;"/>
+            <property name = "username" value = "whistle"/>
+            <property name = "password" value = "890415"/>   
+         </dataSource>
+      </environment>
+   </environments>
+   
+   <mappers>
+      
+       		
+       		<mapper resource="com/whistle/web/dao/mybatis/mapper/ArticleMapper.xml"/>
+       		<mapper resource="com/whistle/web/dao/mybatis/mapper/CommentMapper.xml"/>
+       		<mapper resource="com/whistle/web/dao/mybatis/mapper/UserMapper.xml"/>
+       		<mapper resource="com/whistle/web/dao/mybatis/mapper/RateArticleMapper.xml"/>
+       		<mapper resource="com/whistle/web/dao/mybatis/mapper/RateCommentMapper.xml"/>
+   </mappers>
+   
+</configuration>
+

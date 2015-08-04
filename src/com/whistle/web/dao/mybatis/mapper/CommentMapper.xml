@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- 
+	public List<Comment> getComments(int page);
+	public Comment getComment(int intId);
+	
+	
+	public int regComment(Comment newComment);
+	public int delComment(int intId);
+	
+	public int updateComment(String content, int intID);
+	
+	 -->
+	
+	
+
+<mapper namespace = "com.whistle.web.dao.CommentDao">   <!--  인터페이스 -->
+	
+
+	
+	<select id="getComments" parameterType="int" resultType="com.whistle.web.vo.Comment">
+	
+	
+			SELECT * FROM CommentsView WHERE ArticleId = #{articleId,jdbcType=NUMERIC}
+	</select>
+	
+	
+	<select id="getComment" parameterType="int"  resultType="com.whistle.web.vo.Comment">
+		SELECT * FROM CommentsView WHERE IntId = #{intId,jdbcType=NUMERIC}
+	</select>
+	
+	
+	
+	
+	<insert id="regComment" parameterType="com.whistle.web.vo.Comment">
+	
+		<selectKey keyProperty="intId" order="BEFORE" resultType="int">
+				
+			SELECT ISNULL(MAX(IntId), 0)+1 IntId FROM Comments  
+				
+		</selectKey>
+		
+	<!-- 		private int intId;
+	private String title;
+	private int writerId;
+	private String content; // 이거 데이터 타입 ...
+	private int hit;
+	private Date regDate;
+	 -->
+		
+		
+		INSERT INTO Comments(
+			IntId,
+			ArticleId,
+			WriterId,
+			Content
+		)
+		VALUES(
+			${intId},
+			${articleId},
+			#{writerId},
+			#{content}
+		);
+	</insert>
+	
+	
+	<!--  cascade delte 구현 -->
+	<delete id="delComment" parameterType="int">
+	
+		DELETE Comments WHERE IntId =  #{intId,jdbcType=NUMERIC}
+		
+		 
+	</delete>
+
+	
+	<update id="updateComment">
+			UPDATE Comments SET([Content]) VALUES(#{content}) WHERE intId = ${intId}
+	</update>
+	
+	
+	
+</mapper>

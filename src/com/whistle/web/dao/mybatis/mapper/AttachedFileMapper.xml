@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- public List<AttachedFile> getAttachedFilesByArticleId(int articleId);
+	public AttachedFile getAttachedFile(int intId);
+	
+	public int addAttachedFile(AttachedFile attachedFile);
+	public int delAttachedFile(AttachedFile intId);
+	 -->
+	
+
+<mapper namespace = "com.whistle.web.dao.AttachedFileDao">   <!--  인터페이스 -->
+	
+	
+	
+	<select id="getAttachedFilesByArticleId" parameterType="int" resultType="com.whistle.web.vo.AttachedFile">
+		SELECT * FROM AttachedFiles WHERE ArticleId = #{articleId,jdbcType=NUMERIC}
+	</select>
+	
+	
+	<select id="getAttachedFile" parameterType="int"  resultType="com.whistle.web.vo.AttachedFile">
+		SELECT * FROM AttachedFiles WHERE IntId = #{intId,jdbcType=NUMERIC}
+	</select>
+	
+	
+	<insert id="addAttachedFile" parameterType="com.whistle.web.vo.AttachedFile">
+		
+		<selectKey keyProperty="intId" order="BEFORE" resultType="int">
+				
+			SELECT ISNULL(MAX(IntId), 0)+1 IntId FROM AttachedFiles
+				
+		</selectKey>
+		
+			INSERT INTO AttachedFiles(
+				IntId,
+				ArticleId,
+				Url,
+				Name,
+				Size
+				
+			)
+			VALUES(
+				#{intId, jdbcType=NUMERIC},
+				#{articleId, jdbcType=NUMERIC},
+				#{url},
+				#{name},
+				#{size, jdbcType=NUMERIC}
+				
+			);
+	</insert>
+	
+	
+
+	<delete id="delAttachedFile" parameterType="int">
+		DELETE AttachedFiles
+		WHERE intId = #{intId, jdbcType=NUMERIC}
+	</delete>
+
+
+	
+	
+	
+</mapper>
