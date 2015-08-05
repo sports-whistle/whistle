@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+td {
+	text-align: left;
+	font size: 30px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.a1 {
+	background-color: pink;
+	width: 40;
+	height: 50;
+}
+
+.a2 {
+	font-size: 20px;
+	background-color: yellow;
+	border-collapse: separate;
+}
+
+input[id="week"] {
+	text-align: center;
+}
+
+.a3 {
+	text-align: center;
+	/* 	background-color: red; */
+}
+
+.a4 {
+	/* 	background-color: pink; */
+	
+}

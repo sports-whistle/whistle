@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
       <transactionManager type = "JDBC"/>
          <dataSource type = "POOLED">
             <property name = "driver" value = "com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-            <property name = "url" value = "jdbc:sqlserver://211.238.142.250:1433; databaseName=whistledb;"/>
+            <property name = "url" value = "jdbc:sqlserver://db.newlecture.com:1433; databaseName=whistledb;"/>
             <property name = "username" value = "whistle"/>
             <property name = "password" value = "890415"/>   
          </dataSource>
@@ -17,13 +17,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    </environments>
    
    <mappers>
-      
-       		
-       		<mapper resource="com/whistle/web/dao/mybatis/mapper/ArticleMapper.xml"/>
-       		<mapper resource="com/whistle/web/dao/mybatis/mapper/CommentMapper.xml"/>
-       		<mapper resource="com/whistle/web/dao/mybatis/mapper/UserMapper.xml"/>
-       		<mapper resource="com/whistle/web/dao/mybatis/mapper/RateArticleMapper.xml"/>
-       		<mapper resource="com/whistle/web/dao/mybatis/mapper/RateCommentMapper.xml"/>
+   		<mapper resource="com/whistle/web/dao/mybatis/mapper/ArticleMapper.xml"/>
+   		<mapper resource="com/whistle/web/dao/mybatis/mapper/CommentMapper.xml"/>
+   		<mapper resource="com/whistle/web/dao/mybatis/mapper/UserMapper.xml"/>
+   		<mapper resource="com/whistle/web/dao/mybatis/mapper/RateArticleMapper.xml"/>
+   		<mapper resource="com/whistle/web/dao/mybatis/mapper/RateCommentMapper.xml"/>
+   		<mapper resource="com/whistle/web/dao/mybatis/mapperr/WhistleGamesDao.xml"/>
+  		<mapper resource="com/whistle/web/dao/mybatis/mapper/WhistlePartiesDao.xml"/>
    </mappers>
    
 </configuration>

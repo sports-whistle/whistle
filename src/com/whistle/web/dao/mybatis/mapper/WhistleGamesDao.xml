@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace = "com.whistle.web.dao.GamesDao">  
+	
+	<select id="getGames" resultType="com.whistle.web.vo.Games">
+	
+		SELECT * FROM GAMES
+	
+	</select>
+	
+	
+	<select id="getGame" parameterType="String" resultType="com.whistle.web.vo.Games">
+	
+		SELECT * FROM GAMES WHERE CODE = #{code}
+	
+	</select>
+	
+</mapper>
