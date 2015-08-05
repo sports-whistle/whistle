@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.whistle.web.dao.PartiesDao">  
+	
+	<insert id="addParties" parameterType="com.whistle.web.vo.Parties">
+		
+		<selectKey keyProperty="partyId" order="BEFORE" resultType="string">
+			SELECT ISNULL(MAX(CAST(PartyId AS INT)), 0)+1 PartyId FROM PARTIES
+		</selectKey>
+
+		<!-- <selectKey keyProperty="realRegCnt" order="AFTER" resultType="int">
+			SELECT ISNULL(MAX(CAST(RealRegCnt AS INT)), 0)+1 RealRegCnt FROM PARTIES
+		</selectKey> -->
+	
+		INSERT INTO PARTIES(
+		PartyId,
+		SupportingTeamImgPath,
+		Match,
+		Subject,
+		Zone,
+		Date,
+		RealRegCnt,
+		MaxParticipants,
+		ClickCnt,
+		Comment,
+		UserDirectRegMatchDate
+		
+		)
+		VALUES(
+		#{partyId},
+		#{supportingTeamImgPath},
+		#{match},
+		#{subject},
+		#{zone},
+		#{date},
+		#{realRegCnt},
+		#{maxParticipants},
+		#{clickCnt},
+		#{comment},
+		#{userDirectRegMatchDate}
+		)
+	</insert>
+	
+	
+	<select id="getParties" resultType="com.whistle.web.vo.Parties">
+	
+		SELECT * FROM PARTIES
+		
+	</select>
+	
+	<select id="getParty" parameterType="string" resultType="com.whistle.web.vo.Parties">
+	
+		SELECT * FROM PARTIES WHERE PartyId = #{partyId}
+		 
+	</select>
+	
+	<update id="updateRealRegCnt" parameterType="string">
+	
+	 	update Parties set RealRegCnt = RealRegCnt+1 where PartyId = #{partyId}
+		
+	</update>
+	
+	<update id="updateClickCnt" parameterType="string">
+	
+	 	update Parties set ClickCnt = ClickCnt+1 where PartyId = #{partyId}
+	
+	</update>
+	
+	
+</mapper>
