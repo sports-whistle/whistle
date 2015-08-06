@@ -81,17 +81,35 @@ thead tr {
 	height: 200px;
 }
 
+thead td:FIRST-CHILD+td{
+
+	text-align: left;
+	
+}
+
+
 thead th:FIRST-CHILD, thead th:FIRST-CHILD+th, thead th:FIRST-CHILD+th+th,
 	thead th:FIRST-CHILD+th+th+th {
 	width: 100px;
 	height: 130px;
 	/* border: 1px solid blue; */
+	
 }
 
 thead th:FIRST-CHILD+th+th+th+th {
 	width: 100px;
 	height: 200px;
 	/* border: 1px solid lime; */
+}
+
+tbody td{
+	text-align: center;
+}
+
+
+tbody td:FIRST-CHILD+td {
+	text-align: left;
+	text-indent: 20px; 
 }
 
 form{
@@ -185,8 +203,9 @@ aside{
 </head>
 <body>
 	<header class="clearfix">
+	 
 		<nav>
-			<img src="../resource/images/cars/whistleLogo.png" / >
+			<a href=""><img src="../resource/images/cars/whistleLogo.png" / ></a>
 		</nav>
 		
 		<nav id="chk">
@@ -197,12 +216,14 @@ aside{
 		<nav>
 			<img src="../resource/images/cars/fanZone.png" />
 		</nav>
+		
 	</header>
 	
 	<div id="body">
 		<aside>
 			<h1 id="hidden">다른 카스 페이지 이동</h1>
 			<ul>
+			
 				<li>
 					<a href="carsMatchPlanChk">
 						<img src="../resource/images/cars/carMatchPlanChk.png" />
@@ -235,11 +256,11 @@ aside{
 				
 							<tbody>
 								<tr>
-									<td>${party.supportingTeamImgPath }</td>
 									<td>${game.teamName1}vs${game.teamName2}</td>
 									<td>${party.subject}</td>
 									<td>${game.dateTime}</td>
 									<td>${party.maxParticipants }</td>
+									<td>${party.supportingTeamImgPath }</td>
 									<td>${party.comment }</td>
 								</tr>
 							</tbody>
