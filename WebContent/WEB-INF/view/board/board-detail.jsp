@@ -14,11 +14,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>article-list</title>
 <link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
-
+<link href="${ctxName }/resource/community/css/layout.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 <style>
-	
-	/**general**/
 	
 	.hidden{
 		display:none;
@@ -41,274 +39,195 @@
 	    visibility: hidden;
 	}
 	
-	body{
-		font-family: malgun, sans-serif;
-		font-size:12pt;
 	
-	}
-	
-	
-	
-	/* header styling */
-	
-	
-	#header .content-wrapper{
-		width:1102px;
-		height:inherit;
-		
-		margin-left:auto;
-		margin-right:auto;
-		
-		border-bottom:3px solid #0a55b3;
-	}
-	
-	
-	
-	#header{
+	/**/
+	#whole-page{
 		width:100%;
-		height:160px;
+		height:100%;
+		background-image:url(${ctxName}/resource/images/board/bg-board-pattern.png);
+		background-size: 120%;
 	}
 	
-	#header-white-bar{
-		display:block;
-		text-indent:-9999px;
-		
-		heigth:20px;
-		background: #FFFFFF;
-	}
-	
-	#header-left{
-		width:180px;
-		height:120px;
-			
-		
-		float:left;
-		
-		background: url(${ctxName}/resource/images/board/bg-header-left.png) no-repeat center;
-		background-size: 100% 100%;
-	}
-	
-	
-	
-	#home-logo{
-		height:110px;
-		width:160px;
-		
-		text-indent:-9999px;
-		
-		margin-left:auto;
-		margin-right:auto;
-		/* background: url(${ctxName}/resource/images/whistle-logo2.png) no-repeat center;
-		background-size:cover; */
-	}
+
 	
 	#home-logo a{
 		display:block;
-		
-		height:110px;
-		width:160px;
-		
-		
-		background: url(${ctxName}/resource/images/whistle-logo2.png) no-repeat center;
-		background-size: 100% 100%;
-	}
-	
-	
-	
-	
-	#header-right{
-		width:200px;
-		height:25px;
-		
-		float:right;
-		
-		padding: 0px 5px 2px 0px;
-		
-		background: url(${ctxName}/resource/images/board/bg-header-right-menu.png) no-repeat center;
-		background-size: cover;
-	}
-	
-	
-	#header-menu{
-		display:block;
-		
-		
-		margin-left:auto;
-		margin-right:auto;
-	}
-	
-	
-	
-	
-	#header-menu li{
-		
-		padding-right:4px;
-		float:right;
-	}
-	
-	#header-menu li:first-child{
-		padding-right:0px;
-	
-	}
-	
-	#header-menu a{
-		font-family:inherit;
-		font-size:1em;
-		color:inherit;
-		text-decoration:none;
-	}
-	
-	
-	#header-visual{
+		width:183px;
 		height:140px;
+		background: url(${ctxName}/resource/images/whistle-logo.png) no-repeat center;
+		background-size:cover;
+		text-indent:-9999px;
+		text-decoration:none;
+		overflow:hidden;
+		
+	}
+	
+	
+	#content{
+		
+	}
+	
+	
+	#header{
+		
 		width:inherit;
-		background: url(${ctxName}/resource/images/board/bg-board-header-pattern.png) repeat-x left;
+		height:318px;
+		
+		background-image:url(${ctxName}/resource/images/board/bg-board-header.png);
+		background-size: cover;
 		
 	}
 	
 	
-	
-	/*  main styling */
-	
-	/* main -header */
-	#main .content-wrapper{
-		width:952px;
-		height:inherit;
+
+
+	#board-body{
+		width:810px;
 		
-		margin-left:auto;
-		margin-right:auto;
+		float:left;
+		background: #eeece1;
+		
+		border-radius: 25px;
+  		border: 4px solid #000000;
+  		padding: 20px; 
 	}
 	
 	
-	#main-header{
-		width:952px;
-		height:100px;
+	
+	#article-title{
+		width:inherit;
+		overflow:hidden;
+		padding-bottom:7px;
 		
-		
-		margin-top:12px;
+		border-bottom: 2px solid #000000; 
 	}
 	
+	/* 제목 dt */
+	#article dl dt:first-child{
+		display:none;
+		
+	}
 	
-	#main-header>p:first-child{
-		font-size:2.4em;
+	/* 제목 dd*/
+	#article dl dt:first-child+dd{
+		font-family:malgun;
+		font-size:20pt;
 		font-weight:bold;
 	}
 	
-	#main-header > p:first-child + p{
-		font-size: 1.3em;
-		color: rgb(117,117,117);
+	/* 조회수 dt*/
+	#article dl dt:first-child+dd+dt{
+		display:none;
+	}
+	
+	/* 조회수 dd*/
+	#article dl dt:first-child+dd+dt+dd{
+		display:inline-block;
+		font-size:9pt;
+		color: #c8c8c8;
+	}
+	
+	/* 댓글수 dt*/
+	#article dl dt:first-child+dd+dt+dd+dt{
+		display:none;
+	}
+	
+	/* 댓글수 dd*/
+	#article dl dt:first-child+dd+dt+dd+dt+dd{
+		display:inline-block;
+		font-size:9pt;
+		color: #c8c8c8;
+	
+	}
+	
+	/*등록일 dt*/
+	#article dl dt:first-child+dd+dt+dd+dt+dd+dt{
+		display:none;
+	}
+	
+	/*reg dat*/
+	#article dl dt:first-child+dd+dt+dd+dt+dd+dt+dd{
+		
+		display:inline-block;
+		
+		
+		font-size:9pt;
+		color: #c8c8c8;
+	}
+	
+	/* 내용 dt */
+	#article-title+dt{
+		display:none;
 	}
 	
 	
 	
-	
-	/** main - body  **/
-	
-	#main-body{
-		width:952px;
+	/*내용과 제목 전 공간*/
+	#article-title+dt+dd:before{
+		content:"";
+		display:block;
+		display:hidden;
+		overflow:hidden;
+		height:15px;
 		
-		margin-left:auto;
-		margin-right:auto;
-		
+	
 	}
 	
-	/*  main - article */
+	/* 내용 dd*/
+	#article-title+dt+dd{
+		font-size:12pt;
+	}
+	
+	/*내용과 후 공간*/
+	#article-title+dt+dd:after{
+		content:"";
+		display:block;
+		display:hidden;
+		overflow:hidden;
+		height:15px;
+		
+	
+	}
+	
+	
+	#cheering-chat{
+		width:260px;
+		height:600px;
+		
+		float:right;
+		background:green;
+	}
+	
 	
 	
 	#article{
-		width:655px;
+	}
+
+	
+	
+	#page-description{
 		
+		height:auto;
+		width:auto;
+		
+		
+		margin-top:40px;
+		padding-bottom:50px;
 	}
 	
-	#article-div{
+	#page-description p{
+	
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:70px;
+		font-style:italic;
 		
-		width:625px;
+		margin-left:80px;
 		
-		
-		
-		
-		 border-radius: 15px;
-  		 border: 4px solid #0a55b3;
-  		 padding: 15px; 
-		
-		
-		float:left;
 	}
 	
 	
 
-	
-	/*** chat ***/
-	
-	#cheering-chat{
-		width:235px;
-		height:500px;
-		
-	
-		float:right;
-		
-		
-		 border-radius: 15px;
-  		 border: 4px solid #0a55b3;
-  		 padding: 15px; 
-	}
-	
-	
-	
 
-	
-	
-	/** page nav **/
-	#board-page-nav{
-		
-		display:block;
-		
-		width:200px;
-		overflow:auto;
-		
-		margin-left:auto;
-		margin-right:auto;
-	}
-	
-	
-	#board-page-nav ul li{
-		 float:left;
-	
-	}
-
-
-
-
-
-
-	/*  */
-	
-	
-	#attraction-paragraph .content-wrapper{
-		width:952px;
-		height:inherit;
-		
-		margin-left:auto;
-		margin-right:auto;
-	}
-	
-	
-	
-	
-	#attraction-paragraph{
-		margin-top:45px;
-	
-	}
-	
-	#attraction-paragraph p{
-		font-size: 3em;
-		font-weight: bold;
-	
-	}
-	
-	
-	
-	
 </style>
 	
 
@@ -317,36 +236,15 @@
 </head>
 <body>
 	
-	
+	<div id="whole-page">
 	<h1 class="hidden">게시판</h1>
 	<header>
+		<div class="content-wrapper">
 			<section id="header">
 				<h1 class="hidden">헤더메뉴</h1>
-				
-				<div id="header-white-bar">bar</div>
-				
-				
-				<div id="header-visual">
-				
-				<div class="content-wrapper">
-					<div id="header-left">
-					<nav id="home-logo"><a href="${ctxName}">homelogo</a></nav>
-					</div>
-					
-					
-					
-					<nav id="header-right">
-						<ul id="header-menu">
-							<li><a href="">회원 가입</a></li>
-							<li><a href="">로그인</a></li>
-						</ul>
-					</nav>
-					
-				</div>
-				
-				</div>
+				<nav id="home-logo"><a href="${ctxName}">homelogo</a></nav>
 			</section>
-		
+		</div>
 	</header>
 	
 	
@@ -357,87 +255,90 @@
 		<section>
 			
 			<h1 class=hidden>게시판 메인</h1>
-				<header id="main-header">
-				<p>Whistle Free Board</p>
-				<p>회원들이 자유롭게 소통하는 공간입니다.</p>
-				</header>
-				
-		<div id="main-body clearfix">
-				
-			<div id="article-div">
-				<article id=article>
-					<h1>게시판 글</h1>
-						<dl>
-							<dt>제목</dt><dd>${article.title }</dd>
-							<dt>조회수</dt><dd>${article.hit }</dd>
-							<dt>댓글수</dt><dd>${article.cntCmnt }</dd>
-							<dt>등록일</dt><dd><fmt:formatDate value="${article.regDate }" pattern="yyyy-MM-dd"/></dd>
-							<dt>내용</dt><dd>${article.content }</dd>
-						</dl>
-				</article>
-				
 			
-				<nav>
-					<h1>게시판 글 하단 버튼</h1>
-					
-						<form method="POST">
-							<input type="hidden" name="articleId" value="${article.intId}" />
-							<input type="submit" name="btn" value="deleteArticle"/>
-						</form>
-						<p><a href="${ctxName}/board/board-list">목록</a></p>
-						<p>글 쓰기</p>
-						<p>신고</p>
-				</nav>
+			
+			<div id="content">
+			
 				
-				<div id="comment">
-				<article>
-					<h1>댓글</h1>
-						<div>
-						
-							
-							<c:forEach var="comment" items="${article.commentsOfThis}">
-								<dl>
-									<dt class="seq">번호</dt><dd></dd>
-									<dt class="writer-name">작성자이름</dt><dd>${comment.writerName }</dd>
-									<dt class="content">내용</dt><dd>${comment.content }</dd>
-									<dt class="reg-date">등록일</dt><dd>${comment.regDate }</dd>
 		
-								</dl>
-								<p>수정</p>
-								<p>삭제</p>
-								<p>신고</p>
-							</c:forEach>
-						</div>
-						
-					
-				</article>
-				
-				
-				<section id="reg-comment">
-					<h1>댓글 작성</h1>
-						<p>작성자 닉네임</p>
-						<form method="POST">
-							<input type="hidden" name="articleId" value="${article.intId}" />
-							<label>작성자id</label><input type="text" name="writerId"/>
-							<label>내용</label><input type="text" name="content"/>
+		
+		
+			
+				<div id="board-body">
+					<article id="article">
+						<h1 class="hidden">게시판 글</h1>
+							<dl>
 							
-							<input type="submit" name="btn" value="regComment"/>
-						</form>
+								<div id="article-title">
+								<dt>제목</dt><dd>${article.title }</dd>
+								<dt>조회수</dt><dd>${article.hit } view</dd>
+								<dt>댓글수</dt><dd>${article.cntCmnt } comments</dd>
+								<dt>등록일</dt><dd><fmt:formatDate value="${article.regDate }" pattern="yyyy-MM-dd"/></dd>
+								</div>
+								<dt>내용</dt><dd>${article.content }</dd>
+							</dl>
+					</article>
+					
+				
+					<nav>
+						<h1>게시판 글 하단 버튼</h1>
 						
-				</section>
+							<form method="POST">
+								<input type="hidden" name="articleId" value="${article.intId}" />
+								<input type="submit" name="btn" value="deleteArticle"/>
+							</form>
+							<p><a href="${ctxName}/board/board-list">목록</a></p>
+							<p>글 쓰기</p>
+							<p>신고</p>
+					</nav>
+					
+					<div id="comment">
+					<article>
+						<h1>댓글</h1>
+							<div>
+							
+								
+								<c:forEach var="comment" items="${article.commentsOfThis}">
+									<dl>
+										<dt class="seq">번호</dt><dd></dd>
+										<dt class="writer-name">작성자이름</dt><dd>${comment.writerName }</dd>
+										<dt class="content">내용</dt><dd>${comment.content }</dd>
+										<dt class="reg-date">등록일</dt><dd>${comment.regDate }</dd>
+			
+									</dl>
+									<p>수정</p>
+									<p>삭제</p>
+									<p>신고</p>
+								</c:forEach>
+							</div>
+							
+						
+					</article>
+					
+					
+					<section id="reg-comment">
+						<h1>댓글 작성</h1>
+							<p>작성자 닉네임</p>
+							<form method="POST">
+								<input type="hidden" name="articleId" value="${article.intId}" />
+								<label>작성자id</label><input type="text" name="writerId"/>
+								<label>내용</label><input type="text" name="content"/>
+								
+								<input type="submit" name="btn" value="regComment"/>
+							</form>
+							
+					</section>
+					
+					</div>
+		
 				</div>
-			
-			</div>
-			
-			
-			
-			
+		
 				<section id="cheering-chat">
 					<div id="cheering-chat-app"></div>
 				</section>
 				
-	
-		</div>
+			</div>
+		
 		
 		
 			
@@ -447,15 +348,13 @@
 	</main>
 	
 
-	<section id="attraction-paragraph">
-		<div class="content-wrapper">
-				
-					<p>Fans Precedes a Team.</p>
-				
-		</div>
+	<section id="page-description">
+	<div class="content-wrapper">
+				<p>Fans Precedes a Team.</p>
+	</div>
 	</section>
 
 
-
+	</div>
 </body>
 </html>

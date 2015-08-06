@@ -14,11 +14,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>article-list</title>
 <link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
-
+<link href="${ctxName }/resource/community/css/layout.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 <style>
-	
-	/**general**/
 	
 	.hidden{
 		display:none;
@@ -41,232 +39,120 @@
 	    visibility: hidden;
 	}
 	
-	body{
-		font-family: malgun, sans-serif;
-		font-size:12pt;
 	
-	}
-	
-	
-	
-	/* header styling */
-	
-	
-	#header .content-wrapper{
-		width:1102px;
-		height:inherit;
-		
-		margin-left:auto;
-		margin-right:auto;
-		
-		border-bottom:3px solid #0a55b3;
-	}
-	
-	
-	
-	#header{
+	/**/
+	#whole-page{
 		width:100%;
-		height:160px;
+		height:100%;
+		background-image:url(${ctxName}/resource/images/board/bg-board-pattern.png);
+		background-size: 120%;
 	}
 	
-	#header-white-bar{
-		display:block;
-		text-indent:-9999px;
-		
-		heigth:20px;
-		background: #FFFFFF;
-	}
-	
-	#header-left{
-		width:180px;
-		height:120px;
-			
-		
-		float:left;
-		
-		background: url(${ctxName}/resource/images/board/bg-header-left.png) no-repeat center;
-		background-size: 100% 100%;
-	}
-	
-	
-	
-	#home-logo{
-		height:110px;
-		width:160px;
-		
-		text-indent:-9999px;
-		
-		margin-left:auto;
-		margin-right:auto;
-		/* background: url(${ctxName}/resource/images/whistle-logo2.png) no-repeat center;
-		background-size:cover; */
-	}
+
 	
 	#home-logo a{
 		display:block;
-		
-		height:110px;
-		width:160px;
-		
-		
-		background: url(${ctxName}/resource/images/whistle-logo2.png) no-repeat center;
-		background-size: 100% 100%;
-	}
-	
-	
-	
-	
-	#header-right{
-		width:200px;
-		height:25px;
-		
-		float:right;
-		
-		padding: 0px 5px 2px 0px;
-		
-		background: url(${ctxName}/resource/images/board/bg-header-right-menu.png) no-repeat center;
-		background-size: cover;
-	}
-	
-	
-	#header-menu{
-		display:block;
-		
-		
-		margin-left:auto;
-		margin-right:auto;
-	}
-	
-	
-	
-	
-	#header-menu li{
-		
-		padding-right:4px;
-		float:right;
-	}
-	
-	#header-menu li:first-child{
-		padding-right:0px;
-	
-	}
-	
-	#header-menu a{
-		font-family:inherit;
-		font-size:1em;
-		color:inherit;
-		text-decoration:none;
-	}
-	
-	
-	#header-visual{
+		width:183px;
 		height:140px;
+		background: url(${ctxName}/resource/images/whistle-logo.png) no-repeat center;
+		background-size:cover;
+		text-indent:-9999px;
+		text-decoration:none;
+		overflow:hidden;
+		
+	}
+	
+	
+	#content{
+		
+	}
+	
+	
+	#header{
+		
 		width:inherit;
-		background: url(${ctxName}/resource/images/board/bg-board-header-pattern.png) repeat-x left;
+		height:318px;
+		
+		background-image:url(${ctxName}/resource/images/board/bg-board-header.png);
+		background-size: cover;
 		
 	}
 	
-	
-	
-	/*  main styling */
-	
-	/* main -header */
-	#main .content-wrapper{
-		width:952px;
-		height:inherit;
+	#article-list-header{
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:17pt;
 		
-		margin-left:auto;
-		margin-right:auto;
+		margin-bottom:15px;
+	
+	}
+
+	#board-body{
+		width:810px;
+		
+		float:left;
+		background: #eeece1;
+		
+		border-radius: 25px;
+  	border: 4px solid #000000;
+  		padding: 20px; 
 	}
 	
 	
-	#main-header{
-		width:952px;
-		height:100px;
+	#cheering-chat{
+		width:260px;
+		height:600px;
 		
-		
-		margin-top:12px;
+		float:right;
+		background:green;
 	}
 	
-	
-	#main-header>p:first-child{
-		font-size:2.4em;
-		font-weight:bold;
-	}
-	
-	#main-header > p:first-child + p{
-		font-size: 1.3em;
-		color: rgb(117,117,117);
-	}
-	
-	
-	
-	
-	/** main - body  **/
-	
-	#main-body{
-		width:952px;
-		
-		margin-left:auto;
-		margin-right:auto;
-		
-	}
-	
-	/*  main - article */
 	
 	
 	#article-list{
-		width:655px;
+	}
+
+	
+	
+	#page-description{
 		
+		height:auto;
+		width:auto;
+		
+		
+		margin-top:40px;
+		padding-bottom:50px;
 	}
 	
-	#article-div{
-		
-		width:625px;
-		
-		
-		
-		
-		 border-radius: 15px;
-  		 border: 4px solid #0a55b3;
-  		 padding: 15px; 
-		
-		
-		float:left;
-	}
+	#page-description p{
 	
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:70px;
+		font-style:italic;
+		
+		margin-left:80px;
+		
+	}
 	
 	/*** article list ***/
 	
-	#article-list table{
-	
-	}
-	
-	/*** chat ***/
-	
-	#cheering-chat{
-		width:235px;
-		height:500px;
-		
-	
-		float:right;
-		
-		
-		 border-radius: 15px;
-  		 border: 4px solid #0a55b3;
-  		 padding: 15px; 
-	}
-	
-	
-	
-	/** article table **/
 	
 	#article-list th{
 		background: #9dc6f5;
+		
+		
 	}
 	
 	#article-list td{
 		background: #ddedff;
+		
+		
+	}
+	
+	
+	
+	#article-list table{
+	border-collapse: separate;
+     border-spacing: 0px 4px;
 	}
 	
 	#article-list td,
@@ -283,19 +169,19 @@
 	#article-list th:first-child,
 	#article-list td:first-child{
 		text-align: center;
-		width:60px;
+		width:80px;
 	}
 	
 	#article-list th:first-child+th,
 	#article-list td:first-child+td{
 		text-align: center;
-		width:312px;
+		width:400px;
 	}
 	
 	#article-list th:first-child+th+th,
 	#article-list td:first-child+td+td{
 		text-align: center;
-		width:100px;
+		width:150px;
 	}
 	
 	#article-list th:first-child+th+th+th,
@@ -309,63 +195,9 @@
 	#article-list th:first-child+th+th+th+th,
 	#article-list td:first-child+td+td+td+th{
 		text-align: center;
-		width:60px;
+		width:80px;
 	}
 
-
-	
-	
-	/** page nav **/
-	#board-page-nav{
-		
-		display:block;
-		
-		width:200px;
-		overflow:auto;
-		
-		margin-left:auto;
-		margin-right:auto;
-	}
-	
-	
-	#board-page-nav ul li{
-		 float:left;
-	
-	}
-
-
-
-
-
-
-	/*  */
-	
-	
-	#attraction-paragraph .content-wrapper{
-		width:952px;
-		height:inherit;
-		
-		margin-left:auto;
-		margin-right:auto;
-	}
-	
-	
-	
-	
-	#attraction-paragraph{
-		margin-top:45px;
-	
-	}
-	
-	#attraction-paragraph p{
-		font-size: 3em;
-		font-weight: bold;
-	
-	}
-	
-	
-	
-	
 </style>
 	
 
@@ -374,36 +206,15 @@
 </head>
 <body>
 	
-	
+	<div id="whole-page">
 	<h1 class="hidden">게시판</h1>
 	<header>
+		<div class="content-wrapper">
 			<section id="header">
 				<h1 class="hidden">헤더메뉴</h1>
-				
-				<div id="header-white-bar">bar</div>
-				
-				
-				<div id="header-visual">
-				
-				<div class="content-wrapper">
-					<div id="header-left">
-					<nav id="home-logo"><a href="${ctxName}">homelogo</a></nav>
-					</div>
-					
-					
-					
-					<nav id="header-right">
-						<ul id="header-menu">
-							<li><a href="">회원 가입</a></li>
-							<li><a href="">로그인</a></li>
-						</ul>
-					</nav>
-					
-				</div>
-				
-				</div>
+				<nav id="home-logo"><a href="${ctxName}">homelogo</a></nav>
 			</section>
-		
+		</div>
 	</header>
 	
 	
@@ -414,61 +225,68 @@
 		<section>
 			
 			<h1 class=hidden>게시판 메인</h1>
-				<header id="main-header">
-				<p>Whistle Free Board</p>
-				<p>회원들이 자유롭게 소통하는 공간입니다.</p>
-				</header>
+			
+			
+			<div id="content">
+			
 				
-				<div id="main-body clearfix">
+		
+		
+		
+			
+				<div id="board-body">
+				<div id="article-list-header">
+			
+						<p>Whistle Free Board</p>
 				
-				<div id="article-div">
-					<nav id="article-list">
-						<h1 class="hidden">게시판 글 목록</h1>
-							
-							<table>
-								<thead>
-									<tr>
-										<th>글 번호</th>
-										<th>제목</th>
-										<th>작성자</th>
-										<th>등록일</th>
-										<th>조회수</th>
-									</tr>
-								</thead>
-								<tbody>
-								<c:forEach var="article" items="${articleList}">
+				</div>
+				<nav id="article-list">
+					<h1 class="hidden">게시판 글 목록</h1>
+						
+						<table>
+							<thead>
 								<tr>
-									
-									<td class="seq">${article.intId}</td>
-									<td class="title"><a href="board-detail?detail=${article.intId}"/>${article.title} [${article.cntCmnt }]</td>
-									<td class="writer">${article.writerName}</td>
-									<td class="regdate"><fmt:formatDate value="${article.regDate }" pattern="yyyy-MM-dd"/></td>
-									<td class="hit">${article.hit }</td>
-									
+									<th>글 번호</th>
+									<th>제목</th>
+									<th>작성자</th>
+									<th>등록일</th>
+									<th>조회수</th>
 								</tr>
-								</c:forEach>
-								</tbody>
-							</table>
-					</nav>
-					
+							</thead>
+							<tbody>
+							<c:forEach var="article" items="${articleList}">
+							<tr>
+								
+								<td class="seq">${article.intId}</td>
+								<td class="title"><a href="board-detail?detail=${article.intId}"/>${article.title} [${article.cntCmnt }]</td>
+								<td class="writer">${article.writerName}</td>
+								<td class="regdate"><fmt:formatDate value="${article.regDate }" pattern="yyyy-MM-dd"/></td>
+								<td class="hit">${article.hit }</td>
+								
+							</tr>
+							</c:forEach>
+							</tbody>
+						</table>
+				</nav>
 				
 			
-					<nav id="board-controller">
-						<h1 class="hidden">게시판 하단 네비</h1>
-							
-								<p id="write-button"><a href="board-write-article">글 쓰기</a></p>
-					</nav>
-					
-					<nav id="board-page-nav">
-						<h1 class="hidden">게시판 페이지 이동</h1>
-							
-							<ul>
-								<li><a href="board-list?page=1">1</a></li>
-								<li><a href="board-list?page=2">2</a></li>
-								<li><a href="board-list?page=3">3</a></li>
-								<li><a href="board-list?page=4">4</a></li>
-							</ul>
-					</nav>
+		
+				<nav id="board-controller">
+					<h1 class="hidden">게시판 하단 네비</h1>
+						
+							<p id="write-button"><a href="board-write-article">글 쓰기</a></p>
+				</nav>
+				
+				<nav id="board-page-nav">
+					<h1 class="hidden">게시판 페이지 이동</h1>
+						
+						<ul id="board-page-nav-numbers">
+							<li><a href="board-list?page=1">1</a></li>
+							<li><a href="board-list?page=2">2</a></li>
+							<li><a href="board-list?page=3">3</a></li>
+							<li><a href="board-list?page=4">4</a></li>
+						</ul>
+				</nav>
 		
 				</div>
 		
@@ -476,8 +294,8 @@
 					<div id="cheering-chat-app"></div>
 				</section>
 				
-	
-				</div>
+			</div>
+		
 		
 		
 			
@@ -487,15 +305,13 @@
 	</main>
 	
 
-	<section id="attraction-paragraph">
-		<div class="content-wrapper">
-				
-					<p>Fans Precedes a Team.</p>
-				
-		</div>
+	<section id="page-description">
+	<div class="content-wrapper">
+				<p>Fans Precedes a Team.</p>
+	</div>
 	</section>
 
 
-
+	</div>
 </body>
 </html>
