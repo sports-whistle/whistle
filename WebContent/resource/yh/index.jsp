@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <c:set var="ctxName" value="${pageContext.request.contextPath}"/>
   
-    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>	
@@ -16,23 +15,18 @@
 	
 	<script>
 	
-
-	
+    /* 20150807 Ryu.YG DELETE 없어 된다고 함.. 
 	if(sec>=3 && sec<5) {
 	
 	$("#bg bg1").removeClass();
 	$("#bg bg1").addClass("bg bg8");
-		
-		
-		
-	}
-	
+	} */
 	
 	</script>
 	
 	
 	
-	<style type="text/css">
+<style type="text/css">
 @charset "utf-8";
 @import url(http://fonts.googleapis.com/css?family=Archivo+Black);
 
@@ -279,14 +273,13 @@ article:hover .txt strong { color:#fff;}
 </head>
 
 <body>
-
 	<header>
 		<h1><img src="../images/Main/Whistlelogo.png" /></h1>
 		<ul id="gnb">
 		
 			<li><a href="#"><i class=""></i>About US</a></li>
 			<li><a href="#"><i class=""></i>Zone</a></li>
-			<li><a href="#"><i class=""></i>FanZone</a></li>
+			<li><a href="${ctxName}/resource/dj/prc/FanZone-Main2.jsp"><i class=""></i>FanZone</a></li>
 			<li><a href="#"><i class=""></i>Freedom</a></li>	
 		</ul>		
 
@@ -303,7 +296,6 @@ article:hover .txt strong { color:#fff;}
 	
 		<a href="${ctxName }/basic/login"><img src="../images/Main/loginlogo.png" alt="Login" /><span>Login</span></a>
 		<a href="#"><img src="../images/Main/Joinuslogo.png" alt="Join us" /><span>Join us</span></a>
-	
 		
 	
 	</nav>
@@ -367,6 +359,7 @@ article:hover .txt strong { color:#fff;}
 		
 		<article>		
 			<div class="bg bg5">
+				<span>Fan</span>
 				<span>Fan</span>
 			</div>
 		</article>

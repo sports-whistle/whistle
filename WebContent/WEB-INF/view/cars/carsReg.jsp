@@ -70,6 +70,7 @@ table thead td{
 									<td align="center">제목</td>
 									<td align="center">약속장소</td>
 									<td align="center">최대인원수</td>
+									<td align="center">응원팀</td>
 									<td align="center">남기고 싶은말</td>
 								</tr>
 							</thead>
@@ -80,6 +81,7 @@ table thead td{
 									<td align="center"><input name="subject" /></td>
 									<td align="center"><input name="zone" /></td>
 									<td align="center"><input name="maxParticipants" /></td>
+									<td align="center"><input name="cheerTeam" /></td>
 									<td align="center"><input name="comment" /></td>
 								</tr>
 							</tbody>

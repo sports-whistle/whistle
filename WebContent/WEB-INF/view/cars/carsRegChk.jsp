@@ -40,6 +40,7 @@
 	function LayerHiding() {
 		layerID.style.visibility = "hidden";
 	}
+	
 </script>
 <style>
 

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctxName" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <style>
 #header h1 {
@@ -61,14 +62,13 @@ aside li {
 <title>카스시작</title>
 </head>
 <body>
+
 	<header id="header">
 		<h1>
-			<a href=""><img src="../resource/images/cars/whistleLogo.png"
-				alt="뉴렉처" /></a>
+		<!-- 	<a href=""><img src="../resource/images/cars/whistleLogo.png" alt="뉴렉처" /></a> -->
+			<a href="${ctxName}/cars/carsReg"><img src="../resource/images/cars/whistleLogo.png" alt="뉴렉처" /></a>
 		</h1>
 	</header>
-
-
 
 	<!-- 	<div id="body">
 		<h1>메인화면</h1>
