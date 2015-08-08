@@ -216,18 +216,7 @@
 					</li>
 				</ul>
 				<ul class="tx-bar tx-bar-left tx-group-etc">
-					<li class="tx-list">
-						<div unselectable="on" class="		 tx-btn-lbg 	tx-emoticon" id="tx_emoticon">
-							<a href="javascript:;" class="tx-icon" title="이모티콘">이모티콘</a>
-						</div>
-						<div id="tx_emoticon_menu" class="tx-emoticon-menu tx-menu" unselectable="on"></div>
-					</li>
-					<li class="tx-list">
-						<div unselectable="on" class="		 tx-btn-bg 	tx-link" id="tx_link">
-							<a href="javascript:;" class="tx-icon" title="링크 (Ctrl+K)">링크</a>
-						</div>
-						<div id="tx_link_menu" class="tx-link-menu tx-menu"></div>
-					</li>
+					
 					<li class="tx-list">
 						<div unselectable="on" class="		 tx-btn-bg 	tx-specialchar" id="tx_specialchar">
 							<a href="javascript:;" class="tx-icon" title="특수문자">특수문자</a>
