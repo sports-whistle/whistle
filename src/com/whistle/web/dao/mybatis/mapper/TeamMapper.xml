@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- public Team getTeamById(String teamId);
+	public List<Team> getTeamsWithOneColumn(String colum, String keyword);
+	
+	public int addTeam(Team newTeam);
+	public int updateTeam(Team newTeam);
+	public int delTeam(String teamId); -->
+	
+
+
+
+<mapper namespace = "com.whistle.web.dao.TeamDao">   <!--  인터페이스 -->
+	
+
+	<!-- email 이나 닉네임에 따른 id는 오버로드로 구현 -->
+	<select id="getTeamById" parameterType="string" resultType="com.whistle.web.vo.Team">
+	
+		SELECT * FROM Teams WHERE TeamId = #{teamId}
+		
+	</select>
+	
+	
+	<select id="getTeamsWithOneColumn" resultType="com.whistle.web.vo.Team">
+	
+		SELECT * FROM Teams WHERE ${column} = '%${keyword}%'
+		
+	</select>
+	
+
+	
+	<insert id="addTeam" parameterType="com.whistle.web.vo.Team">
+	
+		
+		INSERT INTO Teams(
+			TeamId,
+			Name,
+			SportsKind,
+			RegionName,
+			ColorRgb,
+			EmblemUrl,
+			SloganUrl,
+	 		HistoryUrl,
+			MembersUrl,
+			MascotUrl,
+			NewsUrl, 
+			NewsUrlFake, 
+			GuideUrl, 
+			GuideInsideUrl, 
+			StadiumInsideUrl,
+			StadiumOutsideUrl,
+			LastCareerUrl,
+			TeamSiteUrl
+		)
+		VALUES(
+			#{TeamId}},
+			#{Name},
+			#{SportsKind},
+			#{RegionName},
+			#{ColorRgb},
+			#{EmblemUrl},
+			#{SloganUrl},
+	 		#{HistoryUrl},
+			#{MembersUrl},
+			#{MascotUrl},
+			#{NewsUrl}, 
+			#{NewsUrlFake}, 
+			#{GuideUrl}, 
+			#{GuideInsideUrl}, 
+			#{StadiumInsideUrl},
+			#{StadiumOutsideUrl},
+			#{LastCareerUrl},
+			#{TeamSiteUrl}
+			
+		)
+		
+	
+	</insert>
+	
+	<update id="updateTeam" parameterType="com.whistle.web.vo.Team">
+	
+	
+		Update Teams Set
+			
+			TeamId = #{TeamId},
+			Name = #{Name},
+			SportsKind = #{SportsKind},
+			RegionName = #{RegionName},
+			ColorRgb = #{ColorRgb},
+			EmblemUrl = #{EmblemUrl},
+			SloganUrl = #{SloganUrl},
+	 		HistoryUrl = #{HistoryUrl},
+			MembersUrl = #{MembersUrl},
+			MascotUrl = #{MascotUrl},
+			NewsUrl = #{NewsUrl}, 
+			NewsUrlFake =  #{NewsUrlFake}, 
+			GuideUrl = #{GuideUrl}, 
+			GuideInsideUrl = #{GuideInsideUrl},  
+			StadiumInsideUrl = #{StadiumInsideUrl},
+			StadiumOutsideUrl = #{StadiumOutsideUrl},
+			LastCareerUrl = #{LastCareerUrl},
+			TeamSiteUrl = #{TeamSiteUrl}
+		
+			
+		WHERE TeamId = #{TeamId};
+	
+	
+	</update>
+	
+	
+	
+	
+	<delete id="dropTeam" parameterType="string">
+	
+		DELETE Teams WHERE TeamId = #{teamId}
+		
+		 
+	</delete>
+	
+	
+	
+
+	
+	
+	
+</mapper>
