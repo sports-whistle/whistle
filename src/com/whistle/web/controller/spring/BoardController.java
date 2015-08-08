@@ -129,18 +129,18 @@ public class BoardController {
 	@RequestMapping(value="board-write-article", method=RequestMethod.GET)
 	public String writeArticle(){
 		
-		return "/WEB-INF/view/board/board-write-article.jsp";
+		return "/WEB-INF/view/board/board-write-article-editor.jsp";
 	}
 	
 	
 	
 	@RequestMapping(value="board-write-article", method=RequestMethod.POST)
-	public String writeArticle(Article newArticle,MultipartFile afile,HttpServletRequest request){
+	public String writeArticle(Article newArticle/*,MultipartFile afile*/,HttpServletRequest request){
 		
 		
 		
 	
-
+/*
 		if(!afile.isEmpty())
 		{
 			
@@ -187,7 +187,7 @@ public class BoardController {
 			
 			attachedFileDao.addAttachedFile(newFile);
 			return "redirect:board-detail?detail="+Integer.toString(newArticle.getIntId());
-		}
+		}*/
 					
 		/* 등록된 글을 받아서, 작성 한 글로 redirect 학 위한 트랜잭션 처리가 필요함*/
 		//int articleId;
