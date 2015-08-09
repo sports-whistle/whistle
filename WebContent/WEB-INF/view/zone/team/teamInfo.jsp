@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Team Information Detail</title>
+</head>
+<body>
+	<header>
+		<h1>whistle</h1>
+	</header>
+	<main>
+		<section>
+			<h1>메인화면</h1>
+		<section>
+		<h1>구단 역사</h1>
+			<p><img src="">인천유나이티드</p>
+			<p><a href ="http://www.incheonutd.com">인천</a></p>
+		</section>
+		<div>
+		<dl>
+			<dt>인천유나이티드 역사</dt>
+			<dd><a href=""><img src=""/></a></dd>
+		</dl>
+		
+		<section>
+		<h1>전시즌 성적</h1>
+		<p>2014 k리그 클래식 시즌 성적 10위</p>
+		<img src="">
+		<img src="">
+		<img src="">
+		</section>
+		<nav>
+		<h1>응원가</h1>
+			<ul>
+				<li>위대</li>
+				<li>노를</li>
+				<li>ㅂㅂ</li>
+			</ul>
+		<img src="">	
+		</nav>
+		</section>
+	</main>
+</body>
+</html>
