@@ -176,13 +176,13 @@ header nav a {
 	
 		<div>
 			<h1>
-				<img src="${ctxName}/resource/images/cars/whistleLogo.png" alt="뉴렉처" />
+				<img src="${ctxName}/resource/images/fanzone/cars/whistleLogo.png" alt="뉴렉처" />
 			</h1>
 		</div>
 	
 		<div id="sentence">
 			<p>
-				<img src="${ctxName}/resource/images/cars/carsRegChk_P.png" />
+				<img src="${ctxName}/resource/images/fanzone/cars/carsRegChk_P.png" />
 			</p>
 		</div>
 		
@@ -190,7 +190,7 @@ header nav a {
 			<h1 id="hidden">FanZone</h1>
 			<a href="carsStart">
 				<p>
-					<img src="${ctxName}/resource/images/cars/carMatchPlanChk.png" />
+					<img src="${ctxName}/resource/images/fanzone/cars/carMatchPlanChk.png" />
 				</p>
 			</a> 
 		</nav> 
@@ -242,7 +242,7 @@ header nav a {
 
 	<div id="enroll">
 		<p>
-			<a href="carsReg?c=${game.code}"><img src="${ctxName}/resource/images/cars/enroll2.png" /></a>
+			<a href="carsReg?c=${game.code}"><img src="${ctxName}/resource/images/fanzone/cars/enroll2.png" /></a>
 		</p>
 	</div>
 	<!-- </fieldset> --> </section> </main>

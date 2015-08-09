@@ -10,7 +10,7 @@
 
 body {
 	/* background: url("../resource/images/cars/carsBackground.png") no-repeat center center ; */
-	background: url("${ctxName}/resource/images/cars/carsBackground.png") no-repeat center center ;
+	background: url("${ctxName}/resource/images/fanzone/cars/carsBackground.png") no-repeat center center ;
 	/* background: url("/resource/images/cars/carsBackground.png") no-repeat center center ; */
 	background-position: top left;
 	background-size: 100% 100%;
@@ -67,7 +67,7 @@ aside li {
 	<header id="header">
 		<h1>
 		<!-- 	<a href=""><img src="../resource/images/cars/whistleLogo.png" alt="뉴렉처" /></a> -->
-			<a href="${ctxName}/cars/carsReg"><img src="${ctxName}/resource/images/cars/whistleLogo.png" alt="뉴렉처" /></a>
+			<a href="${ctxName}/cars/carsReg"><img src="${ctxName}/resource/images/fanzone/cars/whistleLogo.png" alt="뉴렉처" /></a>
 		</h1>
 	</header>
 
@@ -82,19 +82,19 @@ aside li {
 		
 			<li id="carsStart">
 				<a href="carsStart">
-					<img src="${ctxName}/resource/images/cars/fanZone.png" alt="fanZone" />
+					<img src="${ctxName}/resource/images/fanzone/cars/fanZone.png" alt="fanZone" />
 				</a>
 			</li>
 			
 			<li id="carMatchPlanChk">
 				<a href="carsMatchPlanChk">
-					<img src="${ctxName}/resource/images/cars/carMatchPlanChk.png" alt=carsMatchPlanChk />
+					<img src="${ctxName}/resource/images/fanzone/cars/carMatchPlanChk.png" alt=carsMatchPlanChk />
 				</a>
 			</li>
 			
 			<li id="carsReg">
 				<a href="carsReg">
-					<img src="${ctxName}/resource/images/cars/carReg.png" alt="carsReg" />
+					<img src="${ctxName}/resource/images/fanzone/cars/carReg.png" alt="carsReg" />
 				</a>
 			</li>
 			

@@ -1,7 +1,13 @@
 package com.whistle.web.a.fanzone.controller;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,7 +26,6 @@ import com.whistle.web.vo.Parties;
 @RequestMapping("/fanzone/cars/*")
 public class CarsController 
 {
-	
 	@Autowired
 	GamesDao gamesDao; 
 	
@@ -39,11 +44,7 @@ public class CarsController
 	{
 		List<Games> list = gamesDao.getGames();
 		
-		// pageContext??? 에 list값 저장함
-		// 다른페이지 까지 데이타 공유 안 되는거 같음..
 		model.addAttribute("list", list);
-		
-//		request.setAttribute("list", list);
 		
 		return "/WEB-INF/view/fanzone/cars/carsMatchPlanChk.jsp";
 	}
@@ -61,11 +62,6 @@ public class CarsController
 			partiesDao.updateRealRegCnt(partyId);
 		}
 		
-//		if(partyId != null)
-//		{
-//			partiesDao.updateRealRegCnt(partyId);
-//		}
-		
 		List<Parties> partyList = partiesDao.getParties();
 		
 		// 사용자가 선택한 경기 정보 가져오기 
@@ -78,24 +74,66 @@ public class CarsController
 	}
 	
 	@RequestMapping(value = "carsReg", method = RequestMethod.GET)
-	public String carsReg(String c, Model model, HttpServletRequest request)
+	public String carsReg(String c, Model model, HttpServletRequest request, HttpServletResponse response) throws IOException
 	{
-//		int isDirectReg = 0; 
-//		if(c.equals("directReg"))
-//		{
-//			isDirectReg = 1; 
-//			model.addAttribute("isDirectReg", isDirectReg);
-//		}
-//		else
-//		{
-//			isDirectReg = 2; 
-//			model.addAttribute("isDirectReg", isDirectReg);
-			Games game = gamesDao.getGame(c);	
-			model.addAttribute("game", game);
-//		}
+		Games game = gamesDao.getGame(c);	
+		model.addAttribute("game", game);
+	
+		// 엠블럼 이미지 가져오기 
+		String fname = request.getParameter("f");
 		
+		ServletContext application = request.getServletContext();
+		
+		String url = "/resource/upload";  
+		String path = application.getRealPath(url);
+		
+		
+		//upload  폴더안에 파일 읽어 오기 
+		List<File> emblemFileList = getDirFileList(path);
+/*		for(int i=0; i<emblemFileList.size(); i++)
+		{
+			// 읽어 파일 리스트 읽기 
+			OutputStream outs = response.getOutputStream();// 출력
+			InputStream ins = new FileInputStream(emblemFileList.get(i)); // 입력
+			byte[] 대야 = new byte[1024];
+			int len = 0; 
+			
+			while((len = ins.read(대야, 0, 1024)) >= 0)
+			{
+				outs.write(대야, 0, len);
+			}
+	
+			outs.flush();
+			outs.close();
+			ins.close();
+		}*/
+		model.addAttribute("emblemFileList",emblemFileList);
 		return  "/WEB-INF/view/fanzone/cars/carsReg.jsp";
 	}
+	
+	
+	//디렉토리의 파일 리스트를 읽는 메소드
+	 public static List<File> getDirFileList(String dirPath)
+	 {
+	  // 디렉토리 파일 리스트
+	  List<File> dirFileList = null;
+	  
+	  // 파일 목록을 요청한 디렉토리를 가지고 파일 객체를 생성함
+	  File dir = new File(dirPath);
+	  
+	  // 디렉토리가 존재한다면
+	  if (dir.exists())
+	  {
+	   // 파일 목록을 구함
+	   File[] files = dir.listFiles();
+	   
+	   // 파일 배열을 파일 리스트로 변화함 
+	   dirFileList = Arrays.asList(files);
+	  }
+	  
+	  return dirFileList;
+	 }
+	
 	
 	@RequestMapping(value="carsReg", method=RequestMethod.POST)
 	public String carsReg(Parties p, String c, Model model)
@@ -108,8 +146,6 @@ public class CarsController
 		model.addAttribute("game", game);
 		model.addAttribute("party", p);
 
-		//		return  "redirect:carsRegChk";  // 다른 컨트롤러로 넘어간다 하지만 값을 넘겨주지 않음
-//		return "/whistleHtml/carsRegChk.jsp"; // 값 전달 안됨..
 		return  "forward:carsRegChk";  
 	}
 	
@@ -123,6 +159,5 @@ public class CarsController
 		model.addAttribute("party", party);
 		
 		return "/WEB-INF/view/fanzone/cars/carsParticipate.jsp";
-//		return "redirect:carsParticipate";   // 왜 이렇게 하면 페이지 오류가 나지??
 	}
 }

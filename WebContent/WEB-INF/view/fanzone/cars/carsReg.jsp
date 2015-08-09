@@ -6,6 +6,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<script>
+
+function changeimage() 
+{
+	var emblemList = document.getElementById('emblemList');
+	var next = document.getElementById('next');
+	var afterward = document.getElementById('afterward');
+    
+    if (image.src.match("naver")) {
+        image.src = "https://pixabay.com/static/uploads/photo/2015/02/13/09/47/mail-634902__180.png";
+    } else {
+        image.src = "http://img.naver.net/static/www/u/2013/0731/nmms_224940510.gif";
+    }
+}
+
+
+</script>
+
 <style>
 
 #hidden {
@@ -47,7 +66,7 @@ table thead td{
 <body>
 	<header>
 	<h1>
-		<a href=""><img src="${ctxName}/resource/images/cars/whistleLogo.png" / ></a>
+		<a href=""><img src="${ctxName}/resource/images/fanzone/cars/whistleLogo.png" / ></a>
 	</h1>
 	
 	<div id="body">
@@ -66,27 +85,43 @@ table thead td{
 				<form id="form"  action="" method="post">
 					<div>
 						<table>
-							<thead>
-								<tr>
-									<td align="center">경기</td>
-									<td align="center">제목</td>
-									<td align="center">약속장소</td>
-									<td align="center">최대인원수</td>
-									<td align="center">응원팀</td>
-									<td align="center">남기고 싶은말</td>
-								</tr>
-							</thead>
-			
-							<tbody>
-								<tr>
-									<td align="center">${game.teamName1}vs${game.teamName2}</td>
-									<td align="center"><input name="subject" /></td>
-									<td align="center"><input name="zone" /></td>
-									<td align="center"><input name="maxParticipants" /></td>
-									<td align="center"><input name="cheerTeam" /></td>
-									<td align="center"><input name="comment" /></td>
-								</tr>
-							</tbody>
+							<tr>
+								<th align="center">경기</th>
+								<td align="center">${game.teamName1}vs${game.teamName2}</td>
+							</tr>
+							
+							<tr>
+								<th align="center">제목</th>
+								<td align="center"><input name="subject" /></td>
+							</tr>
+							
+							<tr>
+								<th align="center">약속장소</th>
+								<td align="center"><input name="zone" /></td>
+							</tr>
+							
+							<tr>
+								<th align="center">최대인원수</th>
+								<td align="center"><input name="maxParticipants" /></td>
+							</tr>
+							
+							<tr>
+								<th align="center">응원팀</th>
+								<td align="center">
+									<input type="button" id="next" value="다음"/>
+										<p id="emblemList">
+									 <%-- <c:forEach var="emblemFileList" items="${emblemFileList}">  --%>
+											${emblemFileList.get(0.getName()}					
+									 <%-- </c:forEach> --%>
+										</p>
+									<input type="button" id="afterward" value="이전"/>
+								</td>
+							</tr>
+							
+							<tr>
+								<th align="center">남길말</th>
+								<td align="center"><input name="comment" /></td>
+							</tr>
 						</table>
 					</div>
 					

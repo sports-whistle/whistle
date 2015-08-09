@@ -207,7 +207,7 @@ aside{
 	<header class="clearfix">
 	 
 		<nav>
-			<a href=""><img src="${ctxName}/resource/images/cars/whistleLogo.png" / ></a>
+			<a href=""><img src="${ctxName}/resource/images/fanzone/cars/whistleLogo.png" / ></a>
 		</nav>
 		
 		<nav id="chk">
@@ -216,7 +216,7 @@ aside{
 		</nav>
 			
 		<nav>
-			<img src="${ctxName}/resource/images/cars/fanZone.png" />
+			<img src="${ctxName}/resource/images/fanzone/cars/fanZone.png" />
 		</nav>
 		
 	</header>
@@ -228,12 +228,12 @@ aside{
 			
 				<li>
 					<a href="carsMatchPlanChk">
-						<img src="${ctxName}/resource/images/cars/carMatchPlanChk.png" />
+						<img src="${ctxName}/resource/images/fanzone/cars/carMatchPlanChk.png" />
 					</a>
 				</li>
 				
 				<li>
-					<img src="${ctxName}/resource/images/cars/carsApply-together.png" />
+					<img src="${ctxName}/resource/images/fanzone/cars/carsApply-together.png" />
 				</li>
 			</ul>
 		</aside>
@@ -274,13 +274,13 @@ aside{
 				<div id="apply">
 					<div>
 						<a href="carsRegChk?partyId=${party.partyId}&c=${game.code}&y=yes">
-							<img src="${ctxName}/resource/images/cars/yes.png" />
+							<img src="${ctxName}/resource/images/fanzone/cars/yes.png" />
 						</a>
 					</div>
 					
 					<div>					
 						<a href="carsRegChk?partyId=${party.partyId}&c=${game.code}&n=no">
-							<img src="${ctxName}/resource/images/cars/no.png" />
+							<img src="${ctxName}/resource/images/fanzone/cars/no.png" />
 						</a>
 					</div>
 				</div>
