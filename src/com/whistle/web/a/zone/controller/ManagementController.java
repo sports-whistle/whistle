@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.whistle.web.dao.TeamDao;
-import com.whistle.web.vo.AttachedFile;
 import com.whistle.web.vo.Team;
 
 @Controller
@@ -68,42 +67,38 @@ public class ManagementController {
 	public String managementPostFile(HttpServletRequest request,
 			Model model, MultipartFile file){
 		
-		if(request.getParameter("btn").equals("insert-emblem-image")){
-			
-			String subContext = "/zone";
-			String category = "/team/emblem";
-			
-			if(!file.isEmpty()){
-				String emblemUrl = this.uploadFileOnServer(request, file, subContext, category);
-				teamDao.updateOneValue(request.getParameter("teamId"), "emblemUrl", emblemUrl);
+		//if(request.getParameter("btn").equals("insert-emblem-image"))
+			if(request.getParameter("btn").equals("update-emblem-image"))
+		{
+				String subContext = "/zone";
+				String category = "/team/emblem";
 				
-				Team updatedTeam = teamDao.getTeamById(request.getParameter("teamId"));
-				List<Team> teams = new ArrayList<Team>();
-				teams.add(updatedTeam);
-				
-				model.addAttribute("teams", teams);
-				
-				
-				return "/resource/test/team-management.jsp";
-			}else{
-				model.addAttribute("errorMsg","추가된 파일이 없습니다.");
-				return "/resource/test/team-management.jsp";
-			}
-			
-			
-			
+				if(!file.isEmpty())
+				{
+					String emblemUrl = this.uploadFileOnServer(request, file, subContext, category);
+					teamDao.updateOneValue(request.getParameter("teamId"), "EmblemUrl", emblemUrl);
+					
+					Team updatedTeam = teamDao.getTeamById(request.getParameter("teamId"));
+					List<Team> teams = new ArrayList<Team>();
+					teams.add(updatedTeam);
+					
+					model.addAttribute("teams", teams);
+					
+					return "/resource/test/team-management.jsp";
+				}
+				else
+				{
+					model.addAttribute("errorMsg","추가된 파일이 없습니다.");
+					return "/resource/test/team-management.jsp";
+				}
 		}
-		
-	
 		return "";
 	}
 	
 	
-	
-	
 	/*파일을 서버에 올리고 파일의 상대주소를 리턴한다.*/
-	private String uploadFileOnServer(HttpServletRequest request, MultipartFile file, String subContext, String category){
-		
+	private String uploadFileOnServer(HttpServletRequest request, MultipartFile file, String subContext, String category)
+	{
 		ServletContext application = request.getServletContext();
 		
 		String url = "/resource"+subContext+category;

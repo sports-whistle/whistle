@@ -18,10 +18,6 @@
 
 </head>
 <body>
-	
-	
-
-
 	<header>
 		<h1>Whistle Team Info Management Page</h1>
 		<section>

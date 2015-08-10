@@ -117,7 +117,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="dropTeam" parameterType="string">
 	
 		DELETE Teams WHERE TeamId = #{teamId}
-		
 		 
 	</delete>
 	
