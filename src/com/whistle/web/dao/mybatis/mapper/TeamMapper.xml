@@ -123,13 +123,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	
-	<insert id="updateOneValue">
+
+	<update id="updateOneValue">
 		UPDATE Teams
 		SET
 			${param2} = #{param3}
 		 WHERE TeamId = #{param1}
-	</insert>
-	
-	
+	</update>
+
+	<select id="getTeamsEmblemUrl" parameterType="string">
+	 	select EmblemUrl from Teams where SportsKind = #{EmblemUrl}
+	</select>
+
 	
 </mapper>

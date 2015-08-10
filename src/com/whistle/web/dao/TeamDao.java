@@ -6,11 +6,12 @@ import com.whistle.web.vo.Team;
 
 public interface TeamDao {
 	
-	
-	
-	
+
 	public Team getTeamById(String teamId);
 	public List<Team> getTeamsWithOneColumn(String column, String keyword);
+
+	//종목별 url 가져오기 
+	public List<String> getTeamsEmblemUrl(String sportsKind);
 	
 	public int addTeam(Team newTeam);
 	public int updateTeam(Team newTeam);
@@ -18,6 +19,7 @@ public interface TeamDao {
 	
 	
 	public int updateOneValue(String teamId, String column, String value);
+
 	
 	
 }

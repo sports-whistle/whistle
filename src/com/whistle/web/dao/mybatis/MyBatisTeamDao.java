@@ -1,5 +1,6 @@
 package com.whistle.web.dao.mybatis;
 
+
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -64,7 +65,14 @@ public class MyBatisTeamDao implements TeamDao{
 	}
 
 
+	@Override
+	public List<String> getTeamsEmblemUrl(String sportsKind) 
+	{
+		TeamDao dao = session.getMapper(TeamDao.class);
+		List<String> emblemUrlList = dao.getTeamsEmblemUrl(sportsKind);
+		return emblemUrlList;
 
+	}
 
 
 
@@ -74,5 +82,4 @@ public class MyBatisTeamDao implements TeamDao{
 		int result = teamDao.updateOneValue(teamId, column, value);
 		return result;
 	}
-
 }

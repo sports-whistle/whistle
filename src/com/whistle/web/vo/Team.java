@@ -1,6 +1,7 @@
 package com.whistle.web.vo;
 
 public class Team {
+
 	private String teamId;
 	private String name;
 	private String sportsKind;
@@ -190,12 +191,5 @@ public class Team {
 		this.teamSiteUrl = teamSiteUrl;
 	}
 
-	
-	
-	
-	
-	
-	
-	
 	
 }
