@@ -123,8 +123,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	
-
-	
-	
+	<select id="getTeamsEmblemUrl" parameterType="string">
+	 	select EmblemUrl from Teams where SportsKind = #{EmblemUrl}
+	</select>
 	
 </mapper>

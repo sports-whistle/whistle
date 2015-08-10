@@ -20,11 +20,6 @@ public class MyBatisTeamDao implements TeamDao{
 		this.session = session;
 	}
 	
-	
-	
-	
-	
-	
 	@Override
 	public Team getTeamById(String teamId) {
 		// TODO Auto-generated method stub
@@ -38,12 +33,7 @@ public class MyBatisTeamDao implements TeamDao{
 		map.put("column", column);
 		map.put("keyword", keyword);
 		
-		
-		
 		List<Team> tlist = session.selectList("getTeamsWithOneColumn", map);
-		
-	
-		
 		
 		return tlist;
 	}
@@ -64,6 +54,14 @@ public class MyBatisTeamDao implements TeamDao{
 	public int delTeam(String teamId) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public List<String> getTeamsEmblemUrl(String sportsKind) 
+	{
+		TeamDao dao = session.getMapper(TeamDao.class);
+		List<String> emblemUrlList = dao.getTeamsEmblemUrl(sportsKind);
+		return emblemUrlList;
 	}
 
 }

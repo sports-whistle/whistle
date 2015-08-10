@@ -70,6 +70,8 @@ header h1 { width:100px; height:100px; background:url(${ctxName}/resource/images
 #gnb a i { margin-right:13px;}
 .snsSet { width:100px;	height:10px;	position:absolute; bottom:50px; right:50%; margin-right:-45px;}
 .snsSet a { float:left;}
+.associationSet { width:700px; height:5px;	position:absolute; top:80px; right:30px;}
+.associationSet a { float:right; padding-left:3px;}
 
 /*nav*/
 nav a:nth-child(1) {	position:absolute; top:5px;	right:20px; font-family: 'Archivo Black', sans-serif; font-size:15px;  color:white; font-style: italic;}
@@ -285,6 +287,15 @@ article:hover .txt strong { color:#fff;}
 			<a href="#"><img src="${ctxName}/resource/images/index/sns4.png" alt="twitter" /></a>
 			<a href="#"><img src="${ctxName}/resource/images/index/sns5.png" alt="etc" /></a>
 		</div>
+		
+		<div class="associationSet">
+			<a href="http://www.kovo.co.kr/main.asp"><img src="${ctxName}/resource/images/index/Kovo.png" alt="KOVO" /></a>
+			<a href="http://www.koreabaseball.com/Default.aspx"><img src="${ctxName}/resource/images/index/KBO.png" alt="KBO" /></a>
+			<a href="http://www.kbl.or.kr/main/main.asp"><img src="${ctxName}/resource/images/index/KBL.png" alt="KBL" /></a>
+			<a href="http://www.kleague.com/"><img src="${ctxName}/resource/images/index/K-league.png" alt="K-league" /></a>
+		</div>
+		
+		
 	</header>
 	
 	<nav>

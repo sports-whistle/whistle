@@ -64,6 +64,7 @@ table thead td{
 <title>카스 등록</title>
 </head>
 <body>
+	
 	<header>
 	<h1>
 		<a href=""><img src="${ctxName}/resource/images/fanzone/cars/whistleLogo.png" / ></a>
@@ -110,9 +111,10 @@ table thead td{
 								<td align="center">
 									<input type="button" id="next" value="다음"/>
 										<p id="emblemList">
-									 <%-- <c:forEach var="emblemFileList" items="${emblemFileList}">  --%>
-											${emblemFileList.get(0.getName()}					
-									 <%-- </c:forEach> --%>
+										<%-- <img src="${ctxName}/resource/images/common/emblem-ktwiz.png"/> --%>
+									 <c:forEach var="emblemImgList" items="${emblemImgList}"> 
+									 			emblemImgList
+									 </c:forEach>
 										</p>
 									<input type="button" id="afterward" value="이전"/>
 								</td>

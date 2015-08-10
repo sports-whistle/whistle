@@ -63,7 +63,8 @@ aside li {
 <title>카스시작</title>
 </head>
 <body>
-
+	<img src="${ctxName }/resource/images/common/emblem-ktwiz.png"/>
+	<img src="${ctxName }/resource/images/common/emblem-lgtwins.png"/>
 	<header id="header">
 		<h1>
 		<!-- 	<a href=""><img src="../resource/images/cars/whistleLogo.png" alt="뉴렉처" /></a> -->

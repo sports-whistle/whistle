@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.whistle.web.dao.GamesDao;
 import com.whistle.web.dao.PartiesDao;
+import com.whistle.web.dao.TeamDao;
 import com.whistle.web.vo.Games;
 import com.whistle.web.vo.Parties;
 
@@ -32,6 +33,8 @@ public class CarsController
 	@Autowired
 	PartiesDao partiesDao; 
 	
+	@Autowired
+	TeamDao teamDao; 
 	
 	@RequestMapping("carsStart")
 	public String carsStart()
@@ -79,35 +82,10 @@ public class CarsController
 		Games game = gamesDao.getGame(c);	
 		model.addAttribute("game", game);
 	
-		// 엠블럼 이미지 가져오기 
-		String fname = request.getParameter("f");
-		
-		ServletContext application = request.getServletContext();
-		
-		String url = "/resource/upload";  
-		String path = application.getRealPath(url);
-		
-		
-		//upload  폴더안에 파일 읽어 오기 
-		List<File> emblemFileList = getDirFileList(path);
-/*		for(int i=0; i<emblemFileList.size(); i++)
-		{
-			// 읽어 파일 리스트 읽기 
-			OutputStream outs = response.getOutputStream();// 출력
-			InputStream ins = new FileInputStream(emblemFileList.get(i)); // 입력
-			byte[] 대야 = new byte[1024];
-			int len = 0; 
-			
-			while((len = ins.read(대야, 0, 1024)) >= 0)
-			{
-				outs.write(대야, 0, len);
-			}
-	
-			outs.flush();
-			outs.close();
-			ins.close();
-		}*/
-		model.addAttribute("emblemFileList",emblemFileList);
+		//emblemUrl 가져오기 
+		List<String> emblemUrlList = teamDao.getTeamsEmblemUrl("Baseball");
+		model.addAttribute("emblemImgList",emblemUrlList);
+
 		return  "/WEB-INF/view/fanzone/cars/carsReg.jsp";
 	}
 	
