@@ -11,12 +11,11 @@ public interface TeamDao {
 	public List<Team> getTeamsWithOneColumn(String column, String keyword);
 
 	//종목별 url 가져오기 
-	public List<String> getTeamsEmblemUrl(String sportsKind);
+	public List<Team> getTeamsEmblemUrl(String sportsKind);
 	
 	public int addTeam(Team newTeam);
 	public int updateTeam(Team newTeam);
 	public int delTeam(String teamId);
-	
 	
 	public int updateOneValue(String teamId, String column, String value);
 

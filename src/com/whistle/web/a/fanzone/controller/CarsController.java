@@ -1,13 +1,7 @@
 package com.whistle.web.a.fanzone.controller;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Arrays;
 import java.util.List;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,6 +16,7 @@ import com.whistle.web.dao.PartiesDao;
 import com.whistle.web.dao.TeamDao;
 import com.whistle.web.vo.Games;
 import com.whistle.web.vo.Parties;
+import com.whistle.web.vo.Team;
 
 @Controller
 @RequestMapping("/fanzone/cars/*")
@@ -83,7 +78,7 @@ public class CarsController
 		model.addAttribute("game", game);
 	
 		//emblemUrl 가져오기 
-		List<String> emblemUrlList = teamDao.getTeamsEmblemUrl("Baseball");
+		List<Team> emblemUrlList = teamDao.getTeamsEmblemUrl("Baseball");
 		model.addAttribute("emblemImgList",emblemUrlList);
 
 		return  "/WEB-INF/view/fanzone/cars/carsReg.jsp";
@@ -91,7 +86,7 @@ public class CarsController
 	
 	
 	//디렉토리의 파일 리스트를 읽는 메소드
-	 public static List<File> getDirFileList(String dirPath)
+/*	 public static List<File> getDirFileList(String dirPath)
 	 {
 	  // 디렉토리 파일 리스트
 	  List<File> dirFileList = null;
@@ -110,7 +105,7 @@ public class CarsController
 	  }
 	  
 	  return dirFileList;
-	 }
+	 }*/
 	
 	
 	@RequestMapping(value="carsReg", method=RequestMethod.POST)

@@ -118,9 +118,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 		DELETE Teams WHERE TeamId = #{teamId}
 		 
-	</delete>
-	
-	
+	</delete> 
 	
 
 	<update id="updateOneValue">
@@ -130,8 +128,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 WHERE TeamId = #{param1}
 	</update>
 
-	<select id="getTeamsEmblemUrl" parameterType="string">
-	 	select EmblemUrl from Teams where SportsKind = #{EmblemUrl}
+	<select id="getTeamsEmblemUrl" parameterType="string"  resultType="com.whistle.web.vo.Team">
+	 	SELECT EmblemUrl FROM Teams WHERE SportsKind = #{sportsKind}
 	</select>
 
 	

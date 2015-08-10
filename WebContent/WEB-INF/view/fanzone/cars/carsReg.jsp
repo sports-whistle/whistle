@@ -9,6 +9,35 @@
 
 <script>
 
+var imgEmblemList = null; 
+var imgString = "";
+var emblemList =null; 
+window.addEventListener("load", function () {
+	
+	var btnNext = document.getElementById("next");
+	var btnAfterward = document.getElementById("afterward");
+	imgEmblemList = document.getElementById("emblemList");
+	
+	btnNext.onclick = btnNextClick;
+	btnAfterward.onclick = btnAfterWardClick;
+	
+});
+
+
+function btnNextClick()
+{
+ 	var img = new Image();
+ 	img.src = "http://localhost:8080/Whistle/resource/images/fanzone/cars/whistleLogo.png";
+}
+
+
+function btnAfterWardClick()
+{
+	 alert("dd");
+}
+
+
+
 function changeimage() 
 {
 	var emblemList = document.getElementById('emblemList');
@@ -113,7 +142,7 @@ table thead td{
 										<p id="emblemList">
 										<%-- <img src="${ctxName}/resource/images/common/emblem-ktwiz.png"/> --%>
 									 <c:forEach var="emblemImgList" items="${emblemImgList}"> 
-									 			emblemImgList
+									 			<img id="emblemList" src="${ctxName}/${emblemImgList.getEmblemUrl()}"/>
 									 </c:forEach>
 										</p>
 									<input type="button" id="afterward" value="이전"/>
