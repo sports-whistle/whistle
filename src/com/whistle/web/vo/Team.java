@@ -1,195 +1,198 @@
 package com.whistle.web.vo;
 
 public class Team {
-	private String TeamId;
-	private String Name;
-	private String SportsKind;
-	private String RegionName;
+	private String teamId;
+	private String name;
+	private String sportsKind;
+	private String regionName;
 	
 	/*6개 문자, 16진수*/
-	private String ColorRgb;
+	private String colorRgb;
 	//팀 로고
-	private String EmblemUrl;
+	private String emblemUrl;
 	//팀 슬로건
-	private String SloganUrl;
-	private String HistoryUrl;
+	private String sloganUrl;
+	private String historyUrl;
 	
 	//선수 단체 사진
-	private String MembersUrl;
+	private String membersUrl;
 	
-	private String MascotUrl;
+	private String mascotUrl;
 	
-	private String NewsUrl;
+	private String newsUrl;
 	// 겉으로 보이는 뉴스 Url
-	private String NewsUrlFake;
+	private String newsUrlFake;
 	
 	// 찾아 오시는 길
-	private String GuideUrl;
+	private String guideUrl;
 	
 	//경기장 내부 안내 ( 내관 사진 클릭하면 나오는거)
-	private String GuideInsideUrl;
+	private String guideInsideUrl;
 	
 	
 	//경기장 내관 사진
-	private String StadiumInsideUrl;
+	private String stadiumInsideUrl;
 	//경기장 외관 사진
-	private String StadiumOutsideUrl;
+	private String stadiumOutsideUrl;
 	
 	// 저번 시즌 성적? 최고 성적 .. 끝이 2위 등, ~ 위로 끝나야함 (패턴)
-	private String LastCareerUrl;
+	private String lastCareer;
 	
 	//팀 공식 사이트 주소
-	private String TeamSiteUrl;
+	private String teamSiteUrl;
 
-	
-	
-	
 	
 	
 	
 	public String getTeamId() {
-		return TeamId;
+		return teamId;
 	}
 
 	public void setTeamId(String teamId) {
-		TeamId = teamId;
+		this.teamId = teamId;
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getSportsKind() {
-		return SportsKind;
+		return sportsKind;
 	}
 
 	public void setSportsKind(String sportsKind) {
-		SportsKind = sportsKind;
+		this.sportsKind = sportsKind;
 	}
 
 	public String getRegionName() {
-		return RegionName;
+		return regionName;
 	}
 
 	public void setRegionName(String regionName) {
-		RegionName = regionName;
+		this.regionName = regionName;
 	}
 
 	public String getColorRgb() {
-		return ColorRgb;
+		return colorRgb;
 	}
 
 	public void setColorRgb(String colorRgb) {
-		ColorRgb = colorRgb;
+		this.colorRgb = colorRgb;
 	}
 
 	public String getEmblemUrl() {
-		return EmblemUrl;
+		return emblemUrl;
 	}
 
 	public void setEmblemUrl(String emblemUrl) {
-		EmblemUrl = emblemUrl;
+		this.emblemUrl = emblemUrl;
 	}
 
 	public String getSloganUrl() {
-		return SloganUrl;
+		return sloganUrl;
 	}
 
 	public void setSloganUrl(String sloganUrl) {
-		SloganUrl = sloganUrl;
+		this.sloganUrl = sloganUrl;
 	}
 
 	public String getHistoryUrl() {
-		return HistoryUrl;
+		return historyUrl;
 	}
 
 	public void setHistoryUrl(String historyUrl) {
-		HistoryUrl = historyUrl;
+		this.historyUrl = historyUrl;
 	}
 
 	public String getMembersUrl() {
-		return MembersUrl;
+		return membersUrl;
 	}
 
 	public void setMembersUrl(String membersUrl) {
-		MembersUrl = membersUrl;
+		this.membersUrl = membersUrl;
 	}
 
 	public String getMascotUrl() {
-		return MascotUrl;
+		return mascotUrl;
 	}
 
 	public void setMascotUrl(String mascotUrl) {
-		MascotUrl = mascotUrl;
+		this.mascotUrl = mascotUrl;
 	}
 
 	public String getNewsUrl() {
-		return NewsUrl;
+		return newsUrl;
 	}
 
 	public void setNewsUrl(String newsUrl) {
-		NewsUrl = newsUrl;
+		this.newsUrl = newsUrl;
 	}
 
 	public String getNewsUrlFake() {
-		return NewsUrlFake;
+		return newsUrlFake;
 	}
 
 	public void setNewsUrlFake(String newsUrlFake) {
-		NewsUrlFake = newsUrlFake;
+		this.newsUrlFake = newsUrlFake;
 	}
 
 	public String getGuideUrl() {
-		return GuideUrl;
+		return guideUrl;
 	}
 
 	public void setGuideUrl(String guideUrl) {
-		GuideUrl = guideUrl;
+		this.guideUrl = guideUrl;
 	}
 
 	public String getGuideInsideUrl() {
-		return GuideInsideUrl;
+		return guideInsideUrl;
 	}
 
 	public void setGuideInsideUrl(String guideInsideUrl) {
-		GuideInsideUrl = guideInsideUrl;
+		this.guideInsideUrl = guideInsideUrl;
 	}
 
 	public String getStadiumInsideUrl() {
-		return StadiumInsideUrl;
+		return stadiumInsideUrl;
 	}
 
 	public void setStadiumInsideUrl(String stadiumInsideUrl) {
-		StadiumInsideUrl = stadiumInsideUrl;
+		this.stadiumInsideUrl = stadiumInsideUrl;
 	}
 
 	public String getStadiumOutsideUrl() {
-		return StadiumOutsideUrl;
+		return stadiumOutsideUrl;
 	}
 
 	public void setStadiumOutsideUrl(String stadiumOutsideUrl) {
-		StadiumOutsideUrl = stadiumOutsideUrl;
+		this.stadiumOutsideUrl = stadiumOutsideUrl;
 	}
 
-	public String getLastCareerUrl() {
-		return LastCareerUrl;
+
+
+	public String getLastCareer() {
+		return lastCareer;
 	}
 
-	public void setLastCareerUrl(String lastCareerUrl) {
-		LastCareerUrl = lastCareerUrl;
+	public void setLastCareer(String lastCareer) {
+		this.lastCareer = lastCareer;
 	}
 
 	public String getTeamSiteUrl() {
-		return TeamSiteUrl;
+		return teamSiteUrl;
 	}
 
 	public void setTeamSiteUrl(String teamSiteUrl) {
-		TeamSiteUrl = teamSiteUrl;
+		this.teamSiteUrl = teamSiteUrl;
 	}
+
+	
+	
+	
 	
 	
 	

@@ -1,4 +1,4 @@
-package com.whistle.web.a.lhs.controller;
+package com.whistle.web.a.freedom.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

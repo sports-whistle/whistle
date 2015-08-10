@@ -17,5 +17,7 @@ public interface TeamDao {
 	public int delTeam(String teamId);
 	
 	
+	public int updateOneValue(String teamId, String column, String value);
+	
 	
 }

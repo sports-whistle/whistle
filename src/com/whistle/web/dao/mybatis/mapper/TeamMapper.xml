@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="getTeamsWithOneColumn" resultType="com.whistle.web.vo.Team">
 	
-		SELECT * FROM Teams WHERE ${column} = '%${keyword}%'
+		SELECT * FROM Teams WHERE ${param1} Like '%${param2}%'
 		
 	</select>
 	
@@ -53,28 +53,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			GuideInsideUrl, 
 			StadiumInsideUrl,
 			StadiumOutsideUrl,
-			LastCareerUrl,
+			LastCareer,
 			TeamSiteUrl
 		)
 		VALUES(
-			#{TeamId}},
-			#{Name},
-			#{SportsKind},
-			#{RegionName},
-			#{ColorRgb},
-			#{EmblemUrl},
-			#{SloganUrl},
-	 		#{HistoryUrl},
-			#{MembersUrl},
-			#{MascotUrl},
-			#{NewsUrl}, 
-			#{NewsUrlFake}, 
-			#{GuideUrl}, 
-			#{GuideInsideUrl}, 
-			#{StadiumInsideUrl},
-			#{StadiumOutsideUrl},
-			#{LastCareerUrl},
-			#{TeamSiteUrl}
+			#{teamId},
+			#{name},
+			#{sportsKind},
+			#{regionName},
+			#{colorRgb},
+			#{emblemUrl},
+			#{sloganUrl},
+	 		#{historyUrl},
+			#{membersUrl},
+			#{mascotUrl},
+			#{newsUrl}, 
+			#{newsUrlFake}, 
+			#{guideUrl}, 
+			#{guideInsideUrl}, 
+			#{stadiumInsideUrl},
+			#{stadiumOutsideUrl},
+			#{lastCareer},
+			#{teamSiteUrl}
 			
 		)
 		
@@ -123,7 +123,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	
-
+	<insert id="updateOneValue">
+		UPDATE Teams
+		SET
+			${param2} = #{param3}
+		 WHERE TeamId = #{param1}
+	</insert>
 	
 	
 	

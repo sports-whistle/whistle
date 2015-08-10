@@ -1,8 +1,6 @@
 package com.whistle.web.dao.mybatis;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,21 +25,19 @@ public class MyBatisTeamDao implements TeamDao{
 	
 	@Override
 	public Team getTeamById(String teamId) {
-		// TODO Auto-generated method stub
-		return null;
+		TeamDao teamDao = session.getMapper(TeamDao.class);
+		Team team = teamDao.getTeamById(teamId);
+		return team;
 	}
 
 	@Override
 	public List<Team> getTeamsWithOneColumn(String column, String keyword) {
 		
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("column", column);
-		map.put("keyword", keyword);
 		
 		
+		TeamDao teamDao = session.getMapper(TeamDao.class);
 		
-		List<Team> tlist = session.selectList("getTeamsWithOneColumn", map);
-		
+		List<Team> tlist = teamDao.getTeamsWithOneColumn(column, keyword);
 	
 		
 		
@@ -50,8 +46,9 @@ public class MyBatisTeamDao implements TeamDao{
 
 	@Override
 	public int addTeam(Team newTeam) {
-		// TODO Auto-generated method stub
-		return 0;
+		TeamDao teamDao = session.getMapper(TeamDao.class);
+		int result = teamDao.addTeam(newTeam);
+		return result;
 	}
 
 	@Override
@@ -64,6 +61,18 @@ public class MyBatisTeamDao implements TeamDao{
 	public int delTeam(String teamId) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+
+
+
+
+
+	@Override
+	public int updateOneValue(String teamId, String column, String value) {
+		TeamDao teamDao = session.getMapper(TeamDao.class);
+		int result = teamDao.updateOneValue(teamId, column, value);
+		return result;
 	}
 
 }
