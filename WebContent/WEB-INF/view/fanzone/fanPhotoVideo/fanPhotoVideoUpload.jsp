@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +13,12 @@
             <a href="/" class="button logo-button">whistle site</a>
          </h1>
          <section>
-            <h1 class="hidden">Çì´õ ¸Þ´º</h1>
+            <h1 class="hidden">ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½</h1>
 
             <div>
 
                <ul>
-                  <li><a href="/"><img /> Âï°í ! ÃÔ¿µÇÏ°í! °øÀ¯ÇÏÀÚ! </a></li>
+                  <li><a href="/"><img /> ï¿½ï¿½ï¿½ ! ï¿½Ô¿ï¿½ï¿½Ï°ï¿½! ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½! </a></li>
                </ul>
 
             </div>
@@ -33,14 +35,14 @@
    <main>
 
    <section>
-      <h1>¸ÞÀÎ¸Þ´º</h1>
+      <h1>ï¿½ï¿½ï¿½Î¸Þ´ï¿½</h1>
       <nav>
-         <h1>°Ô½ÃÆÇ ¹Ú½º</h1>
+         <h1>ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½</h1>
          <ul>
-            <li>ÆÄÀÏ</li>
-            <li>Á¦¸ñ</li>
-            <li>Ã·ºÎÆÄÀÏ</li>
-            <li>±Û ¾²´Â °÷</li>
+            <li>ï¿½ï¿½ï¿½ï¿½</li>
+            <li>ï¿½ï¿½ï¿½ï¿½</li>
+            <li>Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+            <li>ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½</li>
 
          </ul>
       </nav>

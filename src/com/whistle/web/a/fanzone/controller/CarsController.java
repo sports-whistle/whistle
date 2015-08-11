@@ -78,8 +78,9 @@ public class CarsController
 		model.addAttribute("game", game);
 	
 		//emblemUrl 가져오기 
-		List<Team> emblemUrlList = teamDao.getTeamsEmblemUrl("Baseball");
-		model.addAttribute("emblemImgList",emblemUrlList);
+		List<Team> emblemUrlInTeams = teamDao.getTeamsEmblemUrl("Baseball");
+//		emblemUrlList.get(0).getEmblemUrl()
+		model.addAttribute("emblemUrlInTeams",emblemUrlInTeams);
 
 		return  "/WEB-INF/view/fanzone/cars/carsReg.jsp";
 	}

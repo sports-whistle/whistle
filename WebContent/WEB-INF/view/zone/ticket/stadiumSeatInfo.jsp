@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +29,7 @@
 	</header>
 	<main>
 		<section id = "std">
-		<h1 class="hidden">경기장</h1>
+		<h1 class="hidden">ê²½ê¸°ì¥</h1>
 		<p><img src ="../images/stadiumInf.png"></p>
 		</section>
 	</main>

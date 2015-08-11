@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="ctxName" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,12 +38,12 @@ transform:rotate(45deg);
 </style>
 <body>
 	<header>
-	<h1><a href=""/><img src="../images/Whistle logo.png"></h1>
+	<h1><a href=""/><img src="${ctxName}/resource/images/common/whistle-logo.png"></h1>
 	</header>
 	<main>
 		<section id="inutd">
 			<h1 class="hidden">인천구단뉴스</h1>
-			<p><img src="../images/chick.png"><a href = "http://www.incheonutd.com">http://www.incheonutd.com</a></p>
+			<p><img src="${ctxName}/resource/images/chick.png"><a href = "http://www.incheonutd.com">http://www.incheonutd.com</a></p>
 		</section>	
 	</main>
 </body>

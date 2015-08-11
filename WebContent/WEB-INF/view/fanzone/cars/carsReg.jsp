@@ -9,49 +9,57 @@
 
 <script>
 
-var imgEmblemList = null; 
-var imgString = "";
-var emblemList =null; 
+index = 0; 
+
 window.addEventListener("load", function () {
 	
-	var btnNext = document.getElementById("next");
-	var btnAfterward = document.getElementById("afterward");
-	imgEmblemList = document.getElementById("emblemList");
+	 btnNext = document.getElementById("next");
+	 btnAfterward = document.getElementById("afterward");
+	emblems = document.getElementsByTagName("img");
 	
 	btnNext.onclick = btnNextClick;
 	btnAfterward.onclick = btnAfterWardClick;
 	
+	ctxName = "${ctxName}";
+	teams = [];
+	
+	teams[0]  ="${emblemUrlInTeams.get(0).getEmblemUrl()}";
+	teams[1]  ="${emblemUrlInTeams.get(1).getEmblemUrl()}";
+	teams[2]  ="${emblemUrlInTeams.get(2).getEmblemUrl()}";
+	teams[3]  ="${emblemUrlInTeams.get(3).getEmblemUrl()}";
+	teams[4]  ="${emblemUrlInTeams.get(4).getEmblemUrl()}";
+	teams[5]  ="${emblemUrlInTeams.get(5).getEmblemUrl()}";
+	teams[6]  ="${emblemUrlInTeams.get(6).getEmblemUrl()}";
+	teams[7]  ="${emblemUrlInTeams.get(7).getEmblemUrl()}";
+	teams[8]  ="${emblemUrlInTeams.get(8).getEmblemUrl()}";
+	teams[9]  ="${emblemUrlInTeams.get(9).getEmblemUrl()}";
 });
 
 
 function btnNextClick()
 {
- 	var img = new Image();
- 	img.src = "http://localhost:8080/Whistle/resource/images/fanzone/cars/whistleLogo.png";
+	if(index < 10)
+	{
+		emblems[1].src = ctxName + teams[++index];
+	}
+	else
+	{
+		index = 0; 
+	}
 }
 
 
 function btnAfterWardClick()
 {
-	 alert("dd");
+	if(index > 0)
+	{
+		emblems[1].src = ctxName + teams[--index];
+	}
+	else
+	{
+		index = 9; 
+	}
 }
-
-
-
-function changeimage() 
-{
-	var emblemList = document.getElementById('emblemList');
-	var next = document.getElementById('next');
-	var afterward = document.getElementById('afterward');
-    
-    if (image.src.match("naver")) {
-        image.src = "https://pixabay.com/static/uploads/photo/2015/02/13/09/47/mail-634902__180.png";
-    } else {
-        image.src = "http://img.naver.net/static/www/u/2013/0731/nmms_224940510.gif";
-    }
-}
-
-
 </script>
 
 <style>
@@ -140,10 +148,7 @@ table thead td{
 								<td align="center">
 									<input type="button" id="next" value="다음"/>
 										<p id="emblemList">
-										<%-- <img src="${ctxName}/resource/images/common/emblem-ktwiz.png"/> --%>
-									 <c:forEach var="emblemImgList" items="${emblemImgList}"> 
-									 			<img id="emblemList" src="${ctxName}/${emblemImgList.getEmblemUrl()}"/>
-									 </c:forEach>
+								 			<img id="emblemList"/> 
 										</p>
 									<input type="button" id="afterward" value="이전"/>
 								</td>
