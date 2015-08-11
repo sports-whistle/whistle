@@ -19,7 +19,7 @@ import com.whistle.web.vo.Article;
 import com.whistle.web.vo.Comment;
 
 @Controller
-@RequestMapping("/board/*")
+@RequestMapping("/freedom/*")
 public class BoardController {
 	
 	
@@ -37,7 +37,8 @@ public class BoardController {
 	public String boardGet(HttpServletRequest request, Model model){
 		String _page = request.getParameter("page");
 		List<Article> articleList = null;
-
+		
+		System.out.println("babo");
 		
 		int page = 1;
 		if (_page != null) {
@@ -49,7 +50,7 @@ public class BoardController {
 		model.addAttribute("articleList",articleList);
 		
 
-		return "/WEB-INF/view/board/board-list.jsp";
+		return "/WEB-INF/view/freedom/board-list.jsp";
 	}
 	
 	
@@ -66,7 +67,7 @@ public class BoardController {
 		model.addAttribute("article",article);
 		
 
-		return "/WEB-INF/view/board/board-detail.jsp";
+		return "/WEB-INF/view/freedom/board-detail.jsp";
 	}
 	
 	@RequestMapping(value="board-detail", method=RequestMethod.POST)
@@ -122,7 +123,7 @@ public class BoardController {
 	@RequestMapping(value="board-write-article", method=RequestMethod.GET)
 	public String writeArticle(){
 		
-		return "/WEB-INF/view/board/board-write-article-editor.jsp";
+		return "/WEB-INF/view/freedom/board-write-article-editor.jsp";
 	}
 	
 	
