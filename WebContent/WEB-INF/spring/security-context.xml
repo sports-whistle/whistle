@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- xmlns : ?? 없넹 접두사 .. 무명의 접두사가 있다. 그래서 이 파일 에서 주로 쓰는 파서의 접두사를 지우고 싶다 -->
-<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+<beans:beans 
+	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.springframework.org/schema/security"
-
 	xsi:schemaLocation="
     		http://www.springframework.org/schema/beans
         	http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -16,13 +16,19 @@
         	http://www.springframework.org/schema/security
          	http://www.springframework.org/schema/security/spring-security.xsd">
 
+	<beans:bean 
+   		 id="whistleAuthenticationSuccessHandler" 
+    	class="com.whistle.web.a.basic.controller.WhistleAuthenticationSuccessHandler"></beans:bean> 
+
+
 	<http>
 		<!-- <form-login login-page="/basic/login"
             default-target-url="/community/article-list"/> -->
             
             <form-login login-page="/basic/login"
-            default-target-url="/board/board-list"
+            default-target-url="/main/index"
             authentication-failure-url="/basic/temp"
+            authentication-success-handler-ref="whistleAuthenticationSuccessHandler"
             />
 	
 		<logout logout-success-url ="/community/article-list"/>

@@ -6,6 +6,7 @@ public class User {
 
 	private int uid;
 	private String pwd;
+	private String rePwd; 
 	private String name;
 	private String email;
 	private String kakaoId;
@@ -15,9 +16,35 @@ public class User {
 	private String description;
 	private Date regDate;
 	private boolean isValid;
+	private String address;
+	private String phone; 
+	private String myTeam; 
 	
 	
-	
+	public String getRePwd() {
+		return rePwd;
+	}
+	public void setRePwd(String rePwd) {
+		this.rePwd = rePwd;
+	}
+	public String getMyTeam() {
+		return myTeam;
+	}
+	public void setMyTeam(String myTeam) {
+		this.myTeam = myTeam;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	public int getUid() {
 		return uid;
 	}

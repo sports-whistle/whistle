@@ -207,16 +207,15 @@
 				<div id="right-of-page" >
 				<h1 class="hidden">registry form</h1>
 				
-					<form id="reg-form">
-					<label>ID</label><input type="text"/>
-					<label>Password</label><input type="text"/>
-					<label>Password Confirmation</label><input type="text"/>
-					<label>Address</label><input type="text"/>
-					<label>Cell Phone Number</label><input type="text"/>
-					<label>My Team</label><input type="text"/>
-					<label>Kakao ID</label><input type="text"/>
-					
-					<input type="submit"/>
+					<form action="" id="reg-form" method="post">
+						<label>ID</label><input name="uid"/>
+						<label>Password</label><input name="pwd"/>
+						<label>Password Confirmation</label><input name="rePwd"/>
+						<label>Email</label><input name="email"/>
+						<label>Cell Phone Number</label><input name="phone"/>
+						<label>My Team</label><input name="myTeam"/>
+						<label>Kakao ID</label><input name="kakaoId"/>
+						<input type="submit"/>
 					</form>
 				
 				</div>

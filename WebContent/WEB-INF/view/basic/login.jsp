@@ -223,6 +223,7 @@
 			<section id="login-section">
 				<h1 class="hidden">login-body</h1>		
 					<p id="login-label">login</p>
+					
 					<form action="${ctxName}/j_spring_security_check" method="post" id="login-form">
 						<div id="input-set">
 						<label id="label-id">ID</label><input id="input-id" type="text" name="j_username"/>

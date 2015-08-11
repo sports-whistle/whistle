@@ -300,7 +300,16 @@ article:hover .txt strong { color:#fff;}
 	
 	<nav>
 	
+	
+		
+	
 		<a href="${ctxName }/basic/login"><img src="${ctxName}/resource/images/index/loginlogo.png" alt="Login" /><span>Login</span></a>
+		
+		<c:if test="${not empty pageContext.request.userPrincipal}">
+				<a href="${ctxName}/j_spring_security_logout">${pageContext.request.userPrincipal.name}로그아웃</a>
+				<a href="${ctxName}/j_spring_security_logout">${pageContext.request.userPrincipal.name} ${c}로그아웃</a>
+		</c:if>
+		
 		<a href="#"><img src="${ctxName}/resource/images/index/Joinuslogo.png" alt="Join us" /><span>Join us</span></a>
 	
 	</nav>

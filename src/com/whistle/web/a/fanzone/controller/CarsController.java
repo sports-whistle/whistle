@@ -85,30 +85,6 @@ public class CarsController
 		return  "/WEB-INF/view/fanzone/cars/carsReg.jsp";
 	}
 	
-	
-	//디렉토리의 파일 리스트를 읽는 메소드
-/*	 public static List<File> getDirFileList(String dirPath)
-	 {
-	  // 디렉토리 파일 리스트
-	  List<File> dirFileList = null;
-	  
-	  // 파일 목록을 요청한 디렉토리를 가지고 파일 객체를 생성함
-	  File dir = new File(dirPath);
-	  
-	  // 디렉토리가 존재한다면
-	  if (dir.exists())
-	  {
-	   // 파일 목록을 구함
-	   File[] files = dir.listFiles();
-	   
-	   // 파일 배열을 파일 리스트로 변화함 
-	   dirFileList = Arrays.asList(files);
-	  }
-	  
-	  return dirFileList;
-	 }*/
-	
-	
 	@RequestMapping(value="carsReg", method=RequestMethod.POST)
 	public String carsReg(Parties p, String c, Model model)
 	{
@@ -122,6 +98,7 @@ public class CarsController
 
 		return  "forward:carsRegChk";  
 	}
+	
 	
 	@RequestMapping("carsParticipate")
 	public String carsParticipate(String partyId, String c, Model model)

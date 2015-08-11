@@ -19,17 +19,12 @@
 	<mvc:resources mapping="/resource/**" location="/resource/"></mvc:resources>
 	
 
-	<!--20150809 Ryu.YG MOD 희수 컨트롤러는 일단 건들지 않음.. 'a' 컨트롤러 맨위 오게하기위해  [START] -->
-	<!-- <context:component-scan base-package="com.whistle.web.controller.spring"></context:component-scan> -->
-	<context:component-scan base-package="com.whistle.web.a.lhs.controller"></context:component-scan>
-	<!--20150809 Ryu.YG MOD 컨트롤러 세분화 [END] -->
-	
-	
-	<!--20150809 Ryu.YG ADD [START]  컨트롤러 세분화 -->
+	<!-- <context:component-scan base-package="com.whistle.web.a.lhs.controller"></context:component-scan> -->
 	<context:component-scan base-package="com.whistle.web.a.fanzone.controller"></context:component-scan>
 	<context:component-scan base-package="com.whistle.web.a.zone.controller"></context:component-scan>
 	<context:component-scan base-package="com.whistle.web.a.index.controller"></context:component-scan>
-	<!-- 20150809 Ryu.YG ADD [END] -->
+	<context:component-scan base-package="com.whistle.web.a.freedom.controller"></context:component-scan>
+	<context:component-scan base-package="com.whistle.web.a.basic.controller"></context:component-scan>
 	
 	<bean name="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
