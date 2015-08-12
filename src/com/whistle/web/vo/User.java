@@ -19,8 +19,21 @@ public class User {
 	private String address;
 	private String phone; 
 	private String myTeam; 
+	private String identification;
+	private String defaultRole;
 	
-	
+	public String getDefaultRole() {
+		return defaultRole;
+	}
+	public void setDefaultRole(String defaultRole) {
+		this.defaultRole = defaultRole;
+	}
+	public String getIdentification() {
+		return identification;
+	}
+	public void setIdentification(String identification) {
+		this.identification = identification;
+	}
 	public String getRePwd() {
 		return rePwd;
 	}

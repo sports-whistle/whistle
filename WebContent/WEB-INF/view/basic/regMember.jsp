@@ -34,7 +34,8 @@
 		margin-left:auto;
 		margin-right:auto;
 		
-		background:black;
+		/* background:black; */
+		
 	}
 	
 	
@@ -84,10 +85,6 @@
 /* 		width:400px; */
 		height:auto;
 		margin-top:100px;
-		
-		
-		
-		
 		 border-radius: 25px;
   		 border: 2px solid #FFFFFF;
   		 padding: 20px; 
@@ -115,20 +112,18 @@
 	}
 	
 	#reg-form input{
-	display:block;
-	font-size:20pt;
-	
-	
-	width:400px;
-	
-	margin-left:12px;
-	
-	border:0px;
-	
-	
-	
+		display:block;
+		font-size:20pt;
+		width:400px;
+		margin-left:12px;
+		border:0px;
 	}
 	
+/* 	#next 
+	{
+		width: 50px; 
+		background:red; 
+	} */
 	
 	#reg-form input[type="submit"]{
 	display:block;
@@ -177,6 +172,19 @@
 	float:right;
 	}
 
+#teamSelect{
+	border: 1px solid red;
+	
+}
+
+#teamSelect>div+div 
+{
+	width: 160px; 
+	background: lime;
+}
+
+
+
 </style>
 
 </head>
@@ -193,28 +201,43 @@
 	<div class="content-wrapper">
 		<section>
 			
-			
-			
 			<div id="main-body">
-			
 			<div id="left-of-page">
 			<nav id="logo">logo</nav>
 			<div id="circle-image">circle-image</div>
 			</div>
-			
 		
 			<section class="clearfix">
 				<div id="right-of-page" >
-				<h1 class="hidden">registry form</h1>
+					<h1 class="hidden">registry form</h1>
 				
-					<form action="" id="reg-form" method="post">
-						<label>ID</label><input name="uid"/>
-						<label>Password</label><input name="pwd"/>
-						<label>Password Confirmation</label><input name="rePwd"/>
-						<label>Email</label><input name="email"/>
-						<label>Cell Phone Number</label><input name="phone"/>
-						<label>My Team</label><input name="myTeam"/>
-						<label>Kakao ID</label><input name="kakaoId"/>
+					<form action="" id="reg-form" method="POST">
+						<label>ID</label><input name="identification" type="text"/>
+						<label>Password</label><input name="pwd" type="text"/>
+						<!-- <label>Password Confirmation</label><input name="rePwd" type="text"/> --> <!-- 잠시 주석.. -->
+						<label>Email</label><input name="email" type="text"/>
+						<label>Cell Phone Number</label><input name="phone" type="text"/>
+						
+						<label>My Team</label>
+						
+						<div id="teamSelect">
+							<div>
+								<select>
+									<option>축구</option>
+									<option>야구</option>
+									<option>농구</option>
+									<option>배구</option>
+								</select>
+							</div>				
+							
+							<div id="test">
+								<input  type="button" value="다음"/>
+								<input name="myTeam" type="text"/>
+								<input type="button" value="이전"/>
+							</div>
+						</div>
+						
+						<label>Kakao ID</label><input name="kakaoId" type="text"/>
 						<input type="submit"/>
 					</form>
 				

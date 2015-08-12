@@ -35,9 +35,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</select>
 	
-	<select id="getUserByUid" parameterType="int"  resultType="com.whistle.web.vo.User">
+	<select id="getUserByUid" parameterType="String"  resultType="com.whistle.web.vo.User">
 	
-		SELECT * FROM Users WHERE Uid = #{uid,jdbcType=NUMERIC}
+		<!--인자 String로 바꿔봄-->
+		<!-- SELECT * FROM Users WHERE Uid = #{uid,jdbcType=NUMERIC} -->
+		SELECT * FROM Users WHERE Identification = #{identification}
 		
 	</select>
 	
@@ -52,30 +54,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 		<selectKey keyProperty="uid" order="BEFORE" resultType="int">
 				
-			SELECT ISNULL(MAX(Uid), 0)+1 Uid FROM Users  
-				
+			<!-- INT형이지만 DB에서는 TYPE이  String이라서 max 값을 제대로 가져오지 못함 -->	
+			<!-- SELECT ISNULL(MAX(Uid), 0)+1 Uid FROM Users   -->
+			
+			select ISNULL(MAX(CONVERT(int,uid)),0)+1 uid from users
+		
 		</selectKey>
 		
 		INSERT INTO Users(
 			Uid,
+			Identification,
 			Email,
 			Pwd,
 			Name,
 			KakaoId,
 			IsKakaoIdOpen,
 			Address,
-			MyTeam
-			
+			MyTeam,
+			Phone
 		)
 		VALUES(
 			#{uid},
+			#{identification},
 			#{email},
 			#{pwd},
 			#{name},
 			#{kakaoId},
 			#{isKakaoIdOpen, jdbcType=BOOLEAN},
 			#{address},
-			#{myTeam}
+			#{myTeam},
+			#{phone}
+			
 		)
 		
 	

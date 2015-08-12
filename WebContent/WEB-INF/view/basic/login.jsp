@@ -239,11 +239,9 @@
 			
 			
 			<section id="login-page-description">
-				
 				<h1 class="hidden">attractive</h1>
 					<p id="description1">Which team do you want?</p>
 					<p id="description2">Together, Let's make a sporting world</p>
-				
 			</section>
 		
 		</div>

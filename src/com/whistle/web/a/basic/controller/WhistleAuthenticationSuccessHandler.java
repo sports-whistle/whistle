@@ -15,29 +15,43 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import com.whistle.web.dao.UserDao;
 import com.whistle.web.vo.User;
 
-public class WhistleAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
-	
+public class WhistleAuthenticationSuccessHandler implements AuthenticationSuccessHandler 
+{
 	@Autowired
 	UserDao userDao;
 	
    @Override
-   public void onAuthenticationSuccess(HttpServletRequest request,
-         HttpServletResponse response, Authentication authentication) throws IOException,
-         ServletException {
+   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) 
+		   throws IOException,  ServletException {
       
-	   String uid = authentication.getName();
+		   String uid = authentication.getName();
+		   User user = userDao.getUserByUid(uid);
+		   
+		   String type = user.getDefaultRole();
+		  // String type = "ROLE_TEACHER";
+		   
+		   String targetUrl = "/basic/login";
 	   
-	   User user = userDao.getUserByUid(uid);
-	   //String type = user.getDefaultRole();
-	   
-	   String type = "ROLE_ADMIN";
-	   String targetUrl = "/fanzone/cars/carsStart";
-	   
-	   if(type.equals("ROLE_ADMIN"))
-	   {
-		   targetUrl = "/main/index?a=admin";
+		   if(type.equals("ROLE_ADMIN"))
+		   {
+			   targetUrl = "/main/index?authentication=Admin";
+		   
+			   RedirectStrategy redirectStategy = new DefaultRedirectStrategy();
+			   redirectStategy.sendRedirect(request, response, targetUrl);
+		   }
+		   else if(type.equals("ROLE_TEACHER"))
+		   {
+			   targetUrl = "/main/index?authentication=Teacher";
+		   
+			   RedirectStrategy redirectStategy = new DefaultRedirectStrategy();
+			   redirectStategy.sendRedirect(request, response, targetUrl);
+		   }
+		   else
+		   {
+			   targetUrl = "/main/index?authentication=User";
+			   
+			   RedirectStrategy redirectStategy = new DefaultRedirectStrategy();
+			   redirectStategy.sendRedirect(request, response, targetUrl);
+		   }
 	   }
-	   RedirectStrategy redirectStategy = new DefaultRedirectStrategy();
-	   redirectStategy.sendRedirect(request, response, targetUrl);
-   }
 }

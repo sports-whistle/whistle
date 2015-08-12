@@ -16,13 +16,13 @@ public class RegMemberController {
 	@Autowired
 	private UserDao userDao; 
 	
-	@RequestMapping(value="reg-member", method=RequestMethod.GET)
+	@RequestMapping(value="regMember", method=RequestMethod.GET)
 	public String regMember(){
 		
-		return "/WEB-INF/view/basic/reg-member.jsp";
+		return "/WEB-INF/view/basic/regMember.jsp";
 	}
 	
-	@RequestMapping(value="reg-member", method=RequestMethod.POST)
+	@RequestMapping(value="regMember", method=RequestMethod.POST)
 	public String regMember(User user, Model model)
 	{
 		userDao.regUser(user);
