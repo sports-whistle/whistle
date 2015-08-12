@@ -274,8 +274,8 @@ article:hover .txt strong { color:#fff;}
 		<h1><img src="${ctxName}/resource/images/index/whistle.png" /></h1>
 		<ul id="gnb">
 		
-			<li><a href="#"><i class=""></i>About US</a></li>
-			<li><a href="#"><i class=""></i>Zone</a></li>
+			<li><a href="${ctxName}/main/aboutUs"><i class=""></i>About US</a></li>
+			<li><a href="${ctxName}/zone/main/zoneMain"><i class=""></i>Zone</a></li>
 			<li><a href="${ctxName}/resource/dj/prc/FanZone-Main2.jsp"><i class=""></i>FanZone</a></li>
 			<li><a href="#"><i class=""></i>Freedom</a></li>	
 		</ul>		
