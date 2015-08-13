@@ -27,10 +27,14 @@ body{
 
 <script>
 
+
 	function init(){
-		var team = javaToJs();
+		var team = jsTeam();
+		var ticketInfo = jsTicketInfo();
+		
 		changeBodyColor(team.colorRgb);
-		changeTicketPriceUrl(team.ticketPriceUrl);
+		changeTicketPriceImg(ticketInfo.ticketPriceUrl);
+		
 	}
 	
 	function changeBodyColor(color){
@@ -38,23 +42,28 @@ body{
 		
 	}
 	
-	function changeTicketPriceUrl(priceUrl){
+	function changeTicketPriceImg(imgUrl){
+		//노드 찾기
 		var imgs = document.getElementById("content").getElementsByTagName("img");
-		imgs[0].src=priceUrl;
+		imgs[0].src=imgUrl;
 	}
 	
-	function javaToJs(){
+	function jsTeam(){
 		
 		var team = {
 				colorRgb:"#"+"${team.colorRgb}",
-				ticketPriceUrl:"${ctxName}"+"${team.ticketPriceUrl}"
-				
-		}
+		};
 		return team;
 	}
-
 	
-
+	function jsTicketInfo(){
+		var ticketInfo = {
+				ticketPriceUrl:"${ctxName}"+"${ticketInfo.ticketPriceUrl}"
+		};
+		return ticketInfo;
+	}
+	
+	
 	addEventListener("load",init);
 
 </script>

@@ -28,7 +28,7 @@ public class Team {
 	private String guideUrl;
 	
 	//경기장 내부 안내 ( 내관 사진 클릭하면 나오는거)
-	private String seatsInfoUrl;
+	private String guideInsideUrl;
 	
 	
 	//경기장 내관 사진
@@ -152,12 +152,14 @@ public class Team {
 
 	
 
-	public String getSeatsInfoUrl() {
-		return seatsInfoUrl;
+	
+
+	public String getGuideInsideUrl() {
+		return guideInsideUrl;
 	}
 
-	public void setSeatsInfoUrl(String seatsInfoUrl) {
-		this.seatsInfoUrl = seatsInfoUrl;
+	public void setGuideInsideUrl(String guideInsideUrl) {
+		this.guideInsideUrl = guideInsideUrl;
 	}
 
 	public String getStadiumInsideUrl() {

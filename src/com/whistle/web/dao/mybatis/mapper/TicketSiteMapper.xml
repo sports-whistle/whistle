@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+<mapper namespace = "com.whistle.web.dao.TicketSiteDao">   <!--  인터페이스 -->
+	
+	
+<!--
+	public List<TicketSite> getAllTicketSites();
+	
+	
+	/*select from view = TicketSitesView*/
+	public List<TicketSite> getTicketSitesOfATeam(String teamId);
+	
+	
+	/*insert into TicketSites*/
+	public int addTicketSite(TicketSite site);
+	public int delTicketSite(String cover);
+	public int updateTicketSite(TicketSite site);
+	
+	
+	/* n:m relationship  insert into TicketSitesTeams*/
+	public int addTicketSiteOfTeam(String cover, String teamId);
+	public int rmvTicketSiteOfTeam(String cover, String teamId); -->
+	
+
+
+	<select id="getAllTicketSites" resultType="com.whistle.web.vo.TicketSite">
+		SELECT * FROM TicketSites
+	</select>
+	
+	
+	<select id="getTicketSitesOfATeam" parameterType="string" resultType="com.whistle.web.vo.TicketSite">
+		SELECT * FROM TicketSitesView WHERE TeamId = #{teamId}
+	</select>
+	
+
+	
+	<insert id="addTicketSite" parameterType="com.whistle.web.vo.TicketSite">
+		INSERT INTO TicketSites(
+			cover,
+			siteUrl
+		)
+		VALUES(
+			#{cover},
+			#{siteUrl}
+		)
+	</insert>
+	
+	<delete id="delTicketSite" parameterType="string">
+		DELETE TicketSites WHERE Cover = #{cover}
+	</delete> 
+	
+	
+	
+	<update id="updateTicketSite" parameterType="com.whistle.web.vo.TicketSite">
+		Update TicketSites Set	
+			Cover = #{cover},
+			SiteUrl = #{siteUrl}
+		WHERE Cover = #{cover};
+	</update>
+	
+	
+	<insert id="addTicketSiteOfTeam">
+		INSERT INTO TicketSitesTeams(
+			cover,
+			teamId
+		)
+		VALUES(
+			#{param1},
+			#{param2}
+		)
+	</insert>
+	
+	
+	<delete id="rmvTicketSiteOfTeam">
+		DELETE TicketSitesTeams WHERE Cover = #{param1} AND TeamId = #{param2}
+	</delete> 
+	
+
+	
+</mapper>

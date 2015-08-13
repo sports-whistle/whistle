@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.whistle.web.dao.TeamDao;
+import com.whistle.web.dao.TicketInfoDao;
 import com.whistle.web.vo.Team;
+import com.whistle.web.vo.TicketInfo;
 
 @Controller
 @RequestMapping("/zone/ticket")
@@ -17,14 +19,23 @@ public class TicketController {
 	@Autowired
 	TeamDao teamDao;
 	
+	@Autowired
+	TicketInfoDao ticketInfoDao;
+	
+	
 	@RequestMapping("stadiumSeatsInfo")
 	public String stadiumSeatInfo(HttpServletRequest request, Model model)
 	{
 		String teamId = request.getParameter("teamId");
 		Team team = null;
+		TicketInfo ticketInfo = null;
 		if(teamId!=null){
 			team = teamDao.getTeamById(teamId);
+			ticketInfo = ticketInfoDao.getTicketInfo(teamId);
+			
+			
 			model.addAttribute("team",team);
+			model.addAttribute("ticketInfo", ticketInfo);
 			return "/WEB-INF/view/zone/ticket/stadiumSeatsInfo.jsp";
 		}
 		
@@ -32,7 +43,7 @@ public class TicketController {
 	}
 	
 	@RequestMapping("ticketMenu")
-	public String ticketInfo(HttpServletRequest request, Model model)
+	public String ticketMenu(HttpServletRequest request, Model model)
 	{	
 		String teamId = request.getParameter("teamId");
 		Team team = null;
@@ -63,9 +74,14 @@ public class TicketController {
 	{
 		String teamId = request.getParameter("teamId");
 		Team team = null;
+		TicketInfo ticketInfo = null;
 		if(teamId!=null){
 			team = teamDao.getTeamById(teamId);
+			ticketInfo = ticketInfoDao.getTicketInfo(teamId);
+			
+			
 			model.addAttribute("team",team);
+			model.addAttribute("ticketInfo", ticketInfo);
 			return "/WEB-INF/view/zone/ticket/ticketPrice.jsp";
 		}
 		return "/WEB-INF/view/zone/ticket/ticketPrice.jsp";

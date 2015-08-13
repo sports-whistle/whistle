@@ -31,9 +31,12 @@
 <script>
 
 	function init(){
-		var team = javaToJs();
+		var team = jsTeam();
+		var ticketInfo = jsTicketInfo();
+		
 		changeBodyColor(team.colorRgb);
-		changeSeatsInfoImg(team.seatsInfoUrl);
+		changeSeatsInfoImg(ticketInfo.seatsInfoUrl);
+		
 	}
 	
 	function changeBodyColor(color){
@@ -46,15 +49,20 @@
 		imgs[0].src=imgUrl;
 	}
 	
-	function javaToJs(){
+	function jsTeam(){
 		
 		var team = {
 				colorRgb:"#"+"${team.colorRgb}",
-				seatsInfoUrl:"${ctxName}"+"${team.seatsInfoUrl}"
-		}
+		};
 		return team;
 	}
-
+	
+	function jsTicketInfo(){
+		var ticketInfo = {
+				seatsInfoUrl:"${ctxName}"+"${ticketInfo.ticketSeatsUrl}"
+		};
+		return ticketInfo;
+	}
 	
 
 	addEventListener("load",init);
@@ -63,11 +71,11 @@
 
 <body id="background">
 	<header id ="header">
-	<h1 id="logo"><a href=""/><img src ="${ctxName }/resource/images/whistle-logo.png"></h1>
+	<h1 id="logo"><img src ="${ctxName }/resource/images/whistle-logo.png"></h1>
 	</header>
 	<main>
 		<section id = "content">
-		<h1 class="hidden">ê²½ê¸°ì¥</h1>
+		<h1 class="hidden">좌석정보</h1>
 		<p><img src ="../images/stadiumInf.png"></p>
 		</section>
 	</main>

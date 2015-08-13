@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- public TicketInfo getTicketInfo(String teamId);
+	
+	public int addTicketInfo(TicketInfo ticketInfo);
+	
+	
+	public int updateTicketPriceUrl(String teamId, String url);
+	public int updateTicketSeatsUrl(String teamId, String url);
+	
+	public int delTicketInfo(String teamId); -->
+	
+
+
+
+<mapper namespace = "com.whistle.web.dao.TicketInfoDao">   <!--  인터페이스 -->
+	
+
+
+	<select id="getTicketInfo" parameterType="string" resultType="com.whistle.web.vo.TicketInfo">
+	
+		SELECT * FROM TicketInfo WHERE TeamId = #{teamId}
+		
+	</select>
+	
+
+
+	
+	<insert id="addTicketInfo" parameterType="com.whistle.web.vo.TicketInfo">
+	
+		
+		INSERT INTO TicketInfo
+		VALUES(
+			#{teamId},
+			#{ticketPriceUrl},
+			#{ticketSeatsUrl}
+		)
+	
+	</insert>
+	
+	<update id="updateTicketPriceUrl">
+	
+		Update Teams Set
+			
+			TicketPriceUrl = #{param2}
+		
+			
+		WHERE TeamId = #{param1}
+	
+	</update>
+	
+	<update id="updateTicketSeatsUrl">
+		
+		Update Teams Set
+			
+			TicketSeatsUrl = #{param2}
+		
+			
+		WHERE TeamId = #{param1}
+	
+	</update>
+	
+	
+	
+	<delete id="delTicketInfo" parameterType="string">
+	
+		DELETE TicketInfo WHERE TeamId = #{teamId}
+		 
+	</delete> 
+	
+
+
+
+	
+</mapper>

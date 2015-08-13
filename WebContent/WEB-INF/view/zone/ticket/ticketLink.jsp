@@ -46,10 +46,13 @@ link-menu li a{
 
 <script>
 
-	function init(){
-		var team = javaToJs();
+/* 	function init(){
+		var team = jsTeam();
+		var ticketInfo = jsTicketInfo();
+		
 		changeBodyColor(team.colorRgb);
-		changeSeatsInfoImg(team.seatsInfoUrl);
+		changeSeatsInfoImg(ticketInfo.seatsInfoUrl);
+		
 	}
 	
 	function changeBodyColor(color){
@@ -62,19 +65,30 @@ link-menu li a{
 		imgs[0].src=imgUrl;
 	}
 	
-	function javaToJs(){
+	function jsTeam(){
 		
 		var team = {
 				colorRgb:"#"+"${team.colorRgb}",
-				seatsInfoUrl:"${ctxName}"+"${team.seatsInfoUrl}",
-				
-		}
+		};
 		return team;
 	}
-
 	
-
-	addEventListener("load",init);
+	function jsTicketInfo(){
+		var ticketInfo = {
+				seatsInfoUrl:"${ctxName}"+"${ticketInfo.ticketSeatsUrl}"
+		};
+		return ticketInfo;
+	}
+	
+	function jsTicketSites(){
+		var ticketSites =[];
+		
+		
+		
+		return ticketSites;
+	}
+	
+	addEventListener("load",init); */
 
 </script>
 
