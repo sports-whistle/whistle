@@ -21,7 +21,8 @@
 
 	<!--20150809 Ryu.YG MOD 희수 컨트롤러는 일단 건들지 않음.. 'a' 컨트롤러 맨위 오게하기위해  [START] -->
 	<!-- <context:component-scan base-package="com.whistle.web.controller.spring"></context:component-scan> -->
-	<context:component-scan base-package="com.whistle.web.a.lhs.controller"></context:component-scan>
+
+	<context:component-scan base-package="com.whistle.web.a.freedom.controller"></context:component-scan>
 	<!--20150809 Ryu.YG MOD 컨트롤러 세분화 [END] -->
 	
 	
