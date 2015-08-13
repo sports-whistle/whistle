@@ -8,10 +8,116 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-
-
 <link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
+
+<script type="text/javascript">
+/* 응원팀 엠블런 선택 기능 */
+
+index = 0; 
+
+window.addEventListener("load", function () {
+	
+	btnNext = document.getElementById("next");
+	btnAfterward = document.getElementById("afterward");
+	emblems = document.getElementsByTagName("img");
+	
+	btnNext.onclick = btnNextClick;
+	btnAfterward.onclick = btnAfterWardClick;
+	
+	
+	
+	ctxName = "${ctxName}";
+	teams = [];
+	
+	teams[0]  ="${emblemUrlInTeams.get(0).getEmblemUrl()}";
+	teams[1]  ="${emblemUrlInTeams.get(1).getEmblemUrl()}";
+	teams[2]  ="${emblemUrlInTeams.get(2).getEmblemUrl()}";
+	teams[3]  ="${emblemUrlInTeams.get(3).getEmblemUrl()}";
+	teams[4]  ="${emblemUrlInTeams.get(4).getEmblemUrl()}";
+	teams[5]  ="${emblemUrlInTeams.get(5).getEmblemUrl()}";
+	teams[6]  ="${emblemUrlInTeams.get(6).getEmblemUrl()}";
+	teams[7]  ="${emblemUrlInTeams.get(7).getEmblemUrl()}";
+	teams[8]  ="${emblemUrlInTeams.get(8).getEmblemUrl()}";
+	teams[9]  ="${emblemUrlInTeams.get(9).getEmblemUrl()}";
+});
+
+
+function btnNextClick()
+{
+	cbSportsKind = document.getElementById("cbo-sportsKind");
+
+	
+	/* alert(cbImage.length); */
+	
+	
+	if(cbSportsKind.value =="축구")
+	{
+		// 축구 엠블럼 이미지 가져오기 
+		/* 	if(index < 10)
+		{
+			emblems[1].src = ctxName + teams[++index];
+		}
+		else
+		{
+			index = 0; 
+		} */
+	}
+	else if(cbSportsKind.value =="야구")
+	{
+		// 야구 엠블럼 이미지 가져오기 
+		/* 	if(index < 10)
+		{
+			emblems[1].src = ctxName + teams[++index];
+		}
+		else
+		{
+			index = 0; 
+		} */
+	}
+	else if(cbSportsKind.value =="농구")
+	{
+		// 농구 엠블럼 이미지 가져오기 
+		/* 	if(index < 10)
+		{
+			emblems[1].src = ctxName + teams[++index];
+		}
+		else
+		{
+			index = 0; 
+		} */
+	}
+	else
+	{
+		// 배구 엠블럼 이미지 가져오기 
+		/* 	if(index < 10)
+		{
+			emblems[1].src = ctxName + teams[++index];
+		}
+		else
+		{
+			index = 0; 
+		} */
+	}
+
+}
+
+
+function btnAfterWardClick()
+{
+	/* if(index > 0)
+	{
+		emblems[1].src = ctxName + teams[--index];
+	}
+	else
+	{
+		index = 9; 
+	} */
+}
+
+
+</script>
+
 
 <style>
 	.hidden{
@@ -131,7 +237,6 @@
 	text-indent:-9999px;
 	
 	margin-top:14px;
-	
 	margin-left:auto;
 	margin-right:auto;
 	
@@ -164,7 +269,6 @@
 	
 	}
 	
-	
 	#p2{
 	display:block;
 	font-size:25pt;
@@ -172,21 +276,84 @@
 	float:right;
 	}
 
+
+
+/* ======  [류윤광] 스포츠 종목별 팀선택 스타일 적용 ===== */
+
 #teamSelect{
-	border: 1px solid red;
+	border: 1px solid purple;
+}
+
+/* 콤보박스 영역 스타일*/
+#teamSelect div:FIRST-CHILD{
+
+	display:inline-block;
+	/* height: 50px;  */
+	/* border: 2px solid green; */
+	background: green;
+	margin-left:50px; 
+	margin-bottom: 25px; 
+	vertical-align: middle;
+		
+}
+
+/* 콤보박스 스타일 */
+select{
+
+	float: left;
+}
+
+
+/* 버튼, 엠블럼 표시 부분 영역 */
+#teamSelect>div+div 
+{
+	display:inline-block;
+	background: red;
+	margin-left: 30px; 
+	margin-top: 20px; 
 	
 }
 
-#teamSelect>div+div 
-{
-	width: 160px; 
-	background: lime;
+#teamSelect>div+div>input{
+	float:left;
 }
 
 
+/* 다음, 이전 버튼 스타일 */
+#teamSelect input[type="button"]{
+
+	font-size: 10px; 
+	background: yellow;
+	height:30px; 
+	width: 30px; 
+}
+
+/* 다음 버튼 스타일 */
+#teamSelect input[type="button"]:FIRST-CHILD{
+	
+		margin-right: 30px; 
+}
+
+
+/* 이전 버튼 스타일 */
+#teamSelect input[type="button"]:FIRST-CHILD+p+input{
+
+	
+}
+
+
+/* 팀로고 표시되는 부분 스타일 */
+#teamSelect p{
+	
+	float: left;
+	height: 30px; 
+	line-height: 30px; 
+	font-weight: bold;	
+	margin-right: 30px; 
+}
+
 
 </style>
-
 </head>
 <body>
 
@@ -210,19 +377,18 @@
 			<section class="clearfix">
 				<div id="right-of-page" >
 					<h1 class="hidden">registry form</h1>
-				
 					<form action="" id="reg-form" method="POST">
 						<label>ID</label><input name="identification" type="text"/>
 						<label>Password</label><input name="pwd" type="text"/>
 						<!-- <label>Password Confirmation</label><input name="rePwd" type="text"/> --> <!-- 잠시 주석.. -->
 						<label>Email</label><input name="email" type="text"/>
 						<label>Cell Phone Number</label><input name="phone" type="text"/>
-						
 						<label>My Team</label>
 						
 						<div id="teamSelect">
+						
 							<div>
-								<select>
+								<select id="cbo-sportsKind">
 									<option>축구</option>
 									<option>야구</option>
 									<option>농구</option>
@@ -230,10 +396,14 @@
 								</select>
 							</div>				
 							
-							<div id="test">
-								<input  type="button" value="다음"/>
-								<input name="myTeam" type="text"/>
-								<input type="button" value="이전"/>
+							<div>
+								<input id="next" type="button" value="다음"/>
+								<!-- <div> -->
+									<p>
+										<img id="emblemList"/> 
+									</p>
+								<!-- </div> -->
+								<input id="afterward" type="button" value="이전"/>
 							</div>
 						</div>
 						

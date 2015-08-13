@@ -6,31 +6,34 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ticket Price</title>
+<title>Stadium Information</title>
 </head>
 <style>
-body{
-	background: black;
-}
 .hidden{
 	display:none;
 }
-#price{
-	text-align:center;
-	padding-top: 30px;
+#header{
+	width:50px;
 }
-#price2{
-	text-align:center;
-	padding-top: 50px;
+#logo{
+	height: 100px;
 }
+#content{
+	text-align:center;
+}
+#background{
+	background: #1E3269;
+}
+
 </style>
+
 
 <script>
 
 	function init(){
 		var team = javaToJs();
 		changeBodyColor(team.colorRgb);
-		changeTicketPriceUrl(team.ticketPriceUrl);
+		changeSeatsInfoImg(team.seatsInfoUrl);
 	}
 	
 	function changeBodyColor(color){
@@ -38,17 +41,16 @@ body{
 		
 	}
 	
-	function changeTicketPriceUrl(priceUrl){
+	function changeSeatsInfoImg(imgUrl){
 		var imgs = document.getElementById("content").getElementsByTagName("img");
-		imgs[0].src=priceUrl;
+		imgs[0].src=imgUrl;
 	}
 	
 	function javaToJs(){
 		
 		var team = {
 				colorRgb:"#"+"${team.colorRgb}",
-				ticketPriceUrl:"${ctxName}"+"${team.ticketPriceUrl}"
-				
+				seatsInfoUrl:"${ctxName}"+"${team.seatsInfoUrl}"
 		}
 		return team;
 	}
@@ -60,15 +62,13 @@ body{
 </script>
 
 <body id="background">
-	<header>
-	<h1><a href=""/><img src="${ctxName }/resource/images/whistle-logo.png"/></h1>
+	<header id ="header">
+	<h1 id="logo"><a href=""/><img src ="${ctxName }/resource/images/whistle-logo.png"></h1>
 	</header>
 	<main>
-		<section>
-		<h1 class="hidden">티켓가격</h1>
-			<section id="content">
-				<p id="price"><img src ="${ctxName }/resource/dj/images/ticketprice.png"></p>
-			</section>
+		<section id = "content">
+		<h1 class="hidden">ê²½ê¸°ì¥</h1>
+		<p><img src ="../images/stadiumInf.png"></p>
 		</section>
 	</main>
 </body>

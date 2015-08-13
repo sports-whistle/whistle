@@ -7,9 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/zone/team/")
 public class TeamController 
 {
-	@RequestMapping("teamInfo")
-	public String teamInfo()
-	{
-		return "/WEB-INF/view/zone/team/teamInfo.jsp"; 
-	}
+   @RequestMapping("teamInfo")
+   public String teamInfo()
+   {
+      return "/WEB-INF/view/zone/team/teamInfo.jsp"; 
+   }
+   @RequestMapping("teams")
+   public String teams()
+   {
+      return "/WEB-INF/view/zone/team/teams.jsp"; 
+   }
 }

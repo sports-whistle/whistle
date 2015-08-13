@@ -58,12 +58,12 @@
 	<nav>
 	<h1>인천팀링크</h1>
 		<ul>
-			<li id= inUtd><img src="../images/inUtd.png"/>인천유나이티드</li>
-			<li id= elep><img src="../images/elep.png"/>전자랜드</li>
-			<li id= shinHan><img src="../images/shinHan.png"/>신한은행</li>
-			<li id= jumbo><img src="../images/jumbo.png"/>대한항공</li>
-			<li id= pinS><img src="../images/pinS.png"/>흥국생명</li>
-			<li id= incheonSk><img src="../images/incheonSk.png"/>와이번스</li>
+			<li id= inUtd><a href="${ctxName}/zone/team/teamInfo"><img src="../images/inUtd.png"/>인천유나이티드</a></li>
+			<li id= elep><a href="${ctxName}/zone/team/teamInfo"><img src="../images/elep.png"/>전자랜드</a></li>
+			<li id= shinHan><a href="${ctxName}/zone/team/teamInfo"><img src="../images/shinHan.png"/>신한은행</a></li>
+			<li id= jumbo><a href="${ctxName}/zone/team/teamInfo"><img src="../images/jumbo.png"/>대한항공</a></li>
+			<li id= pinS><a href="${ctxName}/zone/team/teamInfo"><img src="../images/pinS.png"/>흥국생명</a></li>
+			<li id= incheonSk><a href="${ctxName}/zone/team/teamInfo"><img src="../images/incheonSk.png"/>와이번스</a></li>
 		</ul>
 	</nav>
 	</section>

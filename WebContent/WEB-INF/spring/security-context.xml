@@ -18,7 +18,7 @@
 
 	<beans:bean 
    		 id="whistleAuthenticationSuccessHandler" 
-    	class="com.whistle.web.a.basic.controller.WhistleAuthenticationSuccessHandler"></beans:bean> 
+    	 class="com.whistle.web.a.basic.controller.WhistleAuthenticationSuccessHandler"></beans:bean> 
 
 
 	<http>
