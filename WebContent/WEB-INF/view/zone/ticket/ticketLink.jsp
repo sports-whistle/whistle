@@ -46,26 +46,17 @@ link-menu li a{
 
 <script>
 
-/* 	function init(){
+ 	function init(){
 		var team = jsTeam();
-		var ticketInfo = jsTicketInfo();
 		
 		changeBodyColor(team.colorRgb);
-		changeSeatsInfoImg(ticketInfo.seatsInfoUrl);
-		
 	}
 	
 	function changeBodyColor(color){
-		document.getElementById("background").style.backgroundColor=color;
+		document.getElementById("body").style.backgroundColor=color;
 		
 	}
-	
-	function changeSeatsInfoImg(imgUrl){
-		var imgs = document.getElementById("content").getElementsByTagName("img");
-		imgs[0].src=imgUrl;
-	}
-	
-	function jsTeam(){
+		function jsTeam(){
 		
 		var team = {
 				colorRgb:"#"+"${team.colorRgb}",
@@ -73,26 +64,12 @@ link-menu li a{
 		return team;
 	}
 	
-	function jsTicketInfo(){
-		var ticketInfo = {
-				seatsInfoUrl:"${ctxName}"+"${ticketInfo.ticketSeatsUrl}"
-		};
-		return ticketInfo;
-	}
 	
-	function jsTicketSites(){
-		var ticketSites =[];
-		
-		
-		
-		return ticketSites;
-	}
-	
-	addEventListener("load",init); */
+	addEventListener("load",init); 
 
 </script>
 
-<body>
+<body id="body">
 	<header>
 	<h1><a href=""/><img src="${ctxName }/resource/images/whistle-logo.png"/></h1>
 	</header>
@@ -102,8 +79,10 @@ link-menu li a{
 		<nav id ="link-menu">
 		<h1 class="hidden">링크abcd</h1>
 		<ul id="links">
-		<li><a href=http://www.incheonutd.com>http://www.incheonutd.com</a></li>
-		<li><a href=http://www.interpark.com>http://www.interpark.com</a></li>
+		
+			<c:forEach var="site" items="${ticketSites }">
+				<li><a href=${site.siteUrl }>${site.cover }</a></li>
+			</c:forEach>
 		</ul>
 		</nav>
 		</section>

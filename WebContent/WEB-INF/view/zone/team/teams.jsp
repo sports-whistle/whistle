@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctxName" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
+
 <style>
 #pinkbody{
 	background: url("../images/inCheonBack.png") no-repeat ;
@@ -48,7 +52,8 @@
 
 <body id = "pinkbody">
 	<header>
-		<h1><img src="../images/whistleHeader.png"  alt="whistlelogo"></h1>
+		
+		<h1><img src="${ctxName }/resource/images/whistle-logo.png"  alt="whistlelogo"></h1>
 	</header>
 	<main>
 	
@@ -58,7 +63,8 @@
 	<nav>
 	<h1>인천팀링크</h1>
 		<ul>
-			<li id= inUtd><a href="${ctxName}/zone/team/teamInfo"><img src="../images/inUtd.png"/>인천유나이티드</a></li>
+			
+			<li id= inUtd><a href="${ctxName}/zone/team/teamInfo"><img src="${ctxName}/resource/zone/team/emblem/emblem-icnUtd-sampel.png"/>인천유나이티드</a></li>
 			<li id= elep><a href="${ctxName}/zone/team/teamInfo"><img src="../images/elep.png"/>전자랜드</a></li>
 			<li id= shinHan><a href="${ctxName}/zone/team/teamInfo"><img src="../images/shinHan.png"/>신한은행</a></li>
 			<li id= jumbo><a href="${ctxName}/zone/team/teamInfo"><img src="../images/jumbo.png"/>대한항공</a></li>

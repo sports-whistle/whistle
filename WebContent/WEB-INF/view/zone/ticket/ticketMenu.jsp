@@ -34,24 +34,21 @@ text-align:center;
 	function init(){
 		var team = javaToJs();
 		changeBodyColor(team.colorRgb);
-		changeSeatsInfoImg(team.seatsInfoUrl);
-	}
-	
-	function changeBodyColor(color){
-		document.getElementById("background").style.backgroundColor=color;
 		
 	}
 	
-	function changeSeatsInfoImg(imgUrl){
-		var imgs = document.getElementById("content").getElementsByTagName("img");
-		imgs[0].src=imgUrl;
+	function changeBodyColor(color){
+		document.getElementById("body").style.backgroundColor=color;
+		
 	}
+	
+
 	
 	function javaToJs(){
 		
 		var team = {
 				colorRgb:"#"+"${team.colorRgb}",
-				seatsInfoUrl:"${ctxName}"+"${team.seatsInfoUrl}"
+				
 		}
 		return team;
 	}
@@ -62,7 +59,7 @@ text-align:center;
 
 </script>
 
-<body>
+<body id="body">
 	<header>
 		<h1><img src="${ctxName }/resource/images/whistle-logo.png"/></h1>
 	</header>
@@ -70,9 +67,9 @@ text-align:center;
 		<nav>
 		<h1 class="hidden">티켓정보</h1>
 			<ul>
-				<li id="price"><a href="ticketPrice"/><img src="${ctxName }/resource/images/zone/team/ticket/price.png"></li>
-				<li id="seats-info"><a href="stadiumSeatsInfo"/><img src="${ctxName }/resource/images/zone/team/ticket/seatsInfo.png"></li>
-				<li id="reservation"><a href="ticketLink"/><img src="${ctxName }/resource/images/zone/team/ticket/reservation.png"></li>
+				<li id="price"><a href="ticketPrice?teamId=${team.teamId }"/><img src="${ctxName }/resource/images/zone/team/ticket/price.png"></li>
+				<li id="seats-info"><a href="stadiumSeatsInfo?teamId=${team.teamId }"/><img src="${ctxName }/resource/images/zone/team/ticket/seatsInfo.png"></li>
+				<li id="reservation"><a href="ticketLink?teamId=${team.teamId }"/><img src="${ctxName }/resource/images/zone/team/ticket/reservation.png"></li>
 			</ul>
 		</nav>
 	</main>
