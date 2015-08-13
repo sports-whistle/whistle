@@ -100,7 +100,7 @@ link-menu li a{
 		<section>
 		<h1 class="hidden">티켓구입처</h1>
 		<nav id ="link-menu">
-		<h1 class="hidden">링크</h1>
+		<h1 class="hidden">링크abcd</h1>
 		<ul id="links">
 		<li><a href=http://www.incheonutd.com>http://www.incheonutd.com</a></li>
 		<li><a href=http://www.interpark.com>http://www.interpark.com</a></li>
