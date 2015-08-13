@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/zone/zoneTeams/")
+@RequestMapping("/zone/team/")
 public class TeamController 
 {
    @RequestMapping("teamInfo")
@@ -15,6 +15,6 @@ public class TeamController
    @RequestMapping("teams")
    public String teams()
    {
-      return "/WEB-INF/view/zone/team/teamTicketStadiumNewsInfo.jsp"; 
+      return "/WEB-INF/view/zone/team/teams.jsp"; 
    }
 }

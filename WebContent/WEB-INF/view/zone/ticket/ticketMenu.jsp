@@ -8,42 +8,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<style type="text/css">
+<style>
 body{
-	background:black;
+	background:#1E3269;
 }
 .hidden{
 	display:none;
 }
-A:link{
-text-decoration:none
+#price{
+	padding-top: 25px;
 }
-A:visited{
-text-decoration:none
+#seats-info{
+	padding-top: 20px;
 }
-
-
-#links li{
-	color: white;
-	font-weight:bold;
-	font-size: 50px;
-	text-align:center;
-	padding-top: 150px;
+#reservation{
+	padding-top: 20px;
 }
-
 ul{
 list-style: none;
 text-align:center;
 }
-link-menu li: first-child{
-	color:white;
-}
-
-link-menu li a{
-	color: white;
-}
 </style>
-
 <script>
 
 	function init(){
@@ -66,8 +51,7 @@ link-menu li a{
 		
 		var team = {
 				colorRgb:"#"+"${team.colorRgb}",
-				seatsInfoUrl:"${ctxName}"+"${team.seatsInfoUrl}",
-				
+				seatsInfoUrl:"${ctxName}"+"${team.seatsInfoUrl}"
 		}
 		return team;
 	}
@@ -80,19 +64,17 @@ link-menu li a{
 
 <body>
 	<header>
-	<h1><a href=""/><img src="${ctxName }/resource/images/whistle-logo.png"/></h1>
+		<h1><img src="${ctxName }/resource/images/whistle-logo.png"/></h1>
 	</header>
 	<main>
-		<section>
-		<h1 class="hidden">티켓구입처</h1>
-		<nav id ="link-menu">
-		<h1 class="hidden">링크</h1>
-		<ul id="links">
-		<li><a href=http://www.incheonutd.com>http://www.incheonutd.com</a></li>
-		<li><a href=http://www.interpark.com>http://www.interpark.com</a></li>
-		</ul>
+		<nav>
+		<h1 class="hidden">티켓정보</h1>
+			<ul>
+				<li id="price"><a href="ticketPrice"/><img src="${ctxName }/resource/images/zone/team/ticket/price.png"></li>
+				<li id="seats-info"><a href="stadiumSeatsInfo"/><img src="${ctxName }/resource/images/zone/team/ticket/seatsInfo.png"></li>
+				<li id="reservation"><a href="ticketLink"/><img src="${ctxName }/resource/images/zone/team/ticket/reservation.png"></li>
+			</ul>
 		</nav>
-		</section>
 	</main>
 </body>
 </html>
