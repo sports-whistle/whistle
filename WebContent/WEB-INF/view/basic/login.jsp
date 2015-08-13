@@ -223,6 +223,7 @@
 			<section id="login-section">
 				<h1 class="hidden">login-body</h1>		
 					<p id="login-label">login</p>
+					
 					<form action="${ctxName}/j_spring_security_check" method="post" id="login-form">
 						<div id="input-set">
 						<label id="label-id">ID</label><input id="input-id" type="text" name="j_username"/>
@@ -238,11 +239,9 @@
 			
 			
 			<section id="login-page-description">
-				
 				<h1 class="hidden">attractive</h1>
 					<p id="description1">Which team do you want?</p>
 					<p id="description2">Together, Let's make a sporting world</p>
-				
 			</section>
 		
 		</div>
