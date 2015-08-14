@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- 
+	public List<CheerSong> getCheerSongsByTeamId();
+	public List<CheerSong> getCHeerSongsByOneColumn(String column, String keyword);
+	public CheerSong getCheerSong(String name);
+	
+	public int addCheerSong(CheerSong newCheerSong);
+	public int delCheerSong(String name);
+	public int updateCheerSong(CheerSong updatedCheerSong); -->
+	
+
+	<mapper namespace = "com.whistle.web.dao.CheerSongDao">
+	
+	
+	<select id="getCheerSongsByTeamId" parameterType="string" resultType="com.whistle.web.vo.CheerSong">
+		SELECT * FROM CheerSongs WHERE TeamId=#{teamId}
+	</select>
+	
+	<select id="getCheerSongsByOneColumn" resultType="com.whistle.web.vo.CheerSong">
+		SELECT * FROM CheerSongs WHERE ${param1}=#{param2}
+	</select>
+	
+	<select id="getCheerSong" resultType="com.whistle.web.vo.CheerSong">
+		SELECT * FROM CheerSongs WHERE Name = #{name}
+	</select>
+	
+	<insert id="addCheerSong" parameterType="com.whistle.web.vo.CheerSong">
+		INSERT INTO CheerSongs(
+			Name,
+			Mp3Url,
+			TeamId
+		)
+		VALUES(
+			#{name},
+			#{mp3Url},
+			#{teamId}
+		);
+	</insert>
+	
+	<delete id="delCheerSong" parameterType="string">
+		DELETE CheerSong WHERE Name = #{name}
+	</delete>
+	
+	<update id="updateCheerSong" parameterType="com.whistle.web.vo.CheerSong">
+		
+		UPDATE CheerSongs Set
+			Name = #{name},
+			Mp3Url = #{mp3Url},
+			TeamId = #{teamId}
+		WHERE TeamId = #{teamId}
+	</update>
+	
+	
+</mapper>
+	
