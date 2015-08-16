@@ -14,172 +14,253 @@
 <script type="text/javascript">
 /* 응원팀 엠블런 선택 기능 */
 
+index = 0; 
+
 window.addEventListener("load", function () {
 	
 	btnNext = document.getElementById("next");
 	btnAfterward = document.getElementById("afterward");
-	emblemImgList = document.getElementById("img-emblemList");
+	soccerEmblemImgList = document.getElementById("img-emblemList");
 	
 	btnNext.onclick = btnNextClick;   
 	btnAfterward.onclick = btnAfterWardClick;
 	
 	ctxName = "${ctxName}";
-	index = -1; 
 	
 	// 스포츠 종목 선택 
 	cbSportsKind = document.getElementById("cbo-sportsKind");
 	
-	// 종목별 url 담을 변수 선언 
-	soccerEmblemUrlList = [];
-	baseBallEmblemUrlList = [];
-	basketBallEmblemUrlList = [];
-	volleyBallEmblemUrlList = [];
 	
-	// 각 종목별로 url 나누기 
-	<c:forEach items="${emblemUrlInTeams}" var="team">
+	// 선택된 종목 조건으로 엠블럼 이미지 가져오기 
+	if(cbSportsKind.value =="축구")
+	{
+		// 축구 엠블럼만 추출
+		var soccerEmblemUrlList = [];
+
+		<c:forEach items="${emblemUrlInTeams}" var="team">
+	 		<c:if test='${team.sportsKind eq "Soccer"}'>
+ 				soccerEmblemUrlList.push("${team.emblemUrl}"); 
+			 	for(var i=0; i<soccerEmblemUrlList.length; i++)
+		 		{
+			 		soccerEmblemImgList.src = ctxName + emblemUrlList[i];
+		 		}
+			 	var soccerTeamEmblem = []; 
+				 	
+					/* alert("${team.sportsKind}"); */
+				/* emblemUrlList.push("${team.sportsKind}"); */
+			 </c:if> 
+		</c:forEach>
+		
+			
+		/* for ( var i = 0; i < list2.length; i++) {
+		    alert(list2[i]);
+		}
+ 		
+		*/
+		// 축구 엠블럼 이미지 가져오기 
+		/* 	if(index < 10)
+		{
+			emblems[1].src = ctxName + teams[++index];
+		}
+		else
+		{
+			index = 0; 
+		} */
+	}
+	else if(cbSportsKind.value =="야구")
+	{
+		
+		<c:forEach items="${emblemUrlInTeams}" var="team">
+	 		<c:if test='${team.sportsKind eq "BaseBall"}'>
+				 emblemUrlList.push("${team.emblemUrl}"); 
+				
+				 for(var i=0; i<emblemUrlList.length; i++)
+					 emblemList.src = emblemUrlList[i];
+					/* alert("${team.sportsKind}"); */
+				/* emblemUrlList.push("${team.sportsKind}"); */
+			 </c:if> 
+		</c:forEach>
+		
+		// 야구 엠블럼 이미지 가져오기 
+		/* 	if(index < 10)
+		{
+			emblems[1].src = ctxName + teams[++index];
+		}
+		else
+		{
+			index = 0; 
+		} */
+	}
+	else if(cbSportsKind.value =="농구")
+	{
+		
+		<c:forEach items="${emblemUrlInTeams}" var="team">
+	 		<c:if test='${team.sportsKind eq "BasketBall"}'>
+				 emblemUrlList.push("${team.emblemUrl}"); 
+					/* alert("${team.sportsKind}"); */
+				/* emblemUrlList.push("${team.sportsKind}"); */
+			 </c:if> 
+		</c:forEach>
+		
+		// 농구 엠블럼 이미지 가져오기 
+		/* 	if(index < 10)
+		{
+			emblems[1].src = ctxName + teams[++index];
+		}
+		else
+		{
+			index = 0; 
+		} */
+	}
+	else
+	{
+		
+		<c:forEach items="${emblemUrlInTeams}" var="team">
+	 		<c:if test='${team.sportsKind eq "VolleyBall"}'>
+				 emblemUrlList.push("${team.emblemUrl}"); 
+					/* alert("${team.sportsKind}"); */
+				/* emblemUrlList.push("${team.sportsKind}"); */
+			 </c:if> 
+		</c:forEach>
+		// 배구 엠블럼 이미지 가져오기 
+		/* 	if(index < 10)
+		{
+			emblems[1].src = ctxName + teams[++index];
+		}
+		else
+		{
+			index = 0; 
+		} */
+	}
 	
- 		<c:if test='${team.sportsKind eq "Soccer"}'>
-			soccerEmblemUrlList.push("${team.emblemUrl}"); 
-		</c:if> 
-		 
-		<c:if test='${team.sportsKind eq "BaseBall"}'>
- 			baseBallEmblemUrlList.push("${team.emblemUrl}"); 
-		</c:if> 
-		 
-		<c:if test='${team.sportsKind eq "BasketBall"}'>
- 			basketBallEmblemUrlList.push("${team.emblemUrl}"); 
-	 	</c:if> 
-		 
-		<c:if test='${team.sportsKind eq "VolleyBall"}'>
-			volleyBallEmblemUrlList.push("${team.emblemUrl}"); 
-   	 	</c:if> 
-   	 	
-	</c:forEach>
-	
+
 });
 
 
 function btnNextClick()
 {
+	//cbSportsKind = document.getElementById("cbo-sportsKind");
+
+	
+	/* alert(cbImage.length); */
+	
+	
 	if(cbSportsKind.value =="축구")
 	{
-		index++;
+		// 축구 엠블럼만 추출
+		var soccerEmblemUrlList = [];
+
+		<c:forEach items="${emblemUrlInTeams}" var="team">
+	 		<c:if test='${team.sportsKind eq "Soccer"}'>
+ 				soccerEmblemUrlList.push("${team.emblemUrl}"); 
+			 	for(var i=0; i<soccerEmblemUrlList.length; i++)
+		 		{
+			 		soccerEmblemImgList.src = ctxName + emblemUrlList[i];
+		 		}
+			 	var soccerTeamEmblem = []; 
+				 	
+					/* alert("${team.sportsKind}"); */
+				/* emblemUrlList.push("${team.sportsKind}"); */
+			 </c:if> 
+		</c:forEach>
+		
+			
+		/* for ( var i = 0; i < list2.length; i++) {
+		    alert(list2[i]);
+		}
+ 		
+		*/
 		// 축구 엠블럼 이미지 가져오기 
-		if(index < soccerEmblemUrlList.length)
+		/* 	if(index < 10)
 		{
-			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
+			emblems[1].src = ctxName + teams[++index];
 		}
 		else
 		{
 			index = 0; 
-			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
-		} 
+		} */
 	}
 	else if(cbSportsKind.value =="야구")
 	{
-		index++;
+		
+		<c:forEach items="${emblemUrlInTeams}" var="team">
+	 		<c:if test='${team.sportsKind eq "BaseBall"}'>
+				 emblemUrlList.push("${team.emblemUrl}"); 
+				
+				 for(var i=0; i<emblemUrlList.length; i++)
+					 emblemList.src = emblemUrlList[i];
+					/* alert("${team.sportsKind}"); */
+				/* emblemUrlList.push("${team.sportsKind}"); */
+			 </c:if> 
+		</c:forEach>
+		
 		// 야구 엠블럼 이미지 가져오기 
-		if(index < baseBallEmblemUrlList.length)
+		/* 	if(index < 10)
 		{
-			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
+			emblems[1].src = ctxName + teams[++index];
 		}
 		else
 		{
 			index = 0; 
-			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
-		} 
+		} */
 	}
 	else if(cbSportsKind.value =="농구")
 	{
-		index++;
+		
+		<c:forEach items="${emblemUrlInTeams}" var="team">
+	 		<c:if test='${team.sportsKind eq "BasketBall"}'>
+				 emblemUrlList.push("${team.emblemUrl}"); 
+					/* alert("${team.sportsKind}"); */
+				/* emblemUrlList.push("${team.sportsKind}"); */
+			 </c:if> 
+		</c:forEach>
+		
 		// 농구 엠블럼 이미지 가져오기 
-		if(index < basketBallEmblemUrlList.length)
+		/* 	if(index < 10)
 		{
-			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
+			emblems[1].src = ctxName + teams[++index];
 		}
 		else
 		{
 			index = 0; 
-			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
-		} 
+		} */
 	}
 	else
 	{
-		index++;
+		
+		<c:forEach items="${emblemUrlInTeams}" var="team">
+	 		<c:if test='${team.sportsKind eq "VolleyBall"}'>
+				 emblemUrlList.push("${team.emblemUrl}"); 
+					/* alert("${team.sportsKind}"); */
+				/* emblemUrlList.push("${team.sportsKind}"); */
+			 </c:if> 
+		</c:forEach>
 		// 배구 엠블럼 이미지 가져오기 
-		if(index < volleyBallEmblemUrlList.length)
+		/* 	if(index < 10)
 		{
-			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
+			emblems[1].src = ctxName + teams[++index];
 		}
 		else
 		{
 			index = 0; 
-			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
-		} 
+		} */
 	}
+
 }
 
 
 function btnAfterWardClick()
 {
-	if(cbSportsKind.value =="축구")
+	/* if(index > 0)
 	{
-		--index;
-		// 축구 엠블럼 이미지 가져오기 
-		if(index > -1)
-		{
-			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
-			
-		}
-		else
-		{
-			index = soccerEmblemUrlList.length - 1; 
-			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
-		} 
-	}
-	else if(cbSportsKind.value =="야구")
-	{
-		--index;
-		// 야구 엠블럼 이미지 가져오기 
-		if(index > -1)
-		{
-			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
-		}
-		else
-		{
-			index = baseBallEmblemUrlList.length - 1; 
-			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
-		} 
-	}
-	else if(cbSportsKind.value =="농구")
-	{
-		--index;
-		// 농구 엠블럼 이미지 가져오기 
-		if(index > -1)
-		{
-			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
-		}
-		else
-		{
-			index = basketBallEmblemUrlList.length - 1; 
-			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
-		} 
+		emblems[1].src = ctxName + teams[--index];
 	}
 	else
 	{
-		--index;
-		// 배구 엠블럼 이미지 가져오기 
-		if(index > -1)
-		{
-			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
-		}
-		else
-		{
-			index = volleyBallEmblemUrlList.length - 1; 
-			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
-		} 
-	}
+		index = 9; 
+	} */
 }
+
 
 </script>
 

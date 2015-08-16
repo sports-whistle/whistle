@@ -133,4 +133,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	
+	<select id="getAllTeamsEmblemUrl" resultType="com.whistle.web.vo.Team">
+	 	SELECT SportsKind,  EmblemUrl FROM Teams
+	</select> 
+	
 </mapper>

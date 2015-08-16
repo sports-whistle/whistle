@@ -27,11 +27,7 @@ public class RegMemberController {
 	public String regMember(Model model){
 		
 		List<Team> emblemUrlInTeams = null; 
-		emblemUrlInTeams  = teamDao.getTeamsEmblemUrl("Soccer");
-		emblemUrlInTeams  = teamDao.getTeamsEmblemUrl("Baseball");
-		/*emblemUrlInTeams  = teamDao.getTeamsEmblemUrl("Basketball");
-		emblemUrlInTeams  = teamDao.getTeamsEmblemUrl("Vollyball");*/
-
+		emblemUrlInTeams  = teamDao.getAllTeamsEmblemUrl();
 		model.addAttribute("emblemUrlInTeams",emblemUrlInTeams);
 		
 		return "/WEB-INF/view/basic/regMember.jsp";
