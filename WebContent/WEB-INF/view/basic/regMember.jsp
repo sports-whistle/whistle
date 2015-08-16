@@ -12,7 +12,8 @@
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 
 <script type="text/javascript">
-/* 응원팀 엠블런 선택 기능 */
+
+//-------------->>>> 응원팀 선택 기능 추가 
 
 window.addEventListener("load", function () {
 	
@@ -180,7 +181,7 @@ function btnAfterWardClick()
 		} 
 	}
 }
-
+// <<<<--------------  응원팀 선택 기능 추가 
 </script>
 
 
