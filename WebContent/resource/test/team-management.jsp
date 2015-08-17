@@ -35,7 +35,8 @@ window.addEventListener("load", function name() {
 });
 
 
-function sportsKindOnclick() {
+function sportsKindOnclick() 
+{
 	
 	if(cboSportsKind.value == "Soccer")
 	{
