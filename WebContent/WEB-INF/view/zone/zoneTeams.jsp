@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<c:set var="ctxName" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,9 +50,9 @@
 
 <body id = "pinkbody">
 	<header>
-		<h1><img src="../images/whistleHeader.png"  alt="whistlelogo"></h1>
+		<h1><img src="${ctxName}/resource/images/index/whistle.png" alt="logo"></h1>
 	</header>
-	<main>
+	
 	
 	<section>
 	<h1>메인화면</h1>
@@ -58,17 +60,17 @@
 	<nav>
 	<h1>인천팀링크</h1>
 		<ul>
-			<li id= inUtd><a href="${ctxName}/zone/team/teamInfo"><img src="../images/inUtd.png"/>인천유나이티드</a></li>
-			<li id= elep><a href="${ctxName}/zone/team/teamInfo"><img src="../images/elep.png"/>전자랜드</a></li>
-			<li id= shinHan><a href="${ctxName}/zone/team/teamInfo"><img src="../images/shinHan.png"/>신한은행</a></li>
-			<li id= jumbo><a href="${ctxName}/zone/team/teamInfo"><img src="../images/jumbo.png"/>대한항공</a></li>
-			<li id= pinS><a href="${ctxName}/zone/team/teamInfo"><img src="../images/pinS.png"/>흥국생명</a></li>
-			<li id= incheonSk><a href="${ctxName}/zone/team/teamInfo"><img src="../images/incheonSk.png"/>와이번스</a></li>
+			<li id= inUtd><a href="${ctxName}/zone/zoneTeams/teamMenu"><img src="../images/inUtd.png"/>인천유나이티드</a></li>
+			<li id= elep><a href="${ctxName}/zone/zoneTeams/teamMenu"><img src="../images/elep.png"/>전자랜드</a></li>
+			<li id= shinHan><a href="${ctxName}/zone/zoneTeams/teamMenu"><img src="../images/shinHan.png"/>신한은행</a></li>
+			<li id= jumbo><a href="${ctxName}/zone/zoneTeams/teamMenu"><img src="../images/jumbo.png"/>대한항공</a></li>
+			<li id= pinS><a href="${ctxName}/zone/zoneTeams/teamMenu"><img src="../images/pinS.png"/>흥국생명</a></li>
+			<li id= incheonSk><a href="${ctxName}/zone/zoneTeams/teamMenu"><img src="../images/incheonSk.png"/>와이번스</a></li>
 		</ul>
 	</nav>
 	</section>
 	
 	
-	</main>
+
 </body>
 </html>
