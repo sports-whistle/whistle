@@ -143,7 +143,7 @@ function volleyBallTeamOnclick(){
 								<label>팀 색</label>
 								<div style="width:20px; height:20px; background:#${team.colorRgb };"></div>
 								<p>${team.colorRgb }</p>
-	
+								<p>test</p>
 							</li>
 							
 							<li><label>뉴스 Url</label><p>${team.newsUrl }</p></li>
