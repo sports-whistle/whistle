@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<c:set var="ctxName" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,28 +73,28 @@
 				<nav id="teamS">
 				<h1>team information</h1>
 				<ul>
-					<li><img src="../images/teamSelect.png" alt="teamS"></li>
+					<li><a href="${ctxName}/zone/team/teamInfo"><img src="../images/teamSelect.png" alt="teamS"></a></li>
 				</ul>		
 				</nav>
 			
 			<nav id="matchInf">
 			<h1>stadium information</h1>
 				<ul>
-					<li><img src="../images/matchInf.png" alt="matchInf"></li>
+					<li><a href="${ctxName}/zone/stadium/stadiumInfo"><img src="../images/matchInf.png" alt="matchInf"></a></li>
 				</ul>		
 			</nav>
 			
 			<nav id="ticket">
 			<h1>ticket information</h1>
 				<ul>
-					<li><img src="../images/ticket.png" alt="ticket"></li>
+					<li><a href="${ctxName}/zone/ticket/ticketInfo"><img src="../images/ticket.png" alt="ticket"></a></li>
 				</ul>		
 			</nav>
 			
 			<nav id="news">
 			<h1>news information</h1>
 				<ul>
-					<li><img src="../images/news.png" alt="news"></li>
+					<li><a href="${ctxName}/zone/news/teamNewsInfo"><img src="../images/news.png" alt="news"></a></li>
 				</ul>		
 			</nav>
 		

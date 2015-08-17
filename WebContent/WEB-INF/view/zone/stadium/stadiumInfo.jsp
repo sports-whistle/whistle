@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<c:set var="ctxName" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,18 +12,21 @@
 	position: relative;
 	margin: auto;
 	bottom: 130px;
+	float:left;
 }
 #wara{
 	position: relative;
 	margin: auto;
 	left: 600px;
 	bottom: 530px;
+	float:left;
 }
 #motel{
 	position: relative;
 	margin: auto;
 	left: 600px;
 	bottom: 430px;
+	float:left;
 }
 #month{
 
@@ -37,9 +42,9 @@
 	<nav>
 	<h1>팀지역정보</h1>
 	<ul>
-		<li id= si><img src="../images/stadiumInside.png"></li>
-		<li id= wara><img src="../images/warawara.png"></li>
-		<li id= motel><img src="../images/motel.png"></li>
+		<li id= si><a href="${ctxName}/zone/stadium/stadiumSeatInfo"><img src="../images/stadiumInside.png" alt="stadiuminside"></a></li>
+		<li id= wara><a href="${ctxName}/zone/stadium/stadiumVisitInfo"><img src="../images/warawara.png" alt="roughmap"></a></li>
+		<li id= motel><a href="${ctxName}/zone/stadium/famousFoodAndSleepInfo"><img src="../images/motel.png" alt="famousFoodAndSleep"></a></li>
 	</ul>
 	</nav>
 	</section>
