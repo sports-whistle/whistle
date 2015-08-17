@@ -77,24 +77,24 @@ function soccerTeamOnclick(){
 	var soccerTeamId = cboSoccer.value; 
 	
 	<c:set var="soccerTeamId" value="d"/>
-	alert("${soccerTeamId}");
+	
 }
 
 function baseBallTeamOnclick(){
-	S
-	alert("야구");
+	
+	//alert("야구");
 	
 }
 
 function basketBallTeamOnclick(){
 	
-	alert("농구");
+	//alert("농구");
 	
 }
 
 function volleyBallTeamOnclick(){
 	
-	alert("배구");
+	//alert("배구");
 	
 }
 
@@ -125,7 +125,6 @@ function volleyBallTeamOnclick(){
 		</section>
 	</header>
 	
-	
 	<main>
 		<section>
 			<h1>main</h1>
@@ -155,7 +154,7 @@ function volleyBallTeamOnclick(){
 							<li>
 								<label>엠블렘</label>
 								<p>${team.emblemUrl }</p>
-								<img src="${ctxName }${team.emblemUrl }"/>
+								<img src="${ctxName}${team.emblemUrl }"/>
 							</li>
 							<li>
 								<label>슬로건</label>
@@ -227,27 +226,27 @@ function volleyBallTeamOnclick(){
 						</select>
 						
 						<select id="cbo-soccer">
-								<option value="1">포항</option>
-								<option value="2">광주</option>
-								<option value="3">수원</option>
+							<option value="1">포항</option>
+							<option value="2">광주</option>
+							<option value="3">수원</option>
 						</select>
 						
 						<select id="cbo-baseBall">
-								<option value="b1">기아타이거즈</option>
-								<option value="b2">한화이글스</option>
-								<option value="b3">넥센히어로즈</option>
+							<option value="b1">기아타이거즈</option>
+							<option value="b2">한화이글스</option>
+							<option value="b3">넥센히어로즈</option>
 						</select>
 						
 						<select id="cbo-basketBall">
-								<option value="1">농구1</option>
-								<option value="2">농구2</option>
-								<option value="3">농구3</option>
+							<option value="1">농구1</option>
+							<option value="2">농구2</option>
+							<option value="3">농구3</option>
 						</select>
 						
 						<select id="cbo-volleyBall">
-								<option value="1">배구1</option>
-								<option value="2">배구2</option>
-								<option value="3">배구3</option>
+							<option value="1">배구1</option>
+							<option value="2">배구2</option>
+							<option value="3">배구3</option>
 						</select>
 					</div>
 					
@@ -272,6 +271,7 @@ function volleyBallTeamOnclick(){
 						<label>팀 ID</label><input type="text" name="teamId"/>
 						<input type="submit" name="btn" value="delete" />
 					</form>
+					
 			</section>
 			
 			

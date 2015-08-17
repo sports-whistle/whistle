@@ -64,8 +64,6 @@ public class TeamController
 		   
 		   return "/WEB-INF/view/zone/team/teamsOfRegion.jsp"; 
 	   }
-	   
-	   
 
    }
    

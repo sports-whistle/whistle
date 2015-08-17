@@ -68,10 +68,6 @@
 				
 			</ul>
 		</article>
-		
-		
-		
-
 		</section>
 	</main>
 </body>
