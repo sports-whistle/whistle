@@ -72,7 +72,6 @@ function sportsKindOnclick()
 }
 
 
-
 function soccerTeamOnclick(){
 	
 	var soccerTeamId = cboSoccer.value; 

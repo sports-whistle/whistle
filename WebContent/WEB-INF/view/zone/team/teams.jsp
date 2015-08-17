@@ -63,7 +63,6 @@
 	<nav>
 	<h1>인천팀링크</h1>
 		<ul>
-			
 			<li id= inUtd><a href="${ctxName}/zone/team/teamInfo"><img src="${ctxName}/resource/zone/team/emblem/emblem-icnUtd-sampel.png"/>인천유나이티드</a></li>
 			<li id= elep><a href="${ctxName}/zone/team/teamInfo"><img src="../images/elep.png"/>전자랜드</a></li>
 			<li id= shinHan><a href="${ctxName}/zone/team/teamInfo"><img src="../images/shinHan.png"/>신한은행</a></li>
