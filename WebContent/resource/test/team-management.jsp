@@ -98,8 +98,6 @@ function volleyBallTeamOnclick(){
 	
 }
 
-
-
 </script>
 
 </head>

@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=refs/remotes/origin/master
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/view/aboutUs/aboutUs.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/fanzone/dic/dicBaseball.jsp=UTF-8
@@ -15,33 +17,12 @@ encoding//WebContent/WEB-INF/view/zone/stadium/stadiumSeatInfo.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/zone/stadium/stadiumVisitInfo.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/zone/team/teamInfo.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/zone/team/teamTicketStadiumNewsInfo.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/zone/teamMenu.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/zone/ticket/ticketInfo.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/zone/ticket/ticketLink.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/zone/ticket/ticketMenu.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/zone/ticket/ticketPrice.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/zone/zoneMain.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/zone/zoneTeams.jsp=UTF-8
 encoding//WebContent/resource/dj/prc/FanZone-Main2.jsp=UTF-8
-=======
-eclipse.preferences.version=1
-encoding//WebContent/WEB-INF/view/aboutUs/aboutUs.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/fanzone/dic/dicBaseball.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/fanzone/dic/dicBasketball.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/fanzone/dic/dicMain.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/fanzone/dic/dicSoccer.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/fanzone/dic/dicVolleyball.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/fanzone/dic/whiteboard.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/fanzone/fanPhotoVideo/fanPhotoVideoUpload.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/news/teamNewsInfo.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/stadium/famousFoodAndSleepInfo.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/stadium/stadiumInfo.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/stadium/stadiumSeatInfo.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/stadium/stadiumVisitInfo.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/team/teamInfo.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/teamMenu.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/ticket/ticketInfo.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/ticket/ticketLink.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/ticket/ticketPrice.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/zoneMain.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/zone/zoneTeams.jsp=UTF-8
-encoding//WebContent/resource/dj/prc/FanZone-Main2.jsp=UTF-8
->>>>>>> refs/remotes/origin/master
+encoding//WebContent/resource/test/NewFile.jsp=UTF-8
