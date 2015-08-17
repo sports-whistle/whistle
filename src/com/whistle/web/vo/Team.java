@@ -149,6 +149,11 @@ public class Team {
 		this.guideUrl = guideUrl;
 	}
 
+
+	
+
+	
+
 	public String getGuideInsideUrl() {
 		return guideInsideUrl;
 	}

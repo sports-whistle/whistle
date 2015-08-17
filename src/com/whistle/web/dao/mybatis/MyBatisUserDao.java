@@ -49,7 +49,7 @@ public class MyBatisUserDao implements UserDao{
 	}
 
 	@Override
-	public User getUserByUid(int uid) {
+	public User getUserByUid(String uid) {
 		User User = null;
 		//SqlSession session = ssf.openSession();
 		UserDao umapper = session.getMapper(UserDao.class);
@@ -83,21 +83,13 @@ public class MyBatisUserDao implements UserDao{
 	}
 
 	@Override
-	public int regUser(User newUser) {
+	public int regUser(User newUser)
+	{
 		int result = 0;
 		
-		//SqlSession session = ssf.openSession();
 		UserDao amapper = session.getMapper(UserDao.class);
-		
-		try{
-			result = amapper.regUser(newUser);
+		result = amapper.regUser(newUser);
 			
-			session.commit();
-		}finally{
-			session.close();
-		}
-		
-		
 		return result;
 	}
 

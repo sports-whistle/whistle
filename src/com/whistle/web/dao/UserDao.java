@@ -8,7 +8,7 @@ public interface UserDao {
 	//public List<User> getUsersByColumn(String column, String value);
 	public User getUserByName(String Name);
 	public User getUserByEmail(String email);
-	public User getUserByUid(int uid);
+	public User getUserByUid(String uid);
 	
 	
 	public List<User> getUsers();

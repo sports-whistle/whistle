@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctxName" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,20 +23,14 @@ text-decoration:none
 }
 
 
-#inch{
+#links li{
 	color: white;
 	font-weight:bold;
 	font-size: 50px;
 	text-align:center;
 	padding-top: 150px;
 }
-#inter{
-	color: white;
-	font-weight:bold;
-	font-size: 50px;
-	text-align:center;
-	padding-top: 100px;
-}
+
 ul{
 list-style: none;
 text-align:center;
@@ -47,18 +43,46 @@ link-menu li a{
 	color: white;
 }
 </style>
-<body>
+
+<script>
+
+ 	function init(){
+		var team = jsTeam();
+		
+		changeBodyColor(team.colorRgb);
+	}
+	
+	function changeBodyColor(color){
+		document.getElementById("body").style.backgroundColor=color;
+		
+	}
+		function jsTeam(){
+		
+		var team = {
+				colorRgb:"#"+"${team.colorRgb}",
+		};
+		return team;
+	}
+	
+	
+	addEventListener("load",init); 
+
+</script>
+
+<body id="body">
 	<header>
-	<h1><a href=""/><img src="../images/Whistle logo.png"/></h1>
+	<h1><a href=""/><img src="${ctxName }/resource/images/whistle-logo.png"/></h1>
 	</header>
 	<main>
 		<section>
 		<h1 class="hidden">티켓구입처</h1>
 		<nav id ="link-menu">
-		<h1 class="hidden">링크</h1>
-		<ul>
-		<li id="inch"><a href=http://www.incheonutd.com>http://www.incheonutd.com</a></li>
-		<li id="inter"><a href=http://www.interpark.com>http://www.interpark.com</a></li>
+		<h1 class="hidden">링크abcd</h1>
+		<ul id="links">
+		
+			<c:forEach var="site" items="${ticketSites }">
+				<li><a href=${site.siteUrl }>${site.cover }</a></li>
+			</c:forEach>
 		</ul>
 		</nav>
 		</section>

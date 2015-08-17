@@ -13,8 +13,8 @@ index = 0;
 
 window.addEventListener("load", function () {
 	
-	 btnNext = document.getElementById("next");
-	 btnAfterward = document.getElementById("afterward");
+	btnNext = document.getElementById("next");
+	btnAfterward = document.getElementById("afterward");
 	emblems = document.getElementsByTagName("img");
 	
 	btnNext.onclick = btnNextClick;

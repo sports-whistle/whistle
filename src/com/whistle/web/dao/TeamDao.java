@@ -12,6 +12,7 @@ public interface TeamDao {
 
 	//종목별 url 가져오기 
 	public List<Team> getTeamsEmblemUrl(String sportsKind);
+	public List<Team> getAllTeamsEmblemUrl();
 	
 	public int addTeam(Team newTeam);
 	public int updateTeam(Team newTeam);

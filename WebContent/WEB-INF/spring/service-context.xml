@@ -40,8 +40,12 @@
 	<bean id="rateArticleDao" class="com.whistle.web.dao.mybatis.MyBatisRateArticleDao" />
 	<bean id="rateCommentDao" class="com.whistle.web.dao.mybatis.MyBatisRateCommentDao" />
 	
+	<bean id="cheerSongDao" class="com.whistle.web.dao.mybatis.MyBatisCheerSongDao" />
+	<bean id="ticketSiteDao" class="com.whistle.web.dao.mybatis.MyBatisTicketSiteDao" />
+	<bean id="ticketInfoDao" class="com.whistle.web.dao.mybatis.MyBatisTicketInfoDao" />
 	<bean id="teamDao" class="com.whistle.web.dao.mybatis.MyBatisTeamDao" />
 	<bean id="gamesDao" class="com.whistle.web.dao.mybatis.MybatisGamesDao" />
 	<bean id="partiesDao" class="com.whistle.web.dao.mybatis.MybatisPartiesDao" />
+	<bean id="userDao" class="com.whistle.web.dao.mybatis.MyBatisUserDao" />
 
 </beans>

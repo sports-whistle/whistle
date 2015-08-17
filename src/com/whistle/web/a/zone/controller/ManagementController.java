@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.whistle.web.dao.CheerSongDao;
 import com.whistle.web.dao.TeamDao;
+import com.whistle.web.vo.CheerSong;
 import com.whistle.web.vo.Team;
 
 @Controller
@@ -27,9 +29,14 @@ public class ManagementController {
 	@Autowired
 	TeamDao teamDao;
 	
+	@Autowired
+	CheerSongDao cheerSongDao; 
+	
+/*	@Autowired
+	CheerSong cheerSong; */
+	
 	@RequestMapping(value="team-management", method=RequestMethod.GET)
 	public String managementGet(){
-		
 		
 		
 		return "/resource/test/team-management.jsp";
@@ -37,8 +44,7 @@ public class ManagementController {
 	
 	
 	@RequestMapping(value="team-management", method=RequestMethod.POST)
-	public String managementPost(Team newTeam, HttpServletRequest request,
-			Model model){
+	public String managementPost(Team newTeam, HttpServletRequest request, Model model, MultipartFile file){
 		
 		if(request.getParameter("btn").equals("search")){
 			
@@ -46,52 +52,97 @@ public class ManagementController {
 			model.addAttribute("teams", teams);
 			
 			return "/resource/test/team-management.jsp";
-		}else if(request.getParameter("btn").equals("insert-string-data")){
+		}
+		else if(request.getParameter("btn").equals("insert-team-data")){
 			teamDao.addTeam(newTeam);
 			
 			Team team = teamDao.getTeamById(newTeam.getTeamId());
 			List<Team> teams = new ArrayList<Team>();
 			teams.add(team);
-			model.addAttribute("teams", teams);
 			
+		/*	if(!file.isEmpty())
+			{
+				String emblemUrl = this.uploadFileOnServer(request, file, subContext, category);
+				teamDao.updateOneValue(request.getParameter("teamId"), "EmblemUrl", emblemUrl);
+				
+				Team updatedTeam = teamDao.getTeamById(request.getParameter("teamId"));
+				List<Team> teams = new ArrayList<Team>();
+				teams.add(updatedTeam);
+			}*/
+			
+			model.addAttribute("teams", teams);
+
 			return "/resource/test/team-management.jsp";
 		}
-		
-		
 		
 		return "";
 	}
 	
 	
 	@RequestMapping(value="team-management-file", method=RequestMethod.POST)
-	public String managementPostFile(HttpServletRequest request,
-			Model model, MultipartFile file){
-		
-		//if(request.getParameter("btn").equals("insert-emblem-image"))
-			if(request.getParameter("btn").equals("update-emblem-image"))
+	public String managementPostFile(HttpServletRequest request, Model model, MultipartFile file)
+	{
+		if(request.getParameter("btn").equals("update-emblem-image"))
 		{
-				String subContext = "/zone";
-				String category = "/team/emblem";
+			String subContext = "/resource/images/zone";
+			String category = "/team/emblem";
+			
+			if(!file.isEmpty())
+			{
+				String emblemUrl = this.uploadFileOnServer(request, file, subContext, category);
+				teamDao.updateOneValue(request.getParameter("teamId"), "EmblemUrl", emblemUrl);
 				
-				if(!file.isEmpty())
-				{
-					String emblemUrl = this.uploadFileOnServer(request, file, subContext, category);
-					teamDao.updateOneValue(request.getParameter("teamId"), "EmblemUrl", emblemUrl);
-					
-					Team updatedTeam = teamDao.getTeamById(request.getParameter("teamId"));
-					List<Team> teams = new ArrayList<Team>();
-					teams.add(updatedTeam);
-					
-					model.addAttribute("teams", teams);
-					
-					return "/resource/test/team-management.jsp";
-				}
-				else
-				{
-					model.addAttribute("errorMsg","추가된 파일이 없습니다.");
-					return "/resource/test/team-management.jsp";
-				}
+				Team updatedTeam = teamDao.getTeamById(request.getParameter("teamId"));
+				List<Team> teams = new ArrayList<Team>();
+				teams.add(updatedTeam);
+				
+				model.addAttribute("teams", teams);
+				
+				return "/resource/test/team-management.jsp";
+			}
+			else
+			{
+				model.addAttribute("errorMsg","추가된 파일이 없습니다.");
+				return "/resource/test/team-management.jsp";
+			}
 		}
+		//---->>>> 20150816 ryu.add 팀응원가 추가 
+		else if(request.getParameter("btn").equals("update-cheersong-image"))
+		{
+			String subContext = "/resource/images/zone";
+			String category = "/team/cheerSong";
+			
+			if(!file.isEmpty())
+			{
+				String cheerSongUrl= this.uploadFileOnServer(request, file, subContext, category);
+				
+				CheerSong cheerSong  = new CheerSong();
+				
+				cheerSong.setName(file.getName()); //파일이름 추가 
+				cheerSong.setMp3Url(cheerSongUrl);
+/*				cheerSong.setTemaId(temaId);
+				
+				cheerSongDao.addCheerSong();*/
+				
+				Team updatedTeam = teamDao.getTeamById(request.getParameter("teamId"));
+				List<Team> teams = new ArrayList<Team>();
+				teams.add(updatedTeam);
+				
+				model.addAttribute("teams", teams);
+				
+				return "/resource/test/team-management.jsp";
+			}
+			else
+			{
+				model.addAttribute("errorMsg","추가된 파일이 없습니다.");
+				return "/resource/test/team-management.jsp";
+			}
+		}
+		else
+		{
+			
+		}
+		
 		return "";
 	}
 	
@@ -125,8 +176,6 @@ public class ManagementController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}//part.getInputStream();
-		
-		
 		
 		return url+"/"+fname;
 	}

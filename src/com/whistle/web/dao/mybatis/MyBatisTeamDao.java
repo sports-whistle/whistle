@@ -67,8 +67,15 @@ public class MyBatisTeamDao implements TeamDao{
 		TeamDao dao = session.getMapper(TeamDao.class);
 		List<Team> emblemUrlList = dao.getTeamsEmblemUrl(sportsKind);
 		return emblemUrlList;
-
 	}
+	
+	@Override
+	public List<Team> getAllTeamsEmblemUrl() {
+		TeamDao dao = session.getMapper(TeamDao.class);
+		List<Team> emblemUrlList = dao.getAllTeamsEmblemUrl();
+		return emblemUrlList;
+	}
+
 
 	@Override
 	public int updateOneValue(String teamId, String column, String value) {
