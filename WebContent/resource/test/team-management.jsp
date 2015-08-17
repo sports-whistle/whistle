@@ -145,6 +145,10 @@ function volleyBallTeamOnclick(){
 								<p>${team.colorRgb }</p>
 								<p>test</p>
 								<p>test</p>
+								<p>test</p>
+								<p>test</p>
+								<p>test</p>
+								<p>test</p>
 							</li>
 							
 							<li><label>뉴스 Url</label><p>${team.newsUrl }</p></li>
