@@ -276,8 +276,8 @@ article:hover .txt strong { color:#fff;}
 		
 			<li><a href="${ctxName}/main/aboutUs"><i class=""></i>About US</a></li>
 			<li><a href="${ctxName}/zone/main/zoneMain"><i class=""></i>Zone</a></li>
-			<li><a href="${ctxName}/resource/dj/prc/FanZone-Main2.jsp"><i class=""></i>FanZone</a></li>
-			<li><a href="#"><i class=""></i>Freedom</a></li>	
+			<li><a href="${ctxName}/WEB-INF/dj/prc/FanZone-Main2"><i class=""></i>FanZone</a></li>
+			<li><a href="${ctxName}/resource/dj/prc/FanZone-Main2.jsp"><i class=""></i>Freedom</a></li>	
 		</ul>		
 
 		<div class="snsSet">

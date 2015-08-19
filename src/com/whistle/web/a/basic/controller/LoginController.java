@@ -12,20 +12,18 @@ public class LoginController
 	@RequestMapping(value="login", method=RequestMethod.GET)
 	public String login(String a, Model model)
 	{
-		//model.addAttribute("a", a);
-		
 		return "/WEB-INF/view/basic/login.jsp";
 	}
 	
 	@RequestMapping(value="login", method=RequestMethod.POST)
-	public String login(Model model){
-		
+	public String login(Model model)
+	{
 		return  "/WEB-INF/view/basic/login.jsp";
 	}
 	
 	@RequestMapping(value="temp", method=RequestMethod.GET)
-	public String temp(){
-		
+	public String temp()
+	{
 		return "/WEB-INF/view/basic/temp.jsp";
 	}
 }

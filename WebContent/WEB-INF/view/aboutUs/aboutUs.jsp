@@ -31,7 +31,7 @@ article p {font-family: 맑은고딕; font-size: 20px; color:black; font-weight:
 <nav class="logo">
 
 
-<a href="#"><img src="${ctxName}/resource/images/whistle-logo.png" alt="Logo" /></a>
+<a href="${ctxName}/main/index"><img src="${ctxName}/resource/images/whistle-logo.png" alt="Logo" /></a>
 
 </nav>
 

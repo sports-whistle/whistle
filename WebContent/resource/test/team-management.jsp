@@ -252,7 +252,7 @@ function volleyBallTeamOnclick(){
 						<form action="team-management-file" method="post" enctype="multipart/form-data">
 							<ul>
 								<!-- <li><label>팀 ID</label><input type="text" name="teamId"/></li> -->
-								<li><label>응원가 파일</label><input type="file" name="file"/></li>
+								<li><label>응원가 파일</label><input type="file" name="file" /></li>
 							</ul>
 							<input type="submit" name="btn" value="update-cheersong-image"/>
 						</form>

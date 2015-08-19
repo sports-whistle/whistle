@@ -20,26 +20,6 @@ public class IndexController
 				model.addAttribute("authentication", authentication);
 			}
 		}
-	
-		
-		/*switch(authentication)
-		{
-			case "Admin":
-				model.addAttribute("authentication", authentication);
-				break;
-				
-			case "Teacher":
-				model.addAttribute("authentication", authentication);
-				break;
-				
-			case "User":
-				break;
-				
-			default:
-				model.addAttribute("authentication", authentication);
-				break; 
-		
-		}*/
 		return "/WEB-INF/view/index.jsp";
 	}
 }

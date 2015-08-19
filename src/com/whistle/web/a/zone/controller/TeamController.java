@@ -50,21 +50,22 @@ public class TeamController
       return "/WEB-INF/view/zone/team/teams.jsp"; 
    }
    
-   @RequestMapping("teamsOfRegion")
+   // com.whistle.web.a.zone.controller∑Œ ¿Ãµø
+   /*@RequestMapping("teamsOfRegion")
    public String teamsOfRegion(HttpServletRequest request, Model model)
    {
 	   String region = request.getParameter("region");
 	   
-	   if(region!=null){
+	   if(region!=null)
+	   {
 		   List<Team> teams = teamDao.getTeamsWithOneColumn("regionName", region);
 		   model.addAttribute("teams", teams);
 		   
 		   return "/WEB-INF/view/zone/team/teamsOfRegion.jsp";
-	   }else{
-		   
+	   }
+	   else
+	   {
 		   return "/WEB-INF/view/zone/team/teamsOfRegion.jsp"; 
 	   }
-
-   }
-   
+   }*/
 }

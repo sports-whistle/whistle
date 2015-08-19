@@ -38,6 +38,18 @@ public class ManagementController {
 	@RequestMapping(value="team-management", method=RequestMethod.GET)
 	public String managementGet(){
 		
+		System.out.println("management 시작");
+		System.out.println("나와");
+		System.out.println("나와");
+		System.out.println("나와");
+		System.out.println("나와");
+		System.out.println("나와");
+		System.out.println("나와");
+		System.out.println("나와");
+		System.out.println("나와");
+		System.out.println("나와");
+		System.out.println("나와");
+		System.out.println("management 끝");
 		
 		return "/resource/test/team-management.jsp";
 	}
@@ -59,7 +71,7 @@ public class ManagementController {
 			Team team = teamDao.getTeamById(newTeam.getTeamId());
 			List<Team> teams = new ArrayList<Team>();
 			teams.add(team);
-			
+	
 		/*	if(!file.isEmpty())
 			{
 				String emblemUrl = this.uploadFileOnServer(request, file, subContext, category);
@@ -69,6 +81,8 @@ public class ManagementController {
 				List<Team> teams = new ArrayList<Team>();
 				teams.add(updatedTeam);
 			}*/
+			
+
 			
 			model.addAttribute("teams", teams);
 
@@ -111,32 +125,7 @@ public class ManagementController {
 		{
 			String subContext = "/resource/images/zone";
 			String category = "/team/cheerSong";
-			
-			if(!file.isEmpty())
-			{
-				String cheerSongUrl= this.uploadFileOnServer(request, file, subContext, category);
-				
-				CheerSong cheerSong  = new CheerSong();
-				
-				cheerSong.setName(file.getName()); //파일이름 추가 
-				cheerSong.setMp3Url(cheerSongUrl);
-/*				cheerSong.setTemaId(temaId);
-				
-				cheerSongDao.addCheerSong();*/
-				
-				Team updatedTeam = teamDao.getTeamById(request.getParameter("teamId"));
-				List<Team> teams = new ArrayList<Team>();
-				teams.add(updatedTeam);
-				
-				model.addAttribute("teams", teams);
-				
-				return "/resource/test/team-management.jsp";
-			}
-			else
-			{
-				model.addAttribute("errorMsg","추가된 파일이 없습니다.");
-				return "/resource/test/team-management.jsp";
-			}
+
 		}
 		else
 		{

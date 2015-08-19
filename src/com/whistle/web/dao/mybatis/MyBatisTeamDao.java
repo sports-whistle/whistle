@@ -30,8 +30,6 @@ public class MyBatisTeamDao implements TeamDao{
 	@Override
 	public List<Team> getTeamsWithOneColumn(String column, String keyword) {
 		
-		
-		
 		TeamDao teamDao = session.getMapper(TeamDao.class);
 		
 		List<Team> tlist = teamDao.getTeamsWithOneColumn(column, keyword);

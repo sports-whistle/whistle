@@ -22,67 +22,66 @@
 	<div>
 		<dl>
 			<dt>서울</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/SeoulMascot.png"/></a></dd>
+			<%-- <dd><a href="${ctxName}/zone/selectedZone/teamsInZone?seoul=seoul"><img src="${ctxName}/resource/images/zone/SeoulMascot.png"/></a></dd> --%>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=seoul"><img src="${ctxName}/resource/images/zone/SeoulMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>인천</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/InchonMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=incheon"><img src="${ctxName}/resource/images/zone/InchonMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>수원</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/SuwonMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=suwon"><img src="${ctxName}/resource/images/zone/SuwonMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>경기도</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/GyeonggidoMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=gyunggido"><img src="${ctxName}/resource/images/zone/GyeonggidoMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>대전</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/DaejeonMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=daejeon"><img src="${ctxName}/resource/images/zone/DaejeonMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>전주</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/JeanjuMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=jeonju"><img src="${ctxName}/resource/images/zone/JeanjuMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>광주</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/GwangjuMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=gwangju"><img src="${ctxName}/resource/images/zone/GwangjuMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>제주</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/JejuMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=jeju"><img src="${ctxName}/resource/images/zone/JejuMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>강원도</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/kangwondoMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=gangwondo"><img src="${ctxName}/resource/images/zone/kangwondoMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>경상북도</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/GyeongsangbukdoMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=gyungbuk"><img src="${ctxName}/resource/images/zone/GyeongsangbukdoMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>대구</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/DaeguMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=daegu"><img src="${ctxName}/resource/images/zone/DaeguMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>울산</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/UlsanMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=ulsan"><img src="${ctxName}/resource/images/zone/UlsanMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>부산</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/BusanMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=busan"><img src="${ctxName}/resource/images/zone/BusanMascot.png"/></a></dd>
 		</dl>
 		<dl>
 			<dt>경상남도</dt>
-			<dd><a href="${ctxName}/zone/zoneTeams/teams"><img src="${ctxName}/resource/images/zone/GyeongsangnamdoMascot.png"/></a></dd>
+			<dd><a href="${ctxName}/zone/selectedZone/teamsOfRegion?region=gyungnam"><img src="${ctxName}/resource/images/zone/GyeongsangnamdoMascot.png"/></a></dd>
 		</dl>
 		
 	<p>Zone</p>
 	<img src="../images/지문.png">
 		
 	</div>
-	
-	
 	</section>
 	</main>
 </body>
