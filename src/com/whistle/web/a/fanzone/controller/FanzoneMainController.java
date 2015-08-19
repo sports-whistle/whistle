@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/fanzone/*")
 public class FanzoneMainController 
 {
-	@RequestMapping(value="fanzoneMain", method=RequestMethod.GET)
+	@RequestMapping("fanzoneMain")
 	public String fanzoneMain()
 	{
-		return"WEB-INF/view/fanzone/fanZoneMain.jsp";
+		return "/WEB-INF/view/fanzone/fanZoneMain.jsp";
 	}
 }

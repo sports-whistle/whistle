@@ -15,10 +15,9 @@ import com.whistle.web.vo.CheerSong;
 import com.whistle.web.vo.Team;
 
 @Controller
-@RequestMapping("/zone/team/")
-public class TeamController 
+@RequestMapping("/zone/selectedTeam/team/")
+public class SelectedTeamController 
 {
-	
 	@Autowired
 	TeamDao teamDao;
 	
@@ -50,7 +49,7 @@ public class TeamController
       return "/WEB-INF/view/zone/team/teams.jsp"; 
    }
    
-   // com.whistle.web.a.zone.controller로 이동
+   /////////////// SelectedZoneController로 이동////////////
    /*@RequestMapping("teamsOfRegion")
    public String teamsOfRegion(HttpServletRequest request, Model model)
    {
@@ -68,4 +67,11 @@ public class TeamController
 		   return "/WEB-INF/view/zone/team/teamsOfRegion.jsp"; 
 	   }
    }*/
+   
+// 선택한 스포츠팀에서 팀, 티켓, 경기장, 뉴스 정보를 알 수 있는 페이지 
+   @RequestMapping("teamMenu")
+   public String teamMenu()
+   {
+      return "/WEB-INF/view/zone/teamMenu.jsp"; 
+   }
 }

@@ -276,8 +276,8 @@ article:hover .txt strong { color:#fff;}
 		
 			<li><a href="${ctxName}/main/aboutUs"><i class=""></i>About US</a></li>
 			<li><a href="${ctxName}/zone/main/zoneMain"><i class=""></i>Zone</a></li>
-			<li><a href="${ctxName}/WEB-INF/dj/prc/FanZone-Main2"><i class=""></i>FanZone</a></li>
-			<li><a href="${ctxName}/resource/dj/prc/FanZone-Main2.jsp"><i class=""></i>Freedom</a></li>	
+			<li><a href="${ctxName}/fanzone/fanzoneMain"><i class=""></i>FanZone</a></li>
+			<li><a href="${ctxName}/freedom/board-list"><i class=""></i>Freedom</a></li>	
 		</ul>		
 
 		<div class="snsSet">
@@ -299,10 +299,6 @@ article:hover .txt strong { color:#fff;}
 	</header>
 	
 	<nav>
-	
-	
-		
-	
 		<a href="${ctxName }/basic/login"><img src="${ctxName}/resource/images/index/loginlogo.png" alt="Login" /><span>Login</span></a>
 		
 		<c:if test="${not empty pageContext.request.userPrincipal}">
@@ -313,7 +309,6 @@ article:hover .txt strong { color:#fff;}
 			<img src="${ctxName}/resource/images/index/Joinuslogo.png" alt="Join us" />
 				<span>Join us</span>
 		</a>
-	
 	</nav>
 	
 	<section>
@@ -331,7 +326,7 @@ article:hover .txt strong { color:#fff;}
 		
 		<article>			
 			<div class="bg bg9">	
-		<span>Cars</span>
+		<span><a href="${ctxName}/fanzone/cars/carsStart">Cars</a></span>
 			</div>	
 		</article>
 		

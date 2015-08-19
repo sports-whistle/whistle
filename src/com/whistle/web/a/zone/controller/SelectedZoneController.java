@@ -25,8 +25,8 @@ public class SelectedZoneController
 	CheerSongDao cheerSongDao;
 	
 	
-	// 선택한 지역에 존재하는 스포츠팀들 페이지 
-   @RequestMapping("teamsOfRegion")
+	// 선택된 지역내에 존재하는 어떤팀을 선택하느냐에 따라 페이지 달라져야 하는 로직 필요
+   @RequestMapping("teamsInZone")
    public String teams(HttpServletRequest request, Model model)
    {
 	   String region = request.getParameter("region");
@@ -36,20 +36,20 @@ public class SelectedZoneController
 		   List<Team> teams = teamDao.getTeamsWithOneColumn("regionName", region);
 		   model.addAttribute("teams", teams);
 		   
-		   return "/WEB-INF/view/zone/team/teamsOfRegion.jsp";
+		   return "/WEB-INF/view/zone/teamsInZone.jsp";
 	   }
 	   else
 	   {
-		   return "/WEB-INF/view/zone/team/teamsOfRegion.jsp"; 
+		   return "/WEB-INF/view/zone/teamsInZone.jsp"; 
 	   }
       //return "/WEB-INF/view/zone/teamsInZone.jsp"; 
    }
    
-   
+   ////////////////  SelectedTeamController 이동 ///////////////
    // 선택한 스포츠팀에서 팀, 티켓, 경기장, 뉴스 정보를 알 수 있는 페이지 
-   @RequestMapping("teamMenu")
+   /*@RequestMapping("teamMenu")
    public String teamMenu()
    {
       return "/WEB-INF/view/zone/teamMenu.jsp"; 
-   }
+   }*/
 }

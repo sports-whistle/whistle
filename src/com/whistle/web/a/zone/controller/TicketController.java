@@ -17,7 +17,7 @@ import com.whistle.web.vo.TicketInfo;
 import com.whistle.web.vo.TicketSite;
 
 @Controller
-@RequestMapping("/zone/ticket")
+@RequestMapping("/zone/selectedTeam/ticket/*")
 public class TicketController {
 
 	@Autowired

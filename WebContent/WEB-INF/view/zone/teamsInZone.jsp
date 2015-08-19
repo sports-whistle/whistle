@@ -61,20 +61,29 @@
 	</header>
 	
 	
-	<section>
-	<h1 id="hidden">메인화면</h1>
-	
-	<nav>
-	<h1 id="hidden">인천팀링크</h1>
-		<ul>
-			<li id= inUtd><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>인천유나이티드</a></li>
-			<li id= elep><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>전자랜드</a></li>
-			<li id= shinHan><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>신한은행</a></li>
-			<li id= jumbo><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>대한항공</a></li>
-			<li id= pinS><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>흥국생명</a></li>
-			<li id= incheonSk><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>와이번스</a></li>
-		</ul>
-	</nav>
-	</section>
+	<main>
+		<section>
+			<h1 id="hidden">메인화면</h1>
+			
+			<nav>
+				<h1 id="hidden">인천팀링크</h1>
+					<ul id="teams-list">
+						<%-- <li id= inUtd><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>인천유나이티드</a></li>
+						<li id= elep><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>전자랜드</a></li>
+						<li id= shinHan><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>신한은행</a></li>
+						<li id= jumbo><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>대한항공</a></li>
+						<li id= pinS><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>흥국생명</a></li>
+						<li id= incheonSk><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>와이번스</a></li> --%>
+					
+						<c:forEach var="team" items="${teams }">
+							<li><a href="${ctxName}/zone/selectedTeam/team/teamInfo?teamId=${team.teamId}"><img src="${ctxName }${team.emblemUrl}"/></a></li>
+						</c:forEach>
+					
+					</ul>
+			</nav>
+		
+		</section>
+	</main>
+
 </body>
 </html>

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/zone/stadium/*")
+@RequestMapping("/zone/selectedTeam/stadium/*")
 public class StadiumController {
 
 	@RequestMapping("famousFoodAndSleepInfo")

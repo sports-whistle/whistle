@@ -43,8 +43,6 @@ public class Team {
 	private String teamSiteUrl;
 
 	
-	
-	
 	public String getTeamId() {
 		return teamId;
 	}
