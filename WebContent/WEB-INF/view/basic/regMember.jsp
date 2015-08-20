@@ -9,181 +9,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 <link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
-
-<script type="text/javascript">
-
-//-------------->>>> 응원팀 선택 기능 추가 
-
-window.addEventListener("load", function () {
-	
-	btnNext = document.getElementById("next");
-	btnAfterward = document.getElementById("afterward");
-	emblemImgList = document.getElementById("img-emblemList");
-	
-	btnNext.onclick = btnNextClick;   
-	btnAfterward.onclick = btnAfterWardClick;
-	
-	ctxName = "${ctxName}";
-	index = -1; 
-	
-	// 스포츠 종목 선택 
-	cbSportsKind = document.getElementById("cbo-sportsKind");
-	
-	// 종목별 url 담을 변수 선언 
-	soccerEmblemUrlList = [];
-	baseBallEmblemUrlList = [];
-	basketBallEmblemUrlList = [];
-	volleyBallEmblemUrlList = [];
-	
-	// 각 종목별로 url 나누기 
-	<c:forEach items="${emblemUrlInTeams}" var="team">
-	
- 		<c:if test='${team.sportsKind eq "Soccer"}'>
-			soccerEmblemUrlList.push("${team.emblemUrl}"); 
-		</c:if> 
-		 
-		<c:if test='${team.sportsKind eq "BaseBall"}'>
- 			baseBallEmblemUrlList.push("${team.emblemUrl}"); 
-		</c:if> 
-		 
-		<c:if test='${team.sportsKind eq "BasketBall"}'>
- 			basketBallEmblemUrlList.push("${team.emblemUrl}"); 
-	 	</c:if> 
-		 
-		<c:if test='${team.sportsKind eq "VolleyBall"}'>
-			volleyBallEmblemUrlList.push("${team.emblemUrl}"); 
-   	 	</c:if> 
-   	 	
-	</c:forEach>
-	
-});
-
-
-function btnNextClick()
-{
-	if(cbSportsKind.value =="축구")
-	{
-		index++;
-		// 축구 엠블럼 이미지 가져오기 
-		if(index < soccerEmblemUrlList.length)
-		{
-			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
-		}
-		else
-		{
-			index = 0; 
-			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
-		} 
-	}
-	else if(cbSportsKind.value =="야구")
-	{
-		index++;
-		// 야구 엠블럼 이미지 가져오기 
-		if(index < baseBallEmblemUrlList.length)
-		{
-			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
-		}
-		else
-		{
-			index = 0; 
-			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
-		} 
-	}
-	else if(cbSportsKind.value =="농구")
-	{
-		index++;
-		// 농구 엠블럼 이미지 가져오기 
-		if(index < basketBallEmblemUrlList.length)
-		{
-			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
-		}
-		else
-		{
-			index = 0; 
-			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
-		} 
-	}
-	else
-	{
-		index++;
-		// 배구 엠블럼 이미지 가져오기 
-		if(index < volleyBallEmblemUrlList.length)
-		{
-			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
-		}
-		else
-		{
-			index = 0; 
-			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
-		} 
-	}
-}
-
-
-function btnAfterWardClick()
-{
-	if(cbSportsKind.value =="축구")
-	{
-		--index;
-		// 축구 엠블럼 이미지 가져오기 
-		if(index > -1)
-		{
-			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
-			
-		}
-		else
-		{
-			index = soccerEmblemUrlList.length - 1; 
-			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
-		} 
-	}
-	else if(cbSportsKind.value =="야구")
-	{
-		--index;
-		// 야구 엠블럼 이미지 가져오기 
-		if(index > -1)
-		{
-			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
-		}
-		else
-		{
-			index = baseBallEmblemUrlList.length - 1; 
-			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
-		} 
-	}
-	else if(cbSportsKind.value =="농구")
-	{
-		--index;
-		// 농구 엠블럼 이미지 가져오기 
-		if(index > -1)
-		{
-			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
-		}
-		else
-		{
-			index = basketBallEmblemUrlList.length - 1; 
-			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
-		} 
-	}
-	else
-	{
-		--index;
-		// 배구 엠블럼 이미지 가져오기 
-		if(index > -1)
-		{
-			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
-		}
-		else
-		{
-			index = volleyBallEmblemUrlList.length - 1; 
-			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
-		} 
-	}
-}
-// <<<<--------------  응원팀 선택 기능 추가 
-</script>
-
 
 <style>
 	.hidden{
@@ -344,10 +169,13 @@ function btnAfterWardClick()
 
 
 
+
+
+
 /* ======  [류윤광] 스포츠 종목별 팀선택 스타일 적용 ===== */
 
 #teamSelect{
-	border: 1px solid purple;
+	/* border: 1px solid purple; */
 }
 
 /* 콤보박스 영역 스타일*/
@@ -374,7 +202,7 @@ select{
 #teamSelect>div+div 
 {
 	display:inline-block;
-	background: red;
+	/* background: red; */
 	margin-left: 30px; 
 	margin-top: 20px; 
 	
@@ -389,22 +217,23 @@ select{
 #teamSelect input[type="button"]{
 
 	font-size: 10px; 
-	background: yellow;
+	/* background: yellow; */
 	height:30px; 
 	width: 30px; 
 }
 
-/* 다음 버튼 스타일 */
+/* 이전 버튼 스타일 */
 #teamSelect input[type="button"]:FIRST-CHILD{
 	
 		margin-right: 30px; 
+		
 }
 
 
-/* 이전 버튼 스타일 */
+/* 다음 버튼 스타일 */
 #teamSelect input[type="button"]:FIRST-CHILD+p+input{
 
-	
+	background: url("${ctxName}/resource/images/reg-member/circle.png") no-repeat center;
 }
 
 
@@ -419,7 +248,213 @@ select{
 }
 
 
+#img-emblemList{
+
+	transition: 1s all cubic-bezier(0.32, -0.3, 0.69, 1.35); 
+	transition-property: opacity width height; 
+	transition-duration: 1s;  
+}
+
+/* #next{
+	background: url("${ctxName}/resource/images/reg-member/next-btn.png") no-repeat center;
+} */
+
+
 </style>
+
+<script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
+
+<script type="text/javascript">
+
+//-------------->	>>> 응원팀 선택 기능 추가 
+
+window.addEventListener("load", function () {
+	
+	btnNext = document.getElementById("next");
+	btnAfterward = document.getElementById("afterward");
+	emblemImgList = document.getElementById("img-emblemList");
+	
+	emblemImgList.style.width = "80px";
+	
+	 btnNext.style.background = "yellow";
+	 btnAfterward.style.background = "yellow";
+	/* btnNext.style.backgroundImage = "url('${ctxName}/resource/images/reg-member/emblem-baseball-kia.png')"; */
+	/*backgroundImage = "url('img_tree.png')"; */
+	btnNext.onclick = btnNextClick;   
+	btnAfterward.onclick = btnAfterWardClick;
+	
+	ctxName = "${ctxName}";
+	index = -1; 
+	
+	// 스포츠 종목 선택 
+	cbSportsKind = document.getElementById("cbo-sportsKind");
+	
+	// 종목별 url 담을 변수 선언 
+	soccerEmblemUrlList = [];
+	baseBallEmblemUrlList = [];
+	basketBallEmblemUrlList = [];
+	volleyBallEmblemUrlList = [];
+	
+	
+	emblemImgList.src = "${ctxName}/resource/images/reg-member/emblem-baseball-kia.png";
+	
+	// 각 종목별로 url 나누기 
+	<c:forEach items="${emblemUrlInTeams}" var="team">
+	
+ 		<c:if test='${team.sportsKind eq "Soccer"}'>
+			soccerEmblemUrlList.push("${team.emblemUrl}"); 
+		</c:if> 
+		 
+		<c:if test='${team.sportsKind eq "BaseBall"}'>
+ 			baseBallEmblemUrlList.push("${team.emblemUrl}"); 
+		</c:if> 
+		 
+		<c:if test='${team.sportsKind eq "BasketBall"}'>
+ 			basketBallEmblemUrlList.push("${team.emblemUrl}"); 
+	 	</c:if> 
+		 
+		<c:if test='${team.sportsKind eq "VolleyBall"}'>
+			volleyBallEmblemUrlList.push("${team.emblemUrl}"); 
+   	 	</c:if> 
+   	 	
+	</c:forEach>
+	
+	
+	<c:if test='${pwdError eq "pwdError"}'>
+			alert("비밀번호가 틀렸습니다ㅠㅠ");
+	</c:if>
+	
+	
+	
+});
+
+
+function btnNextClick()
+{
+	if(cbSportsKind.value =="축구")
+	{
+		index++;
+		// 축구 엠블럼 이미지 가져오기 
+		if(index < soccerEmblemUrlList.length)
+		{
+			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
+		}
+		else
+		{
+			index = 0; 
+			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
+		} 
+	}
+	else if(cbSportsKind.value =="야구")
+	{
+		index++;
+		// 야구 엠블럼 이미지 가져오기 
+		if(index < baseBallEmblemUrlList.length)
+		{
+			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
+		}
+		else
+		{
+			index = 0; 
+			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
+		} 
+	}
+	else if(cbSportsKind.value =="농구")
+	{
+		index++;
+		// 농구 엠블럼 이미지 가져오기 
+		if(index < basketBallEmblemUrlList.length)
+		{
+			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
+		}
+		else
+		{
+			index = 0; 
+			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
+		} 
+	}
+	else
+	{
+		index++;
+		// 배구 엠블럼 이미지 가져오기 
+		if(index < volleyBallEmblemUrlList.length)
+		{
+			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
+		}
+		else
+		{
+			index = 0; 
+			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
+		} 
+	}
+}
+
+
+function btnAfterWardClick()
+{
+	if(cbSportsKind.value =="축구")
+	{
+		--index;
+		// 축구 엠블럼 이미지 가져오기 
+		if(index > -1)
+		{
+			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
+			
+		}
+		else
+		{
+			index = soccerEmblemUrlList.length - 1; 
+			emblemImgList.src = ctxName + soccerEmblemUrlList[index];
+		} 
+	}
+	else if(cbSportsKind.value =="야구")
+	{
+		--index;
+		// 야구 엠블럼 이미지 가져오기 
+		if(index > -1)
+		{
+			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
+		}
+		else
+		{
+			index = baseBallEmblemUrlList.length - 1; 
+			emblemImgList.src = ctxName + baseBallEmblemUrlList[index];
+		} 
+	}
+	else if(cbSportsKind.value =="농구")
+	{
+		--index;
+		// 농구 엠블럼 이미지 가져오기 
+		if(index > -1)
+		{
+			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
+		}
+		else
+		{
+			index = basketBallEmblemUrlList.length - 1; 
+			emblemImgList.src = ctxName + basketBallEmblemUrlList[index];
+		} 
+	}
+	else
+	{
+		--index;
+		// 배구 엠블럼 이미지 가져오기 
+		if(index > -1)
+		{
+			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
+		}
+		else
+		{
+			index = volleyBallEmblemUrlList.length - 1; 
+			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
+		} 
+	}
+}
+// <<<<--------------  응원팀 선택 기능 추가 
+</script>
+
+
+
 </head>
 <body>
 
@@ -446,7 +481,7 @@ select{
 					<form action="" id="reg-form" method="POST">
 						<label>ID</label><input name="identification" type="text"/>
 						<label>Password</label><input name="pwd" type="text"/>
-						<!-- <label>Password Confirmation</label><input name="rePwd" type="text"/> --> <!-- 잠시 주석.. -->
+						<label>Password Confirmation</label><input name="pwdConfiguration" type="text"/> <!-- 잠시 주석.. -->
 						<label>Email</label><input name="email" type="text"/>
 						<label>Cell Phone Number</label><input name="phone" type="text"/>
 						<label>My Team</label>
@@ -456,20 +491,20 @@ select{
 							<div>
 								<select id="cbo-sportsKind">
 									<option>축구</option>
-									<option>야구</option>
+									<option selected>야구</option>
 									<option>농구</option>
 									<option>배구</option>
 								</select>
 							</div>				
 							
 							<div>
-								<input id="next" type="button" value="다음"/>
+								<input id="afterward" type="button" value="이전"/>
 								<!-- <div> -->
 									<p>
 										<img id="img-emblemList"/> 
 									</p>
 								<!-- </div> -->
-								<input id="afterward" type="button" value="이전"/>
+								<input id="next" type="button" value="다음"/>
 							</div>
 						</div>
 						

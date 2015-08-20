@@ -6,7 +6,7 @@ public class User {
 
 	private int uid;
 	private String pwd;
-	private String rePwd; 
+	private String pwdConfiguration; 
 	private String name;
 	private String email;
 	private String kakaoId;
@@ -34,11 +34,12 @@ public class User {
 	public void setIdentification(String identification) {
 		this.identification = identification;
 	}
-	public String getRePwd() {
-		return rePwd;
+	
+	public String getPwdConfiguration() {
+		return pwdConfiguration;
 	}
-	public void setRePwd(String rePwd) {
-		this.rePwd = rePwd;
+	public void setPwdConfiguration(String pwdConfiguration) {
+		this.pwdConfiguration = pwdConfiguration;
 	}
 	public String getMyTeam() {
 		return myTeam;
