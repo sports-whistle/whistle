@@ -50,8 +50,97 @@
 	display: none; 
 }
 
+ul{
 
+	border: 1px solid maroon;
+	height: overflow; 
+}
+
+
+li{
+
+	/* width: 300px; 
+	height: 300px;  */
+	float: left;
+	list-style: none;
+	border: 1px dotted purple;
+	display: inline;
+}
+
+ul li:FIRST-CHILD{
+
+	margin-left: 150px; 
+
+}
+
+.team-background-img{
+
+	/* position: relative; */
+}
+
+
+
+.team-background-img p{
+
+	width: 300px; 
+	height: 300px; 
+	border: 1px dotted red;
+}
+
+#up{
+
+	border: 1px dotted black; 
+}  
+
+#up p:FIRST-CHILD{
+	
+	border: 1px solid red;  
+	margin-left: 200px; 
+	float: left; 
+}
+
+#up p:FIRST-CHILD + p{
+	border: 1px solid red;  
+	margin-left: 200px; 
+	float: left; 
+}
+
+#up p:FIRST-CHILD + p + p{
+	border: 1px solid red;  
+	margin-left: 1200px; 
+}
+
+#down{
+
+	border: 1px dotted green;
+	position: absolute;
+	top: 900px; 
+}
+
+#down p:FIRST-CHILD{
+	
+	border: 1px solid blue;  
+	margin-left: 200px; 
+	float: left; 
+}
+
+#down p:FIRST-CHILD + p{
+	border: 1px solid blue;  
+	margin-left: 200px; 
+	float: left; 
+}
+
+#down p:FIRST-CHILD + p + p{
+	border: 1px solid blue;  
+	margin-left: 1200px; 
+}
 </style>
+
+<script>
+
+
+
+</script>
 
 </head>
 
@@ -65,8 +154,25 @@
 		<section>
 			<h1 id="hidden">메인화면</h1>
 			
-			<nav>
-				<h1 id="hidden">인천팀링크</h1>
+			<section class="team-background-img">
+			
+				<div id = "up">
+					<p>팀 이미지1</p>
+					<p>팀 이미지2</p>
+					<p>팀 이미지3</p>
+				</div>
+				
+				<div id = "down">
+					<p>팀 이미지4</p>
+					<p>팀 이미지5</p>
+					<p>팀 이미지6</p>
+				</div>
+				
+			</secion>
+			
+			<section>
+				<nav>
+					<h1 id="hidden">인천팀링크</h1>
 					<ul id="teams-list">
 						<%-- <li id= inUtd><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>인천유나이티드</a></li>
 						<li id= elep><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>전자랜드</a></li>
@@ -76,11 +182,11 @@
 						<li id= incheonSk><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>와이번스</a></li> --%>
 					
 						<c:forEach var="team" items="${teams }">
-							<li><a href="${ctxName}/zone/selectedTeam/team/teamInfo?teamId=${team.teamId}"><img src="${ctxName }${team.emblemUrl}"/></a></li>
+							<li><a href="${ctxName}/zone/selectedTeam/team/teamInfo?teamId=${team.teamId}"><img src="${ctxName}${team.emblemUrl}"/></a></li>
 						</c:forEach>
-					
 					</ul>
-			</nav>
+				</nav>
+			</section>
 		
 		</section>
 	</main>
