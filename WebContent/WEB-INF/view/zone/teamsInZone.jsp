@@ -53,7 +53,7 @@
 ul{
 
 	border: 1px solid maroon;
-	height: overflow; 
+	clear: both; 
 }
 
 
@@ -139,7 +139,6 @@ ul li:FIRST-CHILD{
 <script>
 
 
-
 </script>
 
 </head>
@@ -182,7 +181,8 @@ ul li:FIRST-CHILD{
 						<li id= incheonSk><a href="${ctxName}/zone/selectedZone/teamMenu"><img src="${ctxName}/resource/images/zone/team/volleyBall/electronicLand/elep.png"/>와이번스</a></li> --%>
 					
 						<c:forEach var="team" items="${teams }">
-							<li><a href="${ctxName}/zone/selectedTeam/team/teamInfo?teamId=${team.teamId}"><img src="${ctxName}${team.emblemUrl}"/></a></li>
+							<%-- <li><a href="${ctxName}/zone/selectedTeam/team/teamInfo?teamId=${team.teamId}"><img src="${ctxName}${team.emblemUrl}"/></a></li> --%>
+							<li><a href="${ctxName}/zone/selectedTeam/team/teamMenu?teamId=${team.teamId}"><img src="${ctxName}${team.emblemUrl}"/></a></li>
 						</c:forEach>
 					</ul>
 				</nav>

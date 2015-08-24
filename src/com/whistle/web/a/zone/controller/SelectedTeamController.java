@@ -27,7 +27,6 @@ public class SelectedTeamController
    @RequestMapping("teamInfo")
    public String teamInfo(HttpServletRequest request, Model model)
    {	
-	   
 		String teamId = request.getParameter("teamId");
 		Team team = null;
 		List<CheerSong> songs = null;
@@ -39,7 +38,6 @@ public class SelectedTeamController
 			model.addAttribute("songs", songs);
 			return "/WEB-INF/view/zone/team/teamInfo.jsp"; 
 		}
-		
 		return "/WEB-INF/view/zone/team/teamInfo.jsp"; 
    }
    
