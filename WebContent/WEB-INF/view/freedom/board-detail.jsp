@@ -116,37 +116,73 @@
 		float:left;
 	}
 	
-	#right-extra #buttons a{
-		display:inline-block;
 	
-		margin-top:160px;
-		margin-left:50px;
+	#buttons-container{
+		margin-top:120px;
+
+	}
+	
+	#right-extra #buttons a{
+		display:block;
+		float:left;
+		margin-left:25px;
+		
 	
 	}
+	
+	#right-extra #buttons form{
+		display:block;
+		float:left;
+		margin-left:25px;
+	}
+	
+	#right-extra #buttons input[type="submit"]{
+		
+	/*background-image: url(http://inspectelement.com/wp-content/themes/inspectelementv2/style/images/button.png);*/
+	display:inline-block;
+	box-sizing: content-box;
+	background:white;
+	background-position:  0px 0px;
+	background-repeat: no-repeat;
+	width: 124px;
+	height: 134px;
+	border: 0px;
+	text-indent:-9999px;
+	
+		border-radius: 14px;
+  		border: 3px solid #000000;
+  		padding: 14px; 
+	
+	
+/* 	background-color: none; */
+	cursor: pointer;
+	outline: 0;
+		
+		
+	}
+	
 	
 	#right-extra #buttons a img{
 		display:block;
 		
-		
-		
-		
 		width:124px;
 		height:134px;
+		border:0px;
 		
 		background: #ffffff;
 		
 		
-		border-radius: 10px;
+		border-radius: 14px;
   		border: 3px solid #000000;
-  		padding: 4px;
-		
+  		padding: 14px; 
+	
 	}
 	
 	
 	
 	/*whistle logo*/
 	#left a{
-		display:block;
+		display:inline-block;
 		width:183px;
 		height:140px;
 		background: url(${ctxName}/resource/images/whistle-logo.png) no-repeat center;
@@ -192,7 +228,7 @@
 		width:90%;
 		
 		float:left;
-		background: #eeece1;
+		background: #fdfdfd;
 		
 		border-radius: 20px;
   		border: 4px solid #000000;
@@ -210,89 +246,12 @@
 	
 	
 	
-	#article-list{
-	}
+	
 
-	
-	
-	#page-description{
-		
-		height:auto;
-		width:auto;
-		
-		
-		margin-top:40px;
-		padding-bottom:50px;
-	}
-	
-	#page-description p{
-	
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:70px;
-		font-style:italic;
-		
-		margin-left:80px;
-		
-	}
-	
-	/*** article list ***/
-	
-	
-	#article-list th{
-		background: #9dc6f5;
-		font-weight:bold;
-		font-size:1.2em;
-	}
-	
-	#article-list td{
-		background: #ddedff;
-		font-size:0.9em;
-		
-	}
-	
-	
-	
-	#article-list table{
-	border-collapse: separate;
-     border-spacing: 0px 4px;
-	}
-	
-	#article-list td,
-	#article-list th{
-		
-		text-align:center;
-	}
-	
-	
-	#article-list tr{
-		heigth:30px;
-		line-height:30px;
-	}
-	
-	#article-list th:first-child,
-	#article-list td:first-child{
-		text-align: center;
-		width:80px;
-	}
-	
-	#article-list th:first-child+th,
-	#article-list td:first-child+td{
-		text-align: center;
-		width:400px;
-	}
-	
-	#article-list th:first-child+th+th,
-	#article-list td:first-child+td+td{
-		text-align: center;
-		width:150px;
-	}
-	
-	#article-list th:first-child+th+th+th,
-	#article-list td:first-child+td+td+td{
-		text-align: center;
-		width:80px;
-	}
-	
+
+
+
+
 	
 	/** view **/
 	#article-list th:first-child+th+th+th+th,
@@ -301,8 +260,107 @@
 		width:80px;
 	}
 
+	#article-title{
+		width:inherit;
+		overflow:hidden;
+		padding-bottom:7px;
+		
+		border-bottom: 2px solid #000000; 
+		
+		margin-bottom:5px;
+	}
 
-	/*수정수정수정*/
+	
+	/* 제목 dt */
+	#article dl dt:first-child{
+		display:none;
+		
+	}
+	
+	/* 제목 dd*/
+	#article dl dt:first-child+dd{
+		font-family:malgun;
+		font-size:20pt;
+		font-weight:bold;
+	}
+	
+	/* 조회수 dt*/
+	#article dl dt:first-child+dd+dt{
+		display:none;
+	}
+	
+	/* 조회수 dd*/
+	#article dl dt:first-child+dd+dt+dd{
+		display:inline-block;
+		font-size:9pt;
+		color: #c8c8c8;
+	}
+	
+	/* 댓글수 dt*/
+	#article dl dt:first-child+dd+dt+dd+dt{
+		display:none;
+	}
+	
+	/* 댓글수 dd*/
+	#article dl dt:first-child+dd+dt+dd+dt+dd{
+		display:inline-block;
+		font-size:9pt;
+		color: #c8c8c8;
+	
+	}
+	
+	/*등록일 dt*/
+	#article dl dt:first-child+dd+dt+dd+dt+dd+dt{
+		display:none;
+	}
+	
+	/*reg dat*/
+	#article dl dt:first-child+dd+dt+dd+dt+dd+dt+dd{
+		
+		display:inline-block;
+		
+		
+		font-size:9pt;
+		color: #c8c8c8;
+	}
+	
+	/* 내용 dt */
+	#article-title+dt{
+		display:none;
+	}
+	
+	
+	
+	/*내용과 제목 전 공간*/
+	#article-title+dt+dd:before{
+		content:"";
+		display:block;
+		display:hidden;
+		overflow:hidden;
+		height:15px;
+		
+	
+	}
+	
+	/* 내용 dd*/
+	#article-title+dt+dd{
+		font-size:12pt;
+	}
+	
+	/*내용과 후 공간*/
+	#article-title+dt+dd:after{
+		content:"";
+		display:block;
+		display:hidden;
+		overflow:hidden;
+		height:15px;
+		
+	
+	}
+	
+	#buttons-after{
+		height:15px;
+	}
 	
 	
 </style>
@@ -339,8 +397,14 @@
 				
 				<div id="right-extra" class="clearfix">
 				<div id="buttons">
-					
-					<a href="board-write-article"><img src="${ctxName }/resource/images/freedom/btn-write.png"/></a>
+					<div id="buttons-container" class="clearfix">
+						<form action="" method="POST">
+									<input type="hidden" name="articleId" value="${article.intId}"  class="hidden"/>
+									<input type="submit" name="btn" value="deleteArticle"/>
+						</form>
+						
+						<a href="${ctxName}/freedom/board-list"><img src="${ctxName }/resource/images/freedom/btn-list.png"/></a>
+					</div>
 				</div>
 				
 				<section id="cheering-chat">
@@ -366,16 +430,9 @@
 					</article>
 					
 				
-					<nav>
-						<h1>게시판 글 하단 버튼</h1>
+					<nav id="buttons-after-">
+						<h1 class="hidden">게시판 글 하단 버튼</h1>
 						
-							<form method="POST">
-								<input type="hidden" name="articleId" value="${article.intId}" />
-								<input type="submit" name="btn" value="deleteArticle"/>
-							</form>
-							<p><a href="${ctxName}/board/board-list">목록</a></p>
-							<p>글 쓰기</p>
-							<p>신고</p>
 					</nav>
 					
 					<div id="comment">

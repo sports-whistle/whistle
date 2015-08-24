@@ -192,7 +192,7 @@
 		width:90%;
 		
 		float:left;
-		background: #eeece1;
+		background: #fdfdfd;
 		
 		border-radius: 20px;
   		border: 4px solid #000000;
@@ -239,13 +239,13 @@
 	
 	
 	#article-list th{
-		background: #9dc6f5;
+		background: #e6dbdb;
 		font-weight:bold;
 		font-size:1.2em;
 	}
 	
 	#article-list td{
-		background: #ddedff;
+		background: #f6f5f5;
 		font-size:0.9em;
 		
 	}
