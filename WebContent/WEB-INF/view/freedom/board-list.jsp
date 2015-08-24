@@ -15,6 +15,7 @@
 <title>article-list</title>
 <link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
 
+
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 <style>
 	
@@ -398,6 +399,7 @@
 		</section>
 	</main>
 	
+
 
 	</div>
 </body>

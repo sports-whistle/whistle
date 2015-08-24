@@ -111,7 +111,9 @@
 				</div> --%>
 				
 				<div>
-					<li><label>단체사진</label><p>${team.membersUrl }</p></li>
+
+					<li><label>단체사진</label>
+					<img src ="${ctxName}${team.membersUrl}"/></li>
 				</div>
 				
 				<div>
@@ -140,7 +142,8 @@
 				<div>				
 					<li>
 						<label>슬로건</label>
-						<img src="${ctxName }${team.sloganUrl }"/>
+						<img src="${ctxName }${team.sloganUrl}"/>
+
 					</li>
 					
 					<li><label>공식 사이트</label><p>${team.teamSiteUrl}</p></li>
