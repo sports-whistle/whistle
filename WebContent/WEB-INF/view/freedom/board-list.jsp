@@ -14,7 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>article-list</title>
 <link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
-<link href="${ctxName }/resource/community/css/layout.css" rel="stylesheet" type="text/css" />
+
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 <style>
 	
@@ -22,13 +22,7 @@
 		display:none;
 	}
 
-	.content-wrapper{
-		width:1152px;
-		height:inherit;
-		
-		margin-left:auto;
-		margin-right:auto;
-	}
+	
 	
 	.clearfix:after{
 		content: " ";
@@ -40,17 +34,111 @@
 	}
 	
 	
-	/**/
-	#whole-page{
-		width:100%;
+	/*full screen*/
+	html{
 		height:100%;
-		background-image:url(${ctxName}/resource/images/board/bg-board-pattern.png);
-		background-size: 120%;
 	}
 	
+	body{
+		width:100%;
+		min-height:100%;
+		background-color:black;
+		
+	}
+	
+	/*layout*/
+	
+	#left{
+		width:30%;
+		min-height:inherti;
+		
+		float:left;
+	}
+	
+	#right{
+		width:70%;
+		min-height:inherit;
+		float:left;
+	}
 
 	
-	#home-logo a{
+	#right-top{
+		width:70%;
+		margin-left:auto;
+	}
+	#right-top p{
+		display:block;
+		width:254px;
+		height:122px;
+		
+		
+		text-indent:-9999px;
+		overflow:hidden;
+		background: url('${ctxName}/resource/images/freedom/the-message.png') center no-repeat;
+		background-size:cover;
+		float:right;
+	}
+	
+/* 	
+	<div id="right-top" class="clearfix">
+					<p>The Message</p>
+				</div>
+				
+				<div id="right-extra" class="clearfix">
+				<div id="buttons">
+					<p id="write-button"><a href="board-write-article">글 쓰기</a></p>
+				</div>
+				
+				<section id="cheering-chat">
+					<div id="cheering-chat-app"></div>
+				</section>
+				</div> */
+		
+	/* chat */
+	
+	#right-extra #buttons{
+		display:block;
+		width:50%;
+		height:350px;
+		float:left;
+	}
+	
+	
+	
+	
+	
+	#right-extra #cheering-chat{
+		width:50%;
+		float:left;
+	}
+	
+	#right-extra #buttons a{
+		display:inline-block;
+	
+		margin-top:160px;
+		margin-left:50px;
+	
+	}
+	
+	#right-extra #buttons a img{
+		display:block;
+		
+		
+		
+		
+		width:124px;
+		height:134px;
+		
+		border-radius: 6px;
+  		border: 3px solid #000000;
+  		padding: 4px;
+		
+	}
+	
+	
+	
+	/*whistle logo*/
+	#left a{
 		display:block;
 		width:183px;
 		height:140px;
@@ -63,20 +151,25 @@
 	}
 	
 	
+	
+	#left-bg{
+		display:block;
+		width:inherit;
+	}
+	
+	
+	#left-bg img{
+		display:block;
+		width:inherit;
+		
+	}
+	
+	
 	#content{
 		
 	}
 	
 	
-	#header{
-		
-		width:inherit;
-		height:318px;
-		
-		background-image:url(${ctxName}/resource/images/board/bg-board-header.png);
-		background-size: cover;
-		
-	}
 	
 	#article-list-header{
 		font-family:"Arial Black", Gadget, sans-serif;
@@ -93,16 +186,16 @@
 		background: #eeece1;
 		
 		border-radius: 25px;
-  	border: 4px solid #000000;
+  		border: 4px solid #000000;
   		padding: 20px; 
 	}
 	
 	
 	#cheering-chat{
 		width:260px;
-		height:600px;
+		height:350px;
 		
-		float:right;
+	
 		background:green;
 	}
 	
@@ -138,13 +231,13 @@
 	
 	#article-list th{
 		background: #9dc6f5;
-		
-		
+		font-weight:bold;
+		font-size:1.2em;
 	}
 	
 	#article-list td{
 		background: #ddedff;
-		
+		font-size:0.9em;
 		
 	}
 	
@@ -157,6 +250,7 @@
 	
 	#article-list td,
 	#article-list th{
+		
 		text-align:center;
 	}
 	
@@ -198,39 +292,52 @@
 		width:80px;
 	}
 
+
+	/*수정수정수정*/
+	
+	
 </style>
 	
 
 
 
 </head>
-<body>
+<body class="clearfix">
 	
 	<div id="whole-page">
-	<h1 class="hidden">게시판</h1>
+	
 	<header>
-		<div class="content-wrapper">
-			<section id="header">
-				<h1 class="hidden">헤더메뉴</h1>
-				<nav id="home-logo"><a href="${ctxName}">homelogo</a></nav>
-			</section>
-		</div>
+		<h1 class="hidden">헤더메뉴</h1>
 	</header>
 	
 	
 	
-	
-	<main id="main">
-		<div class="content-wrapper clearfix">
-		<section>
+	<aside id="left">
+		<div id="home-logo"><a href="${ctxName}">homelogo</a></div>
+		<div id="left-bg"><img src="${ctxName }/resource/images/freedom/bg-left-bottom.png"/></div>
+	</aside>
 			
+	
+	
+	<main id="right">
+		<section>
 			<h1 class=hidden>게시판 메인</h1>
 			
-			
-			<div id="content">
-			
 				
-		
+				<div id="right-top" class="clearfix">
+					<p>The Message</p>
+				</div>
+				
+				<div id="right-extra" class="clearfix">
+				<div id="buttons">
+					
+					<a href="board-write-article"><img src="${ctxName }/resource/images/freedom/btn-write.png"/></a>
+				</div>
+				
+				<section id="cheering-chat">
+					<div id="cheering-chat-app"></div>
+				</section>
+				</div>
 		
 		
 			
@@ -246,11 +353,11 @@
 						<table>
 							<thead>
 								<tr>
-									<th>글 번호</th>
-									<th>제목</th>
-									<th>작성자</th>
-									<th>등록일</th>
-									<th>조회수</th>
+									<th>#</th>
+									<th>Title</th>
+									<th>Writer</th>
+									<th>Date</th>
+									<th>View</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -270,12 +377,6 @@
 				</nav>
 				
 			
-		
-				<nav id="board-controller">
-					<h1 class="hidden">게시판 하단 네비</h1>
-						
-							<p id="write-button"><a href="board-write-article">글 쓰기</a></p>
-				</nav>
 				
 				<nav id="board-page-nav">
 					<h1 class="hidden">게시판 페이지 이동</h1>
@@ -290,27 +391,13 @@
 		
 				</div>
 		
-				<section id="cheering-chat">
-					<div id="cheering-chat-app"></div>
-				</section>
 				
-			</div>
-		
-		
-		
+				<div id="right-bottom"></div>
+				
 			
-		
 		</section>
-		</div>
 	</main>
 	
-
-	<section id="page-description">
-	<div class="content-wrapper">
-				<p>Fans Precedes a Team.</p>
-	</div>
-	</section>
-
 
 	</div>
 </body>
