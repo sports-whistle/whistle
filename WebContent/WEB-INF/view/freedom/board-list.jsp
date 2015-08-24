@@ -133,7 +133,10 @@
 		width:124px;
 		height:134px;
 		
-		border-radius: 6px;
+		background: #ffffff;
+		
+		
+		border-radius: 10px;
   		border: 3px solid #000000;
   		padding: 4px;
 		
