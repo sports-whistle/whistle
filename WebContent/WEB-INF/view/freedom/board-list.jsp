@@ -50,14 +50,14 @@
 	/*layout*/
 	
 	#left{
-		width:30%;
+		width:35%;
 		min-height:inherti;
 		
 		float:left;
 	}
 	
 	#right{
-		width:70%;
+		width:65%;
 		min-height:inherit;
 		float:left;
 	}
@@ -80,22 +80,25 @@
 		float:right;
 	}
 	
-/* 	
-	<div id="right-top" class="clearfix">
-					<p>The Message</p>
-				</div>
-				
-				<div id="right-extra" class="clearfix">
-				<div id="buttons">
-					<p id="write-button"><a href="board-write-article">글 쓰기</a></p>
-				</div>
-				
-				<section id="cheering-chat">
-					<div id="cheering-chat-app"></div>
-				</section>
-				</div> */
-		
-	/* chat */
+	
+	
+	/*게시판 아래 이미지*/
+	#right-bottom{
+		width:100%;
+	}
+	
+	#right-bottom img{
+		display:block;
+		width:inherit;
+		height:auto;
+	}
+	
+
+
+	#right-extra{
+		margin-right:10%;
+	}
+
 	
 	#right-extra #buttons{
 		display:block;
@@ -155,13 +158,15 @@
 	
 	#left-bg{
 		display:block;
-		width:inherit;
+		width:100%;
+		
+		margin-top:400px;
 	}
 	
 	
 	#left-bg img{
 		display:block;
-		width:inherit;
+		width:100%;
 		
 	}
 	
@@ -181,12 +186,12 @@
 	}
 
 	#board-body{
-		width:810px;
+		width:90%;
 		
 		float:left;
 		background: #eeece1;
 		
-		border-radius: 25px;
+		border-radius: 20px;
   		border: 4px solid #000000;
   		padding: 20px; 
 	}
@@ -393,7 +398,7 @@
 				</div>
 		
 				
-				<div id="right-bottom"></div>
+				<div id="right-bottom"><img src="${ctxName }/resource/images/freedom/bg-right-bottom.png"/></div>
 				
 			
 		</section>
