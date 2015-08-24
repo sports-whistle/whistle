@@ -14,8 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>article-list</title>
 <link href="${ctxName }/resource/css/reset.css" rel="stylesheet" type="text/css" />
-
-
+<link href="${ctxName }/resource/community/css/layout.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 <style>
 	
@@ -23,7 +22,13 @@
 		display:none;
 	}
 
-	
+	.content-wrapper{
+		width:1152px;
+		height:inherit;
+		
+		margin-left:auto;
+		margin-right:auto;
+	}
 	
 	.clearfix:after{
 		content: " ";
@@ -35,117 +40,17 @@
 	}
 	
 	
-	/*full screen*/
-	html{
+	/**/
+	#whole-page{
+		width:100%;
 		height:100%;
-	}
-	
-	body{
-		width:100%;
-		min-height:100%;
-		background-color:black;
-		
-	}
-	
-	/*layout*/
-	
-	#left{
-		width:35%;
-		min-height:inherti;
-		
-		float:left;
-	}
-	
-	#right{
-		width:65%;
-		min-height:inherit;
-		float:left;
-	}
-
-	
-	#right-top{
-		width:70%;
-		margin-left:auto;
-	}
-	#right-top p{
-		display:block;
-		width:254px;
-		height:122px;
-		
-		
-		text-indent:-9999px;
-		overflow:hidden;
-		background: url('${ctxName}/resource/images/freedom/the-message.png') center no-repeat;
-		background-size:cover;
-		float:right;
-	}
-	
-	
-	
-	/*게시판 아래 이미지*/
-	#right-bottom{
-		width:100%;
-	}
-	
-	#right-bottom img{
-		display:block;
-		width:inherit;
-		height:auto;
+		background-image:url(${ctxName}/resource/images/board/bg-board-pattern.png);
+		background-size: 120%;
 	}
 	
 
-
-	#right-extra{
-		margin-right:10%;
-	}
-
 	
-	#right-extra #buttons{
-		display:block;
-		width:50%;
-		height:350px;
-		float:left;
-	}
-	
-	
-	
-	
-	
-	#right-extra #cheering-chat{
-		width:50%;
-		float:left;
-	}
-	
-	#right-extra #buttons a{
-		display:inline-block;
-	
-		margin-top:160px;
-		margin-left:50px;
-	
-	}
-	
-	#right-extra #buttons a img{
-		display:block;
-		
-		
-		
-		
-		width:124px;
-		height:134px;
-		
-		background: #ffffff;
-		
-		
-		border-radius: 10px;
-  		border: 3px solid #000000;
-  		padding: 4px;
-		
-	}
-	
-	
-	
-	/*whistle logo*/
-	#left a{
+	#home-logo a{
 		display:block;
 		width:183px;
 		height:140px;
@@ -158,59 +63,144 @@
 	}
 	
 	
-	
-	#left-bg{
-		display:block;
-		width:100%;
-		
-		margin-top:400px;
-	}
-	
-	
-	#left-bg img{
-		display:block;
-		width:100%;
-		
-	}
-	
-	
 	#content{
 		
 	}
 	
 	
-	
-	#article-list-header{
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:17pt;
+	#header{
 		
-		margin-bottom:15px;
-	
+		width:inherit;
+		height:318px;
+		
+		background-image:url(${ctxName}/resource/images/board/bg-board-header.png);
+		background-size: cover;
+		
 	}
+	
+	
+
 
 	#board-body{
-		width:90%;
+		width:810px;
 		
 		float:left;
 		background: #eeece1;
 		
-		border-radius: 20px;
+		border-radius: 25px;
   		border: 4px solid #000000;
   		padding: 20px; 
 	}
 	
 	
-	#cheering-chat{
-		width:260px;
-		height:350px;
+	
+	#article-title{
+		width:inherit;
+		overflow:hidden;
+		padding-bottom:7px;
+		
+		border-bottom: 2px solid #000000; 
+	}
+	
+	/* 제목 dt */
+	#article dl dt:first-child{
+		display:none;
+		
+	}
+	
+	/* 제목 dd*/
+	#article dl dt:first-child+dd{
+		font-family:malgun;
+		font-size:20pt;
+		font-weight:bold;
+	}
+	
+	/* 조회수 dt*/
+	#article dl dt:first-child+dd+dt{
+		display:none;
+	}
+	
+	/* 조회수 dd*/
+	#article dl dt:first-child+dd+dt+dd{
+		display:inline-block;
+		font-size:9pt;
+		color: #c8c8c8;
+	}
+	
+	/* 댓글수 dt*/
+	#article dl dt:first-child+dd+dt+dd+dt{
+		display:none;
+	}
+	
+	/* 댓글수 dd*/
+	#article dl dt:first-child+dd+dt+dd+dt+dd{
+		display:inline-block;
+		font-size:9pt;
+		color: #c8c8c8;
+	
+	}
+	
+	/*등록일 dt*/
+	#article dl dt:first-child+dd+dt+dd+dt+dd+dt{
+		display:none;
+	}
+	
+	/*reg dat*/
+	#article dl dt:first-child+dd+dt+dd+dt+dd+dt+dd{
+		
+		display:inline-block;
+		
+		
+		font-size:9pt;
+		color: #c8c8c8;
+	}
+	
+	/* 내용 dt */
+	#article-title+dt{
+		display:none;
+	}
+	
+	
+	
+	/*내용과 제목 전 공간*/
+	#article-title+dt+dd:before{
+		content:"";
+		display:block;
+		display:hidden;
+		overflow:hidden;
+		height:15px;
 		
 	
+	}
+	
+	/* 내용 dd*/
+	#article-title+dt+dd{
+		font-size:12pt;
+	}
+	
+	/*내용과 후 공간*/
+	#article-title+dt+dd:after{
+		content:"";
+		display:block;
+		display:hidden;
+		overflow:hidden;
+		height:15px;
+		
+	
+	}
+	
+	
+	#cheering-chat{
+		width:260px;
+		height:600px;
+		
+		float:right;
 		background:green;
 	}
 	
 	
 	
-	#article-list{
+	#article{
 	}
 
 	
@@ -235,118 +225,42 @@
 		
 	}
 	
-	/*** article list ***/
 	
-	
-	#article-list th{
-		background: #9dc6f5;
-		font-weight:bold;
-		font-size:1.2em;
-	}
-	
-	#article-list td{
-		background: #ddedff;
-		font-size:0.9em;
-		
-	}
-	
-	
-	
-	#article-list table{
-	border-collapse: separate;
-     border-spacing: 0px 4px;
-	}
-	
-	#article-list td,
-	#article-list th{
-		
-		text-align:center;
-	}
-	
-	
-	#article-list tr{
-		heigth:30px;
-		line-height:30px;
-	}
-	
-	#article-list th:first-child,
-	#article-list td:first-child{
-		text-align: center;
-		width:80px;
-	}
-	
-	#article-list th:first-child+th,
-	#article-list td:first-child+td{
-		text-align: center;
-		width:400px;
-	}
-	
-	#article-list th:first-child+th+th,
-	#article-list td:first-child+td+td{
-		text-align: center;
-		width:150px;
-	}
-	
-	#article-list th:first-child+th+th+th,
-	#article-list td:first-child+td+td+td{
-		text-align: center;
-		width:80px;
-	}
-	
-	
-	/** view **/
-	#article-list th:first-child+th+th+th+th,
-	#article-list td:first-child+td+td+td+th{
-		text-align: center;
-		width:80px;
-	}
 
 
-	/*수정수정수정*/
-	
-	
 </style>
 	
 
 
 
 </head>
-<body class="clearfix">
+<body>
 	
 	<div id="whole-page">
-	
+	<h1 class="hidden">게시판</h1>
 	<header>
-		<h1 class="hidden">헤더메뉴</h1>
+		<div class="content-wrapper">
+			<section id="header">
+				<h1 class="hidden">헤더메뉴</h1>
+				<nav id="home-logo"><a href="${ctxName}">homelogo</a></nav>
+			</section>
+		</div>
 	</header>
 	
 	
 	
-	<aside id="left">
-		<div id="home-logo"><a href="${ctxName}">homelogo</a></div>
-		<div id="left-bg"><img src="${ctxName }/resource/images/freedom/bg-left-bottom.png"/></div>
-	</aside>
-			
 	
-	
-	<main id="right">
+	<main id="main">
+		<div class="content-wrapper clearfix">
 		<section>
+			
 			<h1 class=hidden>게시판 메인</h1>
 			
+			
+			<div id="content">
+			
 				
-				<div id="right-top" class="clearfix">
-					<p>The Message</p>
-				</div>
-				
-				<div id="right-extra" class="clearfix">
-				<div id="buttons">
-					
-					<a href="board-write-article"><img src="${ctxName }/resource/images/freedom/btn-write.png"/></a>
-				</div>
-				
-				<section id="cheering-chat">
-					<div id="cheering-chat-app"></div>
-				</section>
-				</div>
+		
 		
 		
 			
@@ -419,13 +333,26 @@
 		
 				</div>
 		
+				<section id="cheering-chat">
+					<div id="cheering-chat-app"></div>
+				</section>
 				
-				<div id="right-bottom"><img src="${ctxName }/resource/images/freedom/bg-right-bottom.png"/></div>
-				
+			</div>
+		
+		
+		
 			
+		
 		</section>
+		</div>
 	</main>
 	
+
+	<section id="page-description">
+	<div class="content-wrapper">
+				<p>Fans Precedes a Team.</p>
+	</div>
+	</section>
 
 
 	</div>
