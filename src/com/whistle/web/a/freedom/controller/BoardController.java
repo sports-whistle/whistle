@@ -38,7 +38,7 @@ public class BoardController {
 		String _page = request.getParameter("page");
 		List<Article> articleList = null;
 		
-		System.out.println("babo");
+		
 		
 		int page = 1;
 		if (_page != null) {

@@ -355,36 +355,21 @@
 	#article-title+dt+dd:after{
 		content:"";
 		display:block;
-		display:hidden;
+		
 		overflow:hidden;
 		height:15px;
 		
-	
+		border-bottom: 2px solid #000000; 
+		
+		
+		margin-bottom: 14px;
 	}
 	
 	#buttons-after{
 		height:15px;
 	}
 	
-	/* 
-	<div id="comment-wrapper">
-					<article id="comments">
-						<h1>댓글</h1>
-							<c:forEach var="comment" items="${article.commentsOfThis}">
-								<div class="comment">
-									<dl>
-										<dt class="hidden">번호</dt><dd class="seq hidden">${comment.intId }</dd>
-										<dt class="hidden">작성자이름</dt><dd class="writer-name">${comment.writerName }</dd>
-										<dt class="hidden">등록일</dt><dd  class="reg-date">${comment.regDate }</dd>
-										<dt class="hidden">내용</dt><dd class="content">${comment.content }</dd>
-									</dl>
-									<p>수정</p>
-									<p>삭제</p>
-									<p>신고</p>
-								</div>
-							</c:forEach>
-					</article>
-					 */
+
 	
 		
 	/*작성자 이름*/
@@ -392,7 +377,7 @@
 		font-size:0.8em;
 		display:inline-block;
 		
-		margin-bottom:3px;
+		margin-bottom:4px;
 	}
 	
 	.reg-date{
@@ -400,18 +385,22 @@
 		color: #c8c8c8;
 		display:inline-block;
 		
-		margin-bottom:3px;
+		margin-bottom:4px;
 	}
 	
 	.content{
 		font-size:0.9em;
+		margin-left: 3px;
 		margin-bottom:3px;
+		
+		
 	}
 	
 	.comment-content{
 		background:#fff;
-		padding-left:4px;
-		padding-bottom:4px;
+		padding:4px;
+		padding-left:8px;
+		padding-bottom:8px;
 		border: 1px solid #eaeaea;
 	}
 	
