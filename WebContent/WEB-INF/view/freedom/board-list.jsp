@@ -205,7 +205,7 @@
 		height:350px;
 		
 	
-		background:green;
+		background:none;
 	}
 	
 	
@@ -291,6 +291,14 @@
 	#article-list td:first-child+td+td+td{
 		text-align: center;
 		width:80px;
+	}
+	#article-list td:first-child+td+td+td{
+		font-size:0.8em;
+	}
+	
+	
+	#article-list td:first-child+td+td+td{
+		font-size:0.7em;
 	}
 	
 	

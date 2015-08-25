@@ -118,6 +118,7 @@
 	
 	
 	#buttons-container{
+		display:block;
 		margin-top:120px;
 
 	}
@@ -127,25 +128,28 @@
 		float:left;
 		margin-left:25px;
 		
-	
+		
 	}
 	
 	#right-extra #buttons form{
 		display:block;
 		float:left;
 		margin-left:25px;
+		
+		
 	}
 	
 	#right-extra #buttons input[type="submit"]{
 		
-	/*background-image: url(http://inspectelement.com/wp-content/themes/inspectelementv2/style/images/button.png);*/
+	
 	display:inline-block;
 	box-sizing: content-box;
-	background:white;
-	background-position:  0px 0px;
-	background-repeat: no-repeat;
-	width: 124px;
-	height: 134px;
+
+	background: #fff url('${ctxName}/resource/images/freedom/btn-delete.png') no-repeat center;
+	
+	
+	width: 100px;
+	height: 108px;
 	border: 0px;
 	text-indent:-9999px;
 	
@@ -165,8 +169,8 @@
 	#right-extra #buttons a img{
 		display:block;
 		
-		width:124px;
-		height:134px;
+		width:100px;
+		height:108px;
 		border:0px;
 		
 		background: #ffffff;
@@ -241,7 +245,7 @@
 		height:350px;
 		
 	
-		background:green;
+		background:none;
 	}
 	
 	
@@ -362,6 +366,66 @@
 		height:15px;
 	}
 	
+	/* 
+	<div id="comment-wrapper">
+					<article id="comments">
+						<h1>댓글</h1>
+							<c:forEach var="comment" items="${article.commentsOfThis}">
+								<div class="comment">
+									<dl>
+										<dt class="hidden">번호</dt><dd class="seq hidden">${comment.intId }</dd>
+										<dt class="hidden">작성자이름</dt><dd class="writer-name">${comment.writerName }</dd>
+										<dt class="hidden">등록일</dt><dd  class="reg-date">${comment.regDate }</dd>
+										<dt class="hidden">내용</dt><dd class="content">${comment.content }</dd>
+									</dl>
+									<p>수정</p>
+									<p>삭제</p>
+									<p>신고</p>
+								</div>
+							</c:forEach>
+					</article>
+					 */
+	
+		
+	/*작성자 이름*/
+	.writer-name{
+		font-size:0.8em;
+		display:inline-block;
+		
+		margin-bottom:3px;
+	}
+	
+	.reg-date{
+		font-size:8pt;
+		color: #c8c8c8;
+		display:inline-block;
+		
+		margin-bottom:3px;
+	}
+	
+	.content{
+		font-size:0.9em;
+		margin-bottom:3px;
+	}
+	
+	.comment-content{
+		background:#fff;
+		padding-left:4px;
+		padding-bottom:4px;
+		border: 1px solid #eaeaea;
+	}
+	
+	.comment-button{
+		display:inline-block;
+		width:100%;
+		
+		margin-bottom:4px;
+	}
+	
+	.comment-button p{
+		font-size:0.5em;
+		float:right;
+	}
 	
 </style>
 	
@@ -435,27 +499,22 @@
 						
 					</nav>
 					
-					<div id="comment">
-					<article>
-						<h1>댓글</h1>
-							<div>
-							
-								
-								<c:forEach var="comment" items="${article.commentsOfThis}">
-									<dl>
-										<dt class="seq">번호</dt><dd></dd>
-										<dt class="writer-name">작성자이름</dt><dd>${comment.writerName }</dd>
-										<dt class="content">내용</dt><dd>${comment.content }</dd>
-										<dt class="reg-date">등록일</dt><dd>${comment.regDate }</dd>
-			
+					<div id="comment-wrapper">
+					<article id="comments">
+						<h1 class="hidden">댓글</h1>
+							<c:forEach var="comment" items="${article.commentsOfThis}">
+								<div class="comment">
+									<dl class="comment-content">
+										<dt class="hidden">번호</dt><dd class="seq hidden">${comment.intId }</dd>
+										<dt class="hidden">작성자이름</dt><dd class="writer-name">${comment.writerName }</dd>
+										<dt class="hidden">등록일</dt><dd  class="reg-date"><fmt:formatDate value="${comment.regDate }" pattern="yyyy-MM-dd"/></dd>
+										<dt class="hidden">내용</dt><dd class="content">${comment.content }</dd>
 									</dl>
-									<p>수정</p>
-									<p>삭제</p>
-									<p>신고</p>
-								</c:forEach>
-							</div>
-							
-						
+									<div class="comment-button">
+										<p>삭제</p>
+									</div>
+								</div>
+							</c:forEach>
 					</article>
 					
 					
