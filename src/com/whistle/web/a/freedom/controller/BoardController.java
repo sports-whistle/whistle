@@ -192,6 +192,4 @@ public class BoardController {
 		
 		return "redirect:board-detail?detail="+Integer.toString(newArticle.getIntId());
 	}
-	
-	
 }
