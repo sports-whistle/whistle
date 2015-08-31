@@ -84,16 +84,16 @@ window.addEventListener("load", function name() {
 	var fanEnjoy = document.getElementById("LinkEnjoy");
 	var fanSports = document.getElementById("LinkSports");
 	
-	fanEnjoy.onclick = function () {
+	fanEnjoy.onclick = function (event) {
 		
 		alert("죄송합니다ㅜㅜ 서비스 준비중입니다");
-		
+		event.preventDefault();
 	};
 	
-	fanSports.onclick = function () {
+	fanSports.onclick = function (event) {
 		
 		alert("죄송합니다ㅜㅜ 서비스 준비중입니다");
-		
+		event.preventDefault();
 	};
 });
 </script>

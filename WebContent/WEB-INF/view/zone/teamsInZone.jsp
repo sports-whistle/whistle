@@ -134,6 +134,12 @@ ul li:FIRST-CHILD{
 	border: 1px solid blue;  
 	margin-left: 1200px; 
 }
+
+#teams-list{
+	/* display: inline; */
+	/* display: inline-block; */
+	overflow: auto; 
+}
 </style>
 
 <script>
