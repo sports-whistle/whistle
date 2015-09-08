@@ -157,19 +157,14 @@
 		display:block;
 		font-size:30pt;
 		font-weigth:bold;
-	
 	}
 	
 	#p2{
-	display:block;
-	font-size:25pt;
-	font-weigth:bold;
-	float:right;
+		display:block;
+		font-size:25pt;
+		font-weigth:bold;
+		float:right;
 	}
-
-
-
-
 
 
 /* ======  [류윤광] 스포츠 종목별 팀선택 스타일 적용 ===== */
@@ -263,12 +258,25 @@ select{
 </style>
 
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
+<script type="text/javascript" src="../resource/js/jquery-1.11.3.js"></script>
 
 <script type="text/javascript">
 
 //-------------->	>>> 응원팀 선택 기능 추가 
 
 window.addEventListener("load", function () {
+	
+	imgEmblemList = {
+			width: "50px", 
+			height: "50px", 
+			position: "absolute",
+			left: "970px",
+			top: "500px",  
+			opacity: "1",	
+			zIndex: "1",
+		};
+	
+	
 	
 	btnNext = document.getElementById("next");
 	btnAfterward = document.getElementById("afterward");
@@ -297,6 +305,11 @@ window.addEventListener("load", function () {
 	
 	
 	emblemImgList.src = "${ctxName}/resource/images/reg-member/emblem-baseball-kia.png";
+	
+	//----------jQuery 적용
+	jQueryEmblemImgList = $('#img-emblemList');
+	jQueryEmblemImgList.eq(0).css(imgEmblemList, 1000); 
+	
 	
 	// 각 종목별로 url 나누기 
 	<c:forEach items="${emblemUrlInTeams}" var="team">
@@ -387,7 +400,29 @@ function btnNextClick()
 			emblemImgList.src = ctxName + volleyBallEmblemUrlList[index];
 		} 
 	}
-}
+	
+	// ----------- jQuery로 애니메이션 효과 주기 
+	jQueryEmblemImgList.eq(index).animate(imgEmblemList, 250);
+	jQueryEmblemImgList.eq(index)
+	.animate({
+					width: "1000px",
+					opacity: 0.5
+				},1000)
+				.animate({
+					width:"500px"
+				}, 500)
+				.animate({
+					width:"50px",
+					opacity:1
+				},500);
+			
+			/* .animate({
+				opacity: 0.5
+			},1000)
+			.animate({
+				opacity: 1
+			},1000); */
+};
 
 
 function btnAfterWardClick()

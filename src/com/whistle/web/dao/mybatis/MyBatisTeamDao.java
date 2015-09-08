@@ -33,8 +33,6 @@ public class MyBatisTeamDao implements TeamDao{
 		TeamDao teamDao = session.getMapper(TeamDao.class);
 		
 		List<Team> tlist = teamDao.getTeamsWithOneColumn(column, keyword);
-	
-		
 		
 		return tlist;
 	}

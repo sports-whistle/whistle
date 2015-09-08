@@ -48,7 +48,7 @@ public class MybatisPartiesDao implements PartiesDao
 	}
 
 	@Override
-	public int updateRealRegCnt(String partyId) {
+	public int updateRealRegCnt(String partyId){
 		
 		PartiesDao dao = session.getMapper(PartiesDao.class);
 

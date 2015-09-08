@@ -142,7 +142,7 @@ window.addEventListener("load", function name() {
 
 			<nav id = fanSports>
 				<h1>Sports</h1>
-				<p><a href="">Sports</a></p>
+				<p><a href="">Sports</a></p>z
 			</nav>
 			
 			<nav id = fanTogether>

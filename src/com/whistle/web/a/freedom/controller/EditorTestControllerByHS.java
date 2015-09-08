@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/editor/*")
-public class EditorTestController {
+public class EditorTestControllerByHS {
 
 	@RequestMapping(value="test", method=RequestMethod.POST)
 	public String editorPost(HttpServletRequest request){

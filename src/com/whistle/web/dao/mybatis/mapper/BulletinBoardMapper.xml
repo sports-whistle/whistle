@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.whistle.web.dao.BulletionBoardDao">
+
+	<insert id="addBulletinBoard">
+		
+		<selectKey keyProperty="code" order="BEFORE" resultType="String">
+					
+			SELECT ISNULL(MAX(IntId), 0)+1 Code FROM BulletinBoard
+			
+		</selectKey>	
+		
+		insert into BulletinBoard(
+			
+			Code,
+			Title,
+			Writer,
+			Content,
+			RegDate,
+			hit
+		)
+		values(
+		
+			${code},
+			#{title},
+			#{writer},
+			#{content},
+			#{regDate},
+			#{hit}
+		)
+		
+	</insert>
+
+	<delete id="deleteBulletinBoard" parameterType="String">
+	
+		delete BulletinBoard where Code = #{code}
+	
+	</delete>
+
+
+
+	<update id="updateBulletinBoard">
+	
+		delete BulletinBoard set ()[Content]) values(#{content}) where Code = ${code}
+	
+	</update>
+
+
+
+	<select id="getBulltionBoards" resultType="com.whistle.web.vo.BulletinBoard">
+	
+		select * from BulletinBoard
+	
+	</select>
+
+
+	<select id="getBulltionBoard" parameterType="String" resultType="com.whistle.web.vo.BulletinBoard">
+	
+		select * from BulletinBoard where Code = #{code}
+	
+	</select>
+
+
+</mapper>

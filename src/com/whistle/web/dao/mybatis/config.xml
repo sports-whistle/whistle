@@ -24,7 +24,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    		<mapper resource="com/whistle/web/dao/mybatis/mapper/RateCommentMapper.xml"/>
    		<mapper resource="com/whistle/web/dao/mybatis/mapperr/WhistleGamesDao.xml"/>
   		<mapper resource="com/whistle/web/dao/mybatis/mapper/WhistlePartiesDao.xml"/>
+  		<mapper resource="com/whistle/web/dao/mybatis/mapper/BulletinBoardMapper.xml"/>
    </mappers>
-   
 </configuration>
 

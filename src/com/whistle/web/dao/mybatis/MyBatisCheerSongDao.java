@@ -11,6 +11,7 @@ import com.whistle.web.vo.CheerSong;
 public class MyBatisCheerSongDao implements CheerSongDao{
 	@Autowired
 	SqlSession session;
+	
 	@Override
 	
 	

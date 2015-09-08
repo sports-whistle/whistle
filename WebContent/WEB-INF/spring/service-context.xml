@@ -47,5 +47,7 @@
 	<bean id="gamesDao" class="com.whistle.web.dao.mybatis.MybatisGamesDao" />
 	<bean id="partiesDao" class="com.whistle.web.dao.mybatis.MybatisPartiesDao" />
 	<bean id="userDao" class="com.whistle.web.dao.mybatis.MyBatisUserDao" />
+	
+	<bean id="bulletinBoardDao" class="com.whistle.web.dao.mybatis.MybatisBulletinBoardDao" />
 
 </beans>
